@@ -3,7 +3,7 @@ name: Forecast on new AI tournament questions
 on:
   workflow_dispatch:
   schedule:
-    - cron: "7,27,47 * * * *" # every 20 min, offset off the hour. Make sure to skip already-forecasted questions!
+    - cron: "7,27,47 * * * *" # every 20 min, offset off the hour. Tournament questions stay open for about 90 minutes.
 
 # Add concurrency group to prevent parallel runs
 concurrency:
@@ -11,10 +11,10 @@ concurrency:
   cancel-in-progress: false
 
 
-# Daily job to run the simple forecast bot
 jobs:
   forecast_job:
     runs-on: ubuntu-latest # determines the machine that will run the job - keep as is
+    timeout-minutes: 55 # a stuck run must not block the next ones for hours
     steps: # sets up the steps that will be run in order
       # setup repository with all necessary dependencies - keep as is
       - name: Check out repository
@@ -31,14 +31,25 @@ jobs:
       - name: Run bot
         run: |
           uv run python main.py
-        # this reads the environment variables from the github repository.
-        # Store under Settings --> Secrets and variables --> Actions
         env:
-          METACULUS_TOKEN: ${{ secrets.METACULUS_TOKEN }} # replace this with the name of the variable under which you stored your own Metaculus token
-          PERPLEXITY_API_KEY: ${{ secrets.PERPLEXITY_API_KEY }}
-          EXA_API_KEY: ${{ secrets.EXA_API_KEY }}
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          # Secrets: Settings --> Secrets and variables --> Actions --> Secrets
+          METACULUS_TOKEN: ${{ secrets.METACULUS_TOKEN }}
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          # Optional: free news search for tournament participants
           ASKNEWS_CLIENT_ID: ${{ secrets.ASKNEWS_CLIENT_ID }}
           ASKNEWS_SECRET: ${{ secrets.ASKNEWS_SECRET }}
+          # The bot's dials (all optional, see BOT_NOTES.md). bot_settings.txt is
+          # the simple place to set them. A repository variable set here wins:
+          # Settings --> Secrets and variables --> Actions --> Variables
+          BOT_TIER: ${{ vars.BOT_TIER }}
+          BOT_MINIBENCH_TIER: ${{ vars.BOT_MINIBENCH_TIER }}
+          BOT_FORECASTERS: ${{ vars.BOT_FORECASTERS }}
+          BOT_MINIBENCH_FORECASTERS: ${{ vars.BOT_MINIBENCH_FORECASTERS }}
+          BOT_RESEARCH: ${{ vars.BOT_RESEARCH }}
+          BOT_MINIBENCH_RESEARCH: ${{ vars.BOT_MINIBENCH_RESEARCH }}
+          BOT_BACKUP_MODELS: ${{ vars.BOT_BACKUP_MODELS }}
+          BOT_MAX_USD_PER_RUN: ${{ vars.BOT_MAX_USD_PER_RUN }}
+          BOT_MAX_QUESTIONS_PER_RUN: ${{ vars.BOT_MAX_QUESTIONS_PER_RUN }}
+          BOT_PROB_FLOOR: ${{ vars.BOT_PROB_FLOOR }}
+          BOT_OPTION_FLOOR: ${{ vars.BOT_OPTION_FLOOR }}
+          BOT_DRY_RUN: ${{ vars.BOT_DRY_RUN }}

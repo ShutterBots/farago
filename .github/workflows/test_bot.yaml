@@ -2,6 +2,15 @@ name: Test Bot
 
 on:
   workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Forecast without posting anything to Metaculus"
+        type: boolean
+        default: false
+      max_questions:
+        description: "How many test questions to forecast (one of each type first)"
+        type: string
+        default: "6"
 
 # Add concurrency group to prevent parallel runs
 concurrency:
@@ -9,10 +18,11 @@ concurrency:
   cancel-in-progress: false
 
 
-# Daily job to run the simple forecast bot
+# Manual smoke test against https://www.metaculus.com/tournament/bot-testing-area/
 jobs:
   forecast_job:
     runs-on: ubuntu-latest # determines the machine that will run the job - keep as is
+    timeout-minutes: 55
     steps: # sets up the steps that will be run in order
       # setup repository with all necessary dependencies - keep as is
       - name: Check out repository
@@ -26,17 +36,26 @@ jobs:
           version: "0.13.1"
       - name: Install dependencies
         run: uv sync --locked
+      - name: Check the bot's own maths
+        continue-on-error: true # informative only, never blocks the smoke test
+        run: uv run --with pytest python -m pytest tests -q
       - name: Run bot
         run: |
-          uv run python main.py --mode test_questions
-        # this reads the environment variables from the github repository.
-        # Store under Settings --> Secrets and variables --> Actions
+          uv run python main.py --mode test_questions --max-questions "$MAX_QUESTIONS" ${{ inputs.dry_run && '--dry-run' || '' }}
         env:
-          METACULUS_TOKEN: ${{ secrets.METACULUS_TOKEN }} # replace this with the name of the variable under which you stored your own Metaculus token
-          PERPLEXITY_API_KEY: ${{ secrets.PERPLEXITY_API_KEY }}
-          EXA_API_KEY: ${{ secrets.EXA_API_KEY }}
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          MAX_QUESTIONS: ${{ inputs.max_questions || '6' }}
+          # Secrets: Settings --> Secrets and variables --> Actions --> Secrets
+          METACULUS_TOKEN: ${{ secrets.METACULUS_TOKEN }}
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          # Optional: free news search for tournament participants
           ASKNEWS_CLIENT_ID: ${{ secrets.ASKNEWS_CLIENT_ID }}
           ASKNEWS_SECRET: ${{ secrets.ASKNEWS_SECRET }}
+          # The bot's dials (all optional, see BOT_NOTES.md). bot_settings.txt is
+          # the simple place to set them. A repository variable set here wins:
+          # Settings --> Secrets and variables --> Actions --> Variables
+          BOT_TIER: ${{ vars.BOT_TIER }}
+          BOT_FORECASTERS: ${{ vars.BOT_FORECASTERS }}
+          BOT_RESEARCH: ${{ vars.BOT_RESEARCH }}
+          BOT_MAX_USD_PER_RUN: ${{ vars.BOT_MAX_USD_PER_RUN }}
+          BOT_PROB_FLOOR: ${{ vars.BOT_PROB_FLOOR }}
+          BOT_OPTION_FLOOR: ${{ vars.BOT_OPTION_FLOOR }}

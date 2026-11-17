@@ -1,0 +1,23 @@
+# Dials for the forecasting bot.
+#
+# To change a setting, remove the "# " in front of its line, edit the value and
+# commit. Lines that start with # are ignored, so every setting below is at its
+# default until you do. BOT_NOTES.md explains each one and lists a few more.
+#
+# NEVER put a key or token in this file. This repository is public. Keys live
+# in Settings -> Secrets and variables -> Actions -> Secrets, and nowhere else.
+
+# Panel for the seasonal tournament: lite, standard or max
+# BOT_TIER=standard
+
+# Panel for MiniBench: lite, standard or max, or off to skip MiniBench
+# BOT_MINIBENCH_TIER=lite
+
+# Stop taking new questions in a run once it has spent this many dollars (0 = no cap)
+# BOT_MAX_USD_PER_RUN=6
+
+# The most questions one run will start
+# BOT_MAX_QUESTIONS_PER_RUN=20
+
+# true = forecast but post nothing to Metaculus
+# BOT_DRY_RUN=false

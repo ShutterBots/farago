@@ -1,9 +1,10 @@
 name: Forecast on Metaculus Cup
 
+# Manual only. This bot is built for the bot tournaments, so it does not spend
+# money on the Metaculus Cup on a schedule. Run it by hand when you want to see
+# how the bot compares with human forecasters.
 on:
   workflow_dispatch:
-  schedule:
-    - cron: "0 0 */2 * *" # runs at midnight every 2 days
 
 # Add concurrency group to prevent parallel runs
 concurrency:
@@ -11,10 +12,10 @@ concurrency:
   cancel-in-progress: false
 
 
-# Daily job to run the simple forecast bot
 jobs:
   forecast_job:
     runs-on: ubuntu-latest # determines the machine that will run the job - keep as is
+    timeout-minutes: 55
     steps: # sets up the steps that will be run in order
       # setup repository with all necessary dependencies - keep as is
       - name: Check out repository
@@ -31,14 +32,14 @@ jobs:
       - name: Run bot
         run: |
           uv run python main.py --mode metaculus_cup
-        # this reads the environment variables from the github repository.
-        # Store under Settings --> Secrets and variables --> Actions
         env:
-          METACULUS_TOKEN: ${{ secrets.METACULUS_TOKEN }} # replace this with the name of the variable under which you stored your own Metaculus token
-          PERPLEXITY_API_KEY: ${{ secrets.PERPLEXITY_API_KEY }}
-          EXA_API_KEY: ${{ secrets.EXA_API_KEY }}
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          # Secrets: Settings --> Secrets and variables --> Actions --> Secrets
+          METACULUS_TOKEN: ${{ secrets.METACULUS_TOKEN }}
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           ASKNEWS_CLIENT_ID: ${{ secrets.ASKNEWS_CLIENT_ID }}
           ASKNEWS_SECRET: ${{ secrets.ASKNEWS_SECRET }}
+          BOT_TIER: ${{ vars.BOT_TIER }}
+          BOT_FORECASTERS: ${{ vars.BOT_FORECASTERS }}
+          BOT_RESEARCH: ${{ vars.BOT_RESEARCH }}
+          BOT_MAX_USD_PER_RUN: ${{ vars.BOT_MAX_USD_PER_RUN }}
+          BOT_MAX_QUESTIONS_PER_RUN: ${{ vars.BOT_MAX_QUESTIONS_PER_RUN }}

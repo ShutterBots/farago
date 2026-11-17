@@ -1,4 +1,7 @@
 # Simple Metaculus forecasting bot
+
+> **This fork runs its own bot.** `main.py` here is not the template's: it researches each question from several angles and combines a panel of models. [BOT_NOTES.md](BOT_NOTES.md) explains how it works, what it costs and how to change its settings. The setup steps below still apply. Where this page mentions `FallTemplateBot2026` or editing `main.py` to change behaviour, use `bot_settings.txt` instead.
+
 This repository contains a simple bot meant to get you started with creating your own bot for the AI Forecasting Tournament. Go to https://www.metaculus.com/futureeval/participate/ for more info and tournament rules (and then go to the  "Getting Started" section of our [resources](https://www.metaculus.com/notebooks/38928/ai-benchmark-resources/#want-to-join-the-ai-forecasting-benchmark) page).
 
 **Brand new to this?** You can get a working bot running in about 5 minutes without writing a single line of code — just fork this repo, paste two API keys into GitHub, and click "Run workflow". See **[Quick start](#quick-start--fork-and-use-github-actions)** below.
@@ -58,7 +61,7 @@ Instructions for getting your METACULUS_TOKEN, OPENROUTER_API_KEY, or optional s
 To run a different script under the same workflows, edit the `uv run python main.py` line in the appropriate file under `.github/workflows/` and replace `main.py` with your script. The workflows that exist:
 - `test_bot.yaml` — manual-trigger smoke test against the bot-testing-area tournament.
 - `run_bot_on_tournament.yaml` — every 20 min on the live AIB tournament + MiniBench.
-- `run_bot_on_metaculus_cup.yaml` — every 2 days on the Metaculus Cup.
+- `run_bot_on_metaculus_cup.yaml` — the Metaculus Cup. Manual only in this fork (the template runs it every 2 days).
 
 **To run `main_with_no_framework.py` via GitHub Actions instead of `main.py`:** open the workflow file you want and change `uv run python main.py` to `uv run python main_with_no_framework.py`. That's the only change required.
 
