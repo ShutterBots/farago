@@ -1,30 +1,8 @@
 {
-  "generated_at": "2026-11-18T06:55:48Z",
+  "generated_at": "2026-11-18T06:56:42Z",
   "mode": "tournament",
   "request_id": "20261118T064209Z-3959",
   "questions": [
-    {
-      "question_id": 46209,
-      "post_id": 46008,
-      "type": "numeric",
-      "tournament": "Market Pulse",
-      "title": "How much will Gold Futures total price returns exceed S&P 500 Futures in these biweekly periods of Q4 2026? (Nov 23 - Dec 4)",
-      "url": "https://www.metaculus.com/questions/46008",
-      "background": "[Gold Futures](https://en.wikipedia.org/wiki/Gold_as_an_investment#Derivatives,_CFDs_and_spread_betting) represent physical gold trading, typically based on 100-troy-ounce contracts. Gold is viewed as a safe haven during periods of economic uncertainty, geopolitical tensions, and high inflation. The futures are influenced by global economic conditions, currency values, central bank policies, and international political events, making them a key indicator of global financial stability.\n\nThe [S\\&P 500](https://en.wikipedia.org/wiki/S%26P_500) represents 500 of the largest publicly traded U.S. companies across diverse sectors. It captures the broader market sentiment, including technology, healthcare, financial, and industrial giants like Apple, Microsoft, Amazon, JPMorgan Chase, and Alphabet (Google). The index is market-cap weighted, meaning larger companies have a more significant impact on its movement.\n\nA spreadsheet of past GC vs. ES returns can be found [here](https://docs.google.com/spreadsheets/d/1WFJ_GNmTTwrnPrCroArLgDR-K5kbtMW16VUlR8iRDS0/edit?gid=0#gid=0).&#x20;",
-      "resolution_criteria": "Each subquestion will resolve as the difference between the percent total price return of [Gold Futures (GC)](https://finance.yahoo.com/quote/GC%3DF/history/) and that of [S\\&P 500 Futures (ES)](https://finance.yahoo.com/quote/ES%3DF/history/) for the corresponding biweekly period, according to Yahoo Finance data.\n\nSpecifically, each subquestion will resolve as GC\\_return - ES\\_return.\n\nReturns will be calculated as follows: If P₀ is the Close price of an asset on the last trading day or half-day *before* the start of the period and P₁ is the Close price of the stock on the last trading day *of* the designated period, the percentage return will be calculated as:\n\n$$\n \\text{return} = 100 \\times \\frac{P1 - P0}{P0}\n$$",
-      "fine_print": "* If ES outperforms GC, the corresponding subquestion will resolve as a negative number.\n* If Yahoo Finance delays or ceases reporting these data or if it reports them in error, Metaculus might use alternative credible sources to resolve this question.\n\n***\n\nFor example, for the period Jun 9, 2025 - Jun 20, 2025, the subquestion would resolve based on the following calculations:\n\nGC\\_P₀ \\= 3,322.70 (the Adj Close price on Jun 6)\n\nGC\\_P₁ \\= 3,368.10 (the Close price on Jun 20)\n\nGC\\_return \\= 100 × (3,368.10 - 3,322.70) / 3,322.70 \\= 1.3663\n\nES\\_P₀ \\= 6,006.75 (the Adj Close price on Jun 6)\n\nES\\_P₁ \\= 6,010.21 (the Close price on Jun 20)\n\nES\\_return \\= 100 × (6,010.21 - 6,006.75) / 6,006.75 \\= 0.0576\n\nAnd the resolution would be 1.3663 - 0.0576 \\= **1.3087** percentage points (pp).",
-      "open_time": "2026-11-16T17:00:00Z",
-      "close_time": "2026-11-23T04:00:00Z",
-      "scheduled_resolution_time": "2026-12-04T21:00:00Z",
-      "group_option": "Nov 23 - Dec 4",
-      "unit": "pp",
-      "lower_bound": -10.0,
-      "upper_bound": 10.0,
-      "open_lower_bound": true,
-      "open_upper_bound": true,
-      "deadline": "2026-11-23T04:00:00Z",
-      "reason": "new"
-    },
     {
       "question_id": 46203,
       "post_id": 46007,
@@ -51,8 +29,8 @@
   "skipped": [],
   "errors": [],
   "kept_up_to_date": {
-    "listed_now": 2,
-    "up_to_date": 6,
+    "listed_now": 1,
+    "up_to_date": 7,
     "past_their_scoring_time": 0,
     "held_for_a_later_run": 0
   }
