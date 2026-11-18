@@ -1,30 +1,8 @@
 {
-  "generated_at": "2026-11-18T06:37:52Z",
+  "generated_at": "2026-11-18T06:38:42Z",
   "mode": "tournament",
   "request_id": "20261118T061720Z-2047",
   "questions": [
-    {
-      "question_id": 46245,
-      "post_id": 46015,
-      "type": "numeric",
-      "tournament": "Market Pulse",
-      "title": "What will be the maximum intraday value of the VIX over these biweekly periods in Q4 2026? (Nov 23 - Dec 4)",
-      "url": "https://www.metaculus.com/questions/46015",
-      "background": "The [CBOE Volatility Index (VIX)](https://en.wikipedia.org/wiki/VIX), often referred to as the “fear gauge,” is a real-time market index that represents the market’s expectations for volatility over the coming 30 days. It is derived from the prices of S\\&P 500 index options and is widely viewed as a measure of market risk and investor sentiment.\n\nThe VIX tends to spike during periods of high uncertainty or panic, often driven by earnings reports, economic data releases, Federal Reserve announcements, or geopolitical events. Predicting the maximum intraday value can provide insights into how market participants perceive risk over a short horizon.\n\nHistorical values for the VIX are available from TradingView [here](https://www.tradingview.com/symbols/CBOE-VIX/).",
-      "resolution_criteria": "Each subquestion will resolve as the maximum intraday value of the VIX recorded from the market open on the first Monday to the market close on the last Friday of the specified biweekly period. Specifically, it will resolve as the highest HIGH value for the relevant days in the CSV published [on the Cboe website](https://www.cboe.com/tradable_products/vix/vix_historical_data/).",
-      "fine_print": "* If the market is closed on one or more trading days within the period, only the available trading days will be considered.\n* If the resolution source delays or ceases its reporting of these data, Metaculus might use alternative [credible sources](https://www.metaculus.com/faq/#definitions) to resolve this question.",
-      "open_time": "2026-11-16T17:00:00Z",
-      "close_time": "2026-11-23T04:00:00Z",
-      "scheduled_resolution_time": "2026-12-04T21:00:00Z",
-      "group_option": "Nov 23 - Dec 4",
-      "unit": "pp",
-      "lower_bound": 10.0,
-      "upper_bound": 50.0,
-      "open_lower_bound": true,
-      "open_upper_bound": true,
-      "deadline": "2026-11-23T04:00:00Z",
-      "reason": "new"
-    },
     {
       "question_id": 46221,
       "post_id": 46011,
@@ -91,14 +69,36 @@
       "open_upper_bound": true,
       "deadline": "2026-11-23T04:00:00Z",
       "reason": "new"
+    },
+    {
+      "question_id": 46203,
+      "post_id": 46007,
+      "type": "numeric",
+      "tournament": "Market Pulse",
+      "title": "How much will Crude Oil Futures total price returns exceed S&P 500 Futures in these biweekly periods of Q4 2026? (Nov 23 - Dec 4)",
+      "url": "https://www.metaculus.com/questions/46007",
+      "background": "Crude Oil Futures (CL) directly reflect global energy demand, transportation costs, and geopolitical tensions affecting oil production. Traders and analysts use these futures to gauge economic health, predict inflation, and understand supply chain dynamics. Significant price movements can signal economic slowdowns, changes in global trade, or disruptions in major oil-producing regions like the Middle East, Russia, and North America.\n\nThe [S\\&P 500](https://en.wikipedia.org/wiki/S%26P_500) (whose E-mini futures are abbreviated ES) represents 500 of the largest publicly traded U.S. companies across diverse sectors. It captures broader market sentiment, including the technology, healthcare, and financial sectors, and it includes mega-caps like Apple, Microsoft, Amazon, JPMorgan Chase, and Alphabet (Google). The index is market-cap weighted, meaning larger companies have a more significant impact on its movement.\n\nA spreadsheet of past returns of can be found [here](https://docs.google.com/spreadsheets/d/14dXbnR2I_hlrRivc-TkNwKsHjRsGeCGFoRMXoGpBbqM/edit?gid=0#gid=0).&#x20;",
+      "resolution_criteria": "Each subquestion will resolve as the difference between the percent total price return of [Crude Oil Futures (CL)](https://finance.yahoo.com/quote/CL%3DF/history/) and that of [S\\&P 500 Futures (ES)](https://finance.yahoo.com/quote/ES%3DF/history/) for the corresponding biweekly period, according to Yahoo Finance data.\n\nSpecifically, each subquestion will resolve as CL\\_return - ES\\_return.\n\nReturns will be calculated as follows: If P₀ is the Close price of a company stock on the last trading day or half-day *before* the start of the period and P₁ is the Close price of the stock on the last trading day *of* the designated period, the percentage return will be calculated as:\n\n$$\n \\text{return} = 100 \\times \\frac{P1 - P0}{P0}\n$$",
+      "fine_print": "* If ES outperforms CL, the corresponding subquestion will resolve as a negative number.\n* If Yahoo Finance delays or ceases reporting these data or if it reports them in error, Metaculus might use alternative credible sources to resolve this question.\n\n***\n\nFor example, for the period Jun 9 - Jun 20, the subquestion would resolve based on the following calculations:\n\nCL\\_P₀ \\= 64.58 (the Close price on Jun 6)\n\nCL\\_P₁ \\= 74.93 (the Close price on Jun 20)\n\nCL\\_return \\= 100 × (74.93 - 64.58) / 64.58 \\= 16.0266\n\nES\\_P₀ \\= 6,006.75 (the Close price on Jun 6)\n\nES\\_P₁ \\= 6,010.21 (the Close price on Jun 20)\n\nES\\_return \\= 100 × (6,010.21 - 6,006.75) / 6,006.75 \\= 0.0576\n\nAnd the resolution would be 16.0266 - 0.0576 \\= **15.9690** percentage points (pp).",
+      "open_time": "2026-11-16T17:00:00Z",
+      "close_time": "2026-11-23T04:00:00Z",
+      "scheduled_resolution_time": "2026-12-04T21:00:00Z",
+      "group_option": "Nov 23 - Dec 4",
+      "unit": "pp",
+      "lower_bound": -25.0,
+      "upper_bound": 25.0,
+      "open_lower_bound": true,
+      "open_upper_bound": true,
+      "deadline": "2026-11-23T04:00:00Z",
+      "reason": "new"
     }
   ],
   "skipped": [],
   "errors": [],
   "kept_up_to_date": {
     "listed_now": 4,
-    "up_to_date": 3,
+    "up_to_date": 4,
     "past_their_scoring_time": 0,
-    "held_for_a_later_run": 1
+    "held_for_a_later_run": 0
   }
 }
