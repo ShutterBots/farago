@@ -150,10 +150,18 @@ def build_prediction(
             )
         return dict(zip(options, probabilities)), summary
 
-    percentiles = [
-        Percentile(percentile=fraction, value=value) for fraction, value in forecast.percentiles
-    ]
     try:
+        lower, upper = question.lower_bound, question.upper_bound  # type: ignore[attr-defined]
+        if kind == "date":
+            lower, upper = lower.timestamp(), upper.timestamp()
+        points = fm.trim_far_points(
+            forecast.percentiles,
+            float(lower),
+            float(upper),
+            bool(question.open_lower_bound),  # type: ignore[attr-defined]
+            bool(question.open_upper_bound),  # type: ignore[attr-defined]
+        )
+        percentiles = [Percentile(percentile=fraction, value=value) for fraction, value in points]
         distribution = NumericDistribution.from_question(percentiles, question)  # type: ignore[arg-type]
         curve = [point.percentile for point in distribution.get_cdf()]
     except Exception as error:
@@ -273,6 +281,8 @@ def process(
     record.pop("forecast_sent_at", None)
     _write(POSTED / path.name, record)
     path.unlink(missing_ok=True)
+    # An earlier attempt at this question may have failed. That record is now out of date.
+    (FAILED / path.name).unlink(missing_ok=True)
     return {"file": path.name, "status": "posted", "detail": summary}
 
 

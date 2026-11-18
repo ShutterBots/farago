@@ -17,8 +17,8 @@ There are two ways to run the bot. Both are in this repo.
 
 1. **A Claude session starts on a schedule.** It asks for the list of open questions by pushing a small request file (`state/poll-request.json`).
 2. **GitHub writes the list.** The workflow `claude_route.yaml` holds the Metaculus token. It saves the open questions the bot has not answered to `state/open-questions.json`. The list leaves out what other forecasters think, because the tournament forbids copying the community.
-3. **The Claude session researches and forecasts.** It follows [FORECASTING.md](FORECASTING.md): read the question like a contract, find a base rate, search for recent evidence, then write one file per question in `forecasts/pending/`, with its reasoning.
-4. **GitHub checks and posts.** The same workflow reads each file, refuses anything malformed, applies the guard rails (yes/no forecasts stay between 2% and 98%, every multiple-choice option gets at least 1%, percentiles must make a valid distribution for the question) and posts the forecast with the reasoning as a comment.
+3. **The Claude session researches and forecasts.** It follows [FORECASTING.md](FORECASTING.md): read the question like a contract, find a base rate, search for recent evidence, then write one file per question in `forecasts/pending/`, with its reasoning. It checks each file against the question and pushes it as soon as it is written.
+4. **GitHub checks and posts.** The same workflow reads each file, refuses anything malformed, applies the guard rails (yes/no forecasts stay between 2% and 98%, every multiple-choice option gets at least 1%, percentiles must make a valid distribution for the question) and posts the forecast with the reasoning as a comment. The comment opens with the numbers that were posted. If the number goes out and the comment fails, the next run sends the comment, never a second forecast.
 5. **Every forecast leaves a record.** Posted forecasts move to `forecasts/posted/`. Refused ones move to `forecasts/failed/` with the reason.
 
 No person is involved while it runs, and no AI model is called from GitHub. The workflow starts when the Claude session pushes, so nothing depends on GitHub's timer.
@@ -30,7 +30,7 @@ No person is involved while it runs, and no AI model is called from GitHub. The 
 | `FORECASTING.md` | The playbook the Claude session follows |
 | `list_questions.py` | Writes the list of open questions (runs in GitHub Actions) |
 | `post_forecasts.py` | Checks and posts the waiting forecasts (runs in GitHub Actions) |
-| `check_forecast_files.py` | Lets the Claude session check its files before pushing |
+| `check_forecast_files.py` | Lets the Claude session check its files, and hold them against the question list, before pushing |
 | `forecast_math.py` | The checks and the maths, covered by `tests/` |
 | `.github/workflows/claude_route.yaml` | Runs the two scripts when the session pushes |
 
@@ -39,7 +39,7 @@ No person is involved while it runs, and no AI model is called from GitHub. The 
 - **See what it did:** the `forecasts/posted/` folder is the bot's record. On Metaculus, switch to the bot account (Settings → My Forecasting Bots); the reasoning is in each question's Private comments tab.
 - **Pause:** pause the scheduled Claude task. With no session pushing, nothing runs.
 - **Try it by hand:** Actions → "Claude route - post forecasts and list questions" → Run workflow. It posts whatever is waiting and refreshes the list.
-- **Limits:** one forecast per scored question, at most six questions per run, questions that would close within ten minutes are left alone. Conditional questions are not handled yet and are listed under `skipped`.
+- **Limits:** one forecast per scored question, at most eight questions or 35 minutes per run, questions that would close within ten minutes are left alone. Conditional questions are not handled yet and are listed under `skipped`.
 
 # The API route
 

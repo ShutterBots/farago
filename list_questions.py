@@ -82,7 +82,14 @@ def describe(question: MetaculusQuestion, tournament: str) -> dict[str, Any]:
         if kind == "discrete":
             size = question.cdf_size  # type: ignore[attr-defined]
             span = question.upper_bound - question.lower_bound  # type: ignore[attr-defined]
-            card["step"] = round(span / (size - 1), 9) if size and size > 1 else None
+            step = round(span / (size - 1), 9) if size and size > 1 else None
+            card["step"] = step
+            # The card always shows the first and last value that can be the answer.
+            # The curve itself runs half a step further out on each side.
+            if step and lower is None:
+                card["lower_bound"] = round(question.lower_bound + step / 2, 9)  # type: ignore[attr-defined]
+            if step and upper is None:
+                card["upper_bound"] = round(question.upper_bound - step / 2, 9)  # type: ignore[attr-defined]
     elif kind == "date":
         card["lower_bound"] = iso(question.lower_bound)  # type: ignore[attr-defined]
         card["upper_bound"] = iso(question.upper_bound)  # type: ignore[attr-defined]

@@ -56,40 +56,58 @@ If it never prints `READY`, stop. Final line: "The question list did not arrive;
 
 Read `state/open-questions.json`. If `errors` is not empty, mention it in your final line. If `questions` is empty, you are done: "No open questions."
 
-Take the questions that close soonest first, **at most 6 per run**. Stop starting new questions once the run is 30 minutes old; the next run takes the rest. In `test_questions` mode take at most 5, one of each question type before a second of any type.
+Work through the questions that close soonest first. Note the time now (`date -u +%H:%M`) and look at it again before each question. Stop starting new questions once you have done 8 or the run is 35 minutes old; the next run takes the rest. Skip a question that closes in less than 8 minutes: there is no time left to research and post it. In `test_questions` mode take at most 5, one of each question type before a second of any type.
 
-### 5. Research and forecast each question
+If `forecasts/failed/q<question_id>.json` exists for a question in the list, read its `error` first: an earlier run got that one wrong.
 
-Follow "How to forecast" below. Then write the file `REPO/forecasts/pending/q<question_id>.json` in the format under "The forecast file".
+### 5. One question at a time: research, write, check, push
 
-### 6. Check, then push
+For each question:
 
-```bash
-python3 REPO/check_forecast_files.py
-```
+1. Research it and decide the forecast, as "How to forecast" below describes.
+2. Write `REPO/forecasts/pending/q<question_id>.json` in the format under "The forecast file".
+3. Check it. The checker also holds the forecast against the question's type, options and bounds:
 
-Fix anything it refuses. Then:
+   ```bash
+   python3 REPO/check_forecast_files.py
+   ```
 
-```bash
-cd REPO && git add forecasts/pending && git commit -q -m "Forecasts for N question(s)" \
-  && git -c push.negotiate=true push -q origin HEAD:main
-```
+   Fix whatever it refuses. If it says a question is no longer in the list, delete that file.
+4. Push it straight away, so that nothing is lost if the run is cut short:
 
-If the push is refused because `main` moved, fetch, rebase onto `FETCH_HEAD` as in step 2, and push once more.
+   ```bash
+   cd REPO && git add forecasts/pending && git commit -q -m "Forecast for question QUESTION_ID" \
+     && git fetch -q --depth=50 origin main && git rebase -q FETCH_HEAD \
+     && git -c push.negotiate=true push -q origin HEAD:main
+   ```
 
-### 7. See what happened
+   If the push is refused because `main` moved in that moment, run the command again from `git fetch`. If the rebase reports a conflict, another run has already handled this question: run `git rebase --abort && git reset -q --hard FETCH_HEAD` and go on to the next question.
 
-Wait up to five minutes (timeout of six minutes), then look:
+GitHub posts each forecast within a minute or two of the push. Do not wait for it between questions.
+
+### 6. See what happened
+
+After your last push, wait for GitHub to finish (give this command a timeout of six minutes):
 
 ```bash
 cd REPO && for i in $(seq 1 20); do sleep 15; git fetch -q --depth=50 origin main; \
   if ! git ls-tree --name-only FETCH_HEAD forecasts/pending/ | grep -q 'q[0-9]*\.json'; then break; fi; done; \
-  git ls-tree --name-only FETCH_HEAD forecasts/posted/ forecasts/failed/ | tail -20
+  git checkout -q -B run FETCH_HEAD
 ```
 
-A file in `forecasts/posted/` was posted. A file in `forecasts/failed/` was refused, and its `error` field says why. Do not rewrite a refused forecast in the same run.
+Then look up each question you forecast, with your question ids in place of `ID1 ID2`:
 
-### 8. Final line
+```bash
+cd REPO && for id in ID1 ID2; do \
+  if [ -f forecasts/pending/q$id.json ]; then echo "$id still waiting"; \
+  elif [ -f forecasts/failed/q$id.json ]; then echo "$id FAILED: $(grep -m1 '"error"' forecasts/failed/q$id.json)"; \
+  elif [ -f forecasts/posted/q$id.json ]; then echo "$id posted"; \
+  else echo "$id not found"; fi; done
+```
+
+A forecast that failed because of the forecast itself (a value, a name, the format) may be corrected and pushed again **once**, if its question is still in the list. Leave it alone if the error says the question closed or was already forecast.
+
+### 7. Final line
 
 One line: how many forecasts were posted (with question ids), how many failed and why, and how many questions were left for the next run.
 

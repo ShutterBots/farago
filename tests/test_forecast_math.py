@@ -554,3 +554,134 @@ def test_forecast_files_that_are_refused(data, reason):
     with pytest.raises(ValueError) as caught:
         fm.parse_forecast_file(data)
     assert reason in str(caught.value), str(caught.value)
+
+
+# --------------------------------------------------------------------------- #
+# The Claude route: forecasts that run far past an open bound
+# --------------------------------------------------------------------------- #
+
+
+def height_at(points, value):
+    """The height of the straight-line curve through (fraction, value) points at a value."""
+    for (f0, v0), (f1, v1) in zip(points, points[1:]):
+        if v0 <= value <= v1:
+            return f0 if v1 == v0 else f0 + (f1 - f0) * (value - v0) / (v1 - v0)
+    raise AssertionError(f"{value} is outside the curve")
+
+
+def test_trim_far_points_leaves_ordinary_forecasts_alone():
+    points = ((0.05, 10.0), (0.25, 30.0), (0.5, 50.0), (0.75, 70.0), (0.95, 250.0))
+    assert fm.trim_far_points(points, 0.0, 100.0, True, True) == points
+    # exactly on the limit is not beyond it
+    on_limit = points[:-1] + ((0.95, 100.0 + fm.FAR_REACH * 100.0),)
+    assert fm.trim_far_points(on_limit, 0.0, 100.0, True, True) == on_limit
+
+
+def test_trim_far_points_cuts_the_far_end_without_moving_the_curve():
+    points = ((0.02, 80.0), (0.05, 95.0), (0.10, 140.0), (0.5, 900.0), (0.9, 4000.0), (0.95, 9000.0))
+    trimmed = fm.trim_far_points(points, 0.0, 100.0, False, True)
+    limit = 100.0 + fm.FAR_REACH * 100.0
+    assert trimmed[:3] == points[:3] and len(trimmed) == 4
+    assert trimmed[-1][1] == limit and 0.10 < trimmed[-1][0] < 0.5
+    assert max(value for _, value in trimmed) <= 100.0 + 2 * 100.0  # what the framework allows
+    # the chance of landing inside the range is exactly what it was
+    for value in (85.0, 100.0, 120.0, 200.0, limit):
+        assert height_at(trimmed, value) == pytest.approx(height_at(points, value))
+
+
+def test_trim_far_points_works_on_the_low_side_too():
+    points = ((0.05, -9000.0), (0.1, -4000.0), (0.5, -900.0), (0.9, -140.0), (0.95, -95.0), (0.98, -80.0))
+    trimmed = fm.trim_far_points(points, -100.0, 0.0, True, False)
+    limit = -100.0 - fm.FAR_REACH * 100.0
+    assert trimmed[1:] == points[3:] and trimmed[0][1] == limit and 0.5 < trimmed[0][0] < 0.9
+    for value in (limit, -200.0, -100.0, -90.0):
+        assert height_at(trimmed, value) == pytest.approx(height_at(points, value))
+
+
+def test_trim_far_points_respects_closed_bounds_and_hopeless_cases():
+    far = ((0.05, 10.0), (0.5, 50.0), (0.95, 5000.0))
+    # a closed bound: a value far beyond it is a mistake, and is left for the refusal
+    assert fm.trim_far_points(far, 0.0, 100.0, False, False) == far
+    # everything beyond: nothing sensible can be kept, so nothing is changed
+    lost = ((0.05, 4000.0), (0.5, 5000.0), (0.95, 6000.0))
+    assert fm.trim_far_points(lost, 0.0, 100.0, True, True) == lost
+    # a degenerate range
+    assert fm.trim_far_points(far, 5.0, 5.0, True, True) == far
+
+
+def test_trim_far_points_never_leaves_two_points_too_close_together():
+    # the last point kept sits a hair before the limit: no extra point is added on top of it
+    limit = 100.0 + fm.FAR_REACH * 100.0
+    points = ((0.05, 50.0), (0.5, limit - 1e-9), (0.95, 9000.0))
+    assert fm.trim_far_points(points, 0.0, 100.0, True, True) == points[:2]
+
+
+# --------------------------------------------------------------------------- #
+# The Claude route: a forecast held against its question card
+# --------------------------------------------------------------------------- #
+
+NUMBER_CARD = {
+    "question_id": 12345, "post_id": 67890, "type": "numeric", "unit": "%",
+    "lower_bound": 30.0, "upper_bound": 70.0, "open_lower_bound": False, "open_upper_bound": True,
+}
+COUNT_CARD = {
+    "question_id": 12345, "post_id": 67890, "type": "discrete", "unit": "officials",
+    "lower_bound": 0.0, "upper_bound": 15.0, "open_lower_bound": False, "open_upper_bound": False, "step": 1.0,
+}
+DATE_CARD = {
+    "question_id": 12345, "post_id": 67890, "type": "date",
+    "lower_bound": "2022-05-29T00:00:00Z", "upper_bound": "2027-05-28T00:00:00Z",
+    "open_lower_bound": False, "open_upper_bound": True,
+}
+CHOICE_CARD = {
+    "question_id": 12345, "post_id": 67890, "type": "multiple_choice",
+    "options": ["Democratic Party", "Republican Party", "Other"],
+}
+
+
+def verdict(card, kind=None, **fields):
+    return fm.check_against_card(fm.parse_forecast_file(forecast(kind or card["type"], **fields)), card)
+
+
+def test_card_check_passes_forecasts_that_fit():
+    assert verdict(NUMBER_CARD, percentiles=SEVEN) is None
+    assert verdict(NUMBER_CARD, percentiles={**SEVEN, "95": 400.0}) is None  # past the open top
+    assert verdict({**NUMBER_CARD, "type": "binary"}, probability=0.4) is None
+    assert verdict(CHOICE_CARD, probabilities={"Democratic Party": 0.6, "Republican Party": 0.38, "Other": 0.02}) is None
+    # a count may sit half a step outside the first and last whole number
+    counts = {"0.5": -0.5, "5": 3.6, "25": 4.6, "50": 5.3, "75": 6.1, "95": 7.4, "99.5": 15.5}
+    assert verdict(COUNT_CARD, percentiles=counts) is None
+    later = {"2": "2027-02-15", "5": "2027-05-12", "25": "2028-03-01", "50": "2029-03-01", "75": "2031-01-01", "95": "2037-01-01"}
+    assert verdict(DATE_CARD, percentiles=later) is None
+    # a card with no bounds on it cannot be checked, and is not blamed
+    assert verdict({"question_id": 12345, "post_id": 67890, "type": "numeric"}, percentiles=SEVEN) is None
+
+
+@pytest.mark.parametrize(
+    "card, fields, reason",
+    [
+        (NUMBER_CARD, {"kind": "discrete", "percentiles": SEVEN}, "says this question is 'numeric'"),
+        ({**NUMBER_CARD, "post_id": 111}, {"percentiles": SEVEN}, "'post_id' must be 111"),
+        (NUMBER_CARD, {"percentiles": {**SEVEN, "5": 29.0}}, "cannot be below 30"),
+        ({**NUMBER_CARD, "open_upper_bound": False}, {"percentiles": {**SEVEN, "95": 71.0}}, "cannot be above 70"),
+        (COUNT_CARD, {"percentiles": {**SEVEN, "5": -0.6}}, "cannot be below 0"),
+        (COUNT_CARD, {"percentiles": {"5": 1, "25": 2, "50": 3, "75": 5, "95": 15.6}}, "cannot be above 15"),
+        (NUMBER_CARD, {"percentiles": {k: v * 1000 for k, v in SEVEN.items()}}, "check the unit"),
+        (
+            DATE_CARD,
+            {"percentiles": {"5": "2029-01-01", "25": "2030-01-01", "50": "2031-01-01", "75": "2033-01-01", "95": "2037-01-01"}},
+            "at least one percentile inside the range",
+        ),
+        (
+            DATE_CARD,
+            {"percentiles": {"5": "2021-01-01", "25": "2026-12-01", "50": "2027-01-01", "75": "2027-02-01", "95": "2027-03-01"}},
+            "cannot be below 2022-05-29",
+        ),
+        (CHOICE_CARD, {"probabilities": {"Democrats": 0.6, "Republicans": 0.38, "Other": 0.02}}, "the options are"),
+        (CHOICE_CARD, {"probabilities": {"Democratic Party": 0.6, "Republican Party": 0.4}}, "the options are"),
+    ],
+)
+def test_card_check_names_what_does_not_fit(card, fields, reason):
+    fields = dict(fields)
+    problem = verdict(card, fields.pop("kind", None), **fields)
+    assert problem is not None and reason in problem, problem

@@ -853,3 +853,146 @@ def parse_forecast_file(data: Any) -> ForecastFile:
             "percentile is the low end, the 90th the high end"
         )
     return ForecastFile(question_id, post_id, kind, reasoning, percentiles=tuple(ordered))
+
+
+# The framework refuses a forecast with any value more than twice the width of
+# the question's range beyond a bound, and wants neighbouring percentiles at
+# least 0.00005 apart. Both limits are kept at a distance here.
+FAR_REACH = 1.9
+MIN_FRACTION_GAP = 1e-4
+# It also wants at least one value inside the range, give or take a quarter of its width.
+NEAR_REACH = 0.25
+
+
+def _fraction_at(low: tuple[float, float], high: tuple[float, float], value: float) -> float:
+    """Where a straight line between two (fraction, value) points reaches the value."""
+    share = (value - low[1]) / (high[1] - low[1])
+    return low[0] + (high[0] - low[0]) * share
+
+
+def trim_far_points(
+    points: Sequence[tuple[float, float]],
+    lower: float,
+    upper: float,
+    open_lower: bool,
+    open_upper: bool,
+) -> tuple[tuple[float, float], ...]:
+    """
+    Cuts a forecast off where it runs far past an open bound.
+
+    "Not before 2037" on a question whose range ends in 2027 is a fair thing to
+    say, but the framework refuses values that far out. Everything past an open
+    bound counts the same, so the far points are replaced by one point on the
+    straight line the forecast already draws. Inside the range, and for some
+    way beyond it, the forecast is exactly what it was.
+
+    Points are (fraction, value) with the lowest fraction first. Closed bounds
+    are left alone: a value far beyond one is a mistake, and is refused later.
+    """
+    result = list(points)
+    span = upper - lower
+    if span <= 0 or len(result) < 2:
+        return tuple(result)
+
+    if open_upper:
+        limit = upper + FAR_REACH * span
+        kept = [point for point in result if point[1] <= limit]
+        if kept and len(kept) < len(result):
+            fraction = _fraction_at(kept[-1], result[len(kept)], limit)
+            if fraction - kept[-1][0] >= MIN_FRACTION_GAP:
+                kept.append((fraction, limit))
+            result = kept
+
+    if open_lower:
+        limit = lower - FAR_REACH * span
+        kept = [point for point in result if point[1] >= limit]
+        if kept and len(kept) < len(result):
+            fraction = _fraction_at(result[len(result) - len(kept) - 1], kept[0], limit)
+            if kept[0][0] - fraction >= MIN_FRACTION_GAP:
+                kept.insert(0, (fraction, limit))
+            result = kept
+
+    return tuple(result)
+
+
+def _card_edges(card: Mapping[str, Any], kind: str) -> tuple[float, float, float] | None:
+    """The lowest and highest answer a question's card allows, and the slack a whole-number question gets."""
+    lower, upper = card.get("lower_bound"), card.get("upper_bound")
+    if lower is None or upper is None:
+        return None
+    try:
+        if kind == "date":
+            return parse_when(lower).timestamp(), parse_when(upper).timestamp(), 0.0
+        slack = 0.0
+        if kind == "discrete":
+            # the count k is the stretch from k - step/2 to k + step/2
+            slack = float(card.get("step") or 1.0) / 2.0
+        return float(lower), float(upper), slack
+    except (TypeError, ValueError):
+        return None
+
+
+def _show_value(value: float, kind: str) -> str:
+    if kind == "date":
+        return datetime.fromtimestamp(value, tz=timezone.utc).strftime("%Y-%m-%d")
+    return f"{value:g}"
+
+
+def check_against_card(forecast: ForecastFile, card: Mapping[str, Any]) -> str | None:
+    """
+    What is wrong with a forecast for this particular question, judged from the
+    question's card in state/open-questions.json. Returns None when it fits.
+
+    This catches, before anything is pushed, the mistakes the posting step would
+    refuse or silently bend: the wrong type, a misnamed option, a value outside a
+    closed bound, or numbers in the wrong unit.
+    """
+    if card.get("type") != forecast.kind:
+        return f"the question list says this question is '{card.get('type')}', the file says '{forecast.kind}'"
+    if card.get("post_id") != forecast.post_id:
+        return f"'post_id' must be {card.get('post_id')} for this question"
+
+    if forecast.kind == "multiple_choice":
+        options = card.get("options")
+        if isinstance(options, list) and options:
+            try:
+                align_options(forecast.options, [str(option) for option in options])
+            except ValueError as error:
+                return f"{error} (the options are {options})"
+        return None
+
+    if forecast.kind not in CONTINUOUS_KINDS:
+        return None
+    edges = _card_edges(card, forecast.kind)
+    if edges is None:
+        return None
+    lower, upper, slack = edges
+    span = upper - lower
+    if span <= 0:
+        return None
+    tiny = span * 1e-9
+
+    if not card.get("open_lower_bound", True):
+        fraction, value = forecast.percentiles[0]
+        if value < lower - slack - tiny:
+            return (
+                f"the answer cannot be below {_show_value(lower, forecast.kind)}, but the value at "
+                f"percentile {fraction * 100:g} is {_show_value(value, forecast.kind)}"
+            )
+    if not card.get("open_upper_bound", True):
+        fraction, value = forecast.percentiles[-1]
+        if value > upper + slack + tiny:
+            return (
+                f"the answer cannot be above {_show_value(upper, forecast.kind)}, but the value at "
+                f"percentile {fraction * 100:g} is {_show_value(value, forecast.kind)}"
+            )
+
+    reach = NEAR_REACH * span * 0.9
+    if not any(lower - reach <= value <= upper + reach for _, value in forecast.percentiles):
+        return (
+            f"none of the values lies inside the question's range "
+            f"({_show_value(lower, forecast.kind)} to {_show_value(upper, forecast.kind)}): check the "
+            "unit and the scale, and give at least one percentile inside the range even "
+            "when most of the probability is beyond an open bound"
+        )
+    return None
