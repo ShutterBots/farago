@@ -1,30 +1,8 @@
 {
-  "generated_at": "2026-11-18T06:17:53Z",
+  "generated_at": "2026-11-18T06:33:49Z",
   "mode": "tournament",
   "request_id": "20261118T061720Z-2047",
   "questions": [
-    {
-      "question_id": 46738,
-      "post_id": 46482,
-      "type": "multiple_choice",
-      "tournament": "Seasonal tournament",
-      "title": "How many EU member states will the AI Act National Implementation tracker classify as having clear market surveillance and notifying authorities on January 1, 2027?",
-      "url": "https://www.metaculus.com/questions/46482",
-      "background": "According to the resolution source, \"Since the AI Act entered into force on 1 August 2024, the focus for Member States has shifted to national implementation. One of the first tasks for Member States is to designate the relevant authorities. This post gives an overview of the national authorities designated under the AI Act and what we know about the national implementation plans.\"\n\n`{\"format\": \"bot_tournament_question\", \"info\": {\"hash_id\": \"ac7536aa3d548d34\", \"sheet_id\": \"103\"}}`",
-      "resolution_criteria": "This question resolves as the number of EU member states classified as ‘Clear’ in the ‘National Competent Authorities’ column of the Future of Life Institute's [Overview of all AI Act National Implementation Plans](https://artificialintelligenceact.eu/national-implementation-plans/) tracker, when checked by Metaculus on or after January 1, 2027.",
-      "fine_print": "",
-      "open_time": "2026-11-18T06:00:00Z",
-      "close_time": "2026-11-18T09:00:00Z",
-      "scheduled_resolution_time": "2027-01-01T00:00:00Z",
-      "options": [
-        "≤9",
-        "10 or 11",
-        "12 or 13",
-        "14 or 15",
-        ">15"
-      ],
-      "deadline": "2026-11-18T09:00:00Z"
-    },
     {
       "question_id": 46245,
       "post_id": 46015,

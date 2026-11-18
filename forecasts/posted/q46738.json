@@ -1,0 +1,20 @@
+{
+  "question_id": 46738,
+  "post_id": 46482,
+  "type": "multiple_choice",
+  "probabilities": {
+    "≤9": 0.64,
+    "10 or 11": 0.14,
+    "12 or 13": 0.14,
+    "14 or 15": 0.06,
+    ">15": 0.02
+  },
+  "reasoning": "**What is asked.** The number of EU member states marked 'Clear' in the 'National Competent Authorities' column of the Future of Life Institute's AI Act national implementation tracker (artificialintelligenceact.eu/national-implementation-plans) when Metaculus checks it on or after 1 January 2027.\n\n**Starting point.** I read the tracker on 18 November 2026. It says 'Last update: 17 June 2026' and counts 9 member states as having designated both market surveillance and notifying authorities ('clear'), 12 with 'partial clarity' and 6 'unclear'. The nine are Cyprus, Denmark, Finland, Hungary, Ireland, Italy, Lithuania, Malta and Slovenia.\n\n**What decides it.** The question resolves on what the page shows, not on what member states have actually done. The page has gone five months without an edit, which is itself evidence that edits are infrequent. So the main uncertainty is whether the maintainers update it in the six weeks before the check, a stretch that includes the holidays. I put that at roughly one in three. With no update the answer stays at 9.\n\n**If it is updated.** Twelve states sit in 'partial clarity', described by the page as having pending legislative proposals, announcements or one authority appointed. Those are the natural candidates to move up. An update that catches up on six months of national legislation would most likely show 11 to 13, with 10 at the low end and 14 or more only if an unusually large batch is recorded at once. A fall below 9 would need a reclassification, which I treat as rare.\n\n**What would make me wrong.** A routine year-end refresh of the tracker that I have not allowed enough for would shift weight from '≤9' to the middle options.\n\n**Forecast.** ≤9: 64%; 10 or 11: 14%; 12 or 13: 14%; 14 or 15: 6%; >15: 2%.",
+  "posted_at": "2026-11-18T06:33:32Z",
+  "posted_as": "≤9: 64.0%, 10 or 11: 14.0%, 12 or 13: 14.0%, 14 or 15: 6.0%, >15: 2.0%",
+  "question_title": "How many EU member states will the AI Act National Implementation tracker classify as having clear market surveillance and notifying authorities on January 1, 2027?",
+  "question_url": "https://www.metaculus.com/questions/46482",
+  "tournaments": [
+    "fall-futureeval-2026"
+  ]
+}
