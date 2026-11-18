@@ -1,0 +1,26 @@
+{
+  "question_id": 43325,
+  "post_id": 43323,
+  "type": "numeric",
+  "percentiles": {
+    "0.5": -32.0,
+    "1": -30.8,
+    "5": -28.5,
+    "10": -27.2,
+    "25": -25.2,
+    "50": -23.5,
+    "75": -21.9,
+    "90": -20.4,
+    "95": -19.5,
+    "99": -17.8,
+    "99.5": -17.0
+  },
+  "reasoning": "**What is asked.** Donald Trump's net approval on 31 December 2026 in the Silver Bulletin average, in percentage points.\n\n**Starting point.** The Silver Bulletin average hit an all-time low of -24.3 on 23 October 2026 after -23.9 the week before. It then recovered slightly: approval was 38.4% on 2 November and 37.6% on 12 November (Silver Bulletin; Newsweek, November 2026), which puts the net figure in the low minus-twenties, roughly -22 to -24.\n\n**Recent evidence.** Individual polls taken after the 3 November midterms are worse than the average: The Economist/YouGov had him at -31 (9 to 11 November), a record low for that series, and another tracker moved from -19 to -26. Averages lag single polls, so some further decline is likely to feed through. Against that, his rating has repeatedly bounced a point or two after each new low this year.\n\n**How much it can move.** Over six-week stretches in 2026 the average has typically moved by two to three points, and by about five in its largest swings (for example -7.5 to -13.0 during the autumn 2025 shutdown). I centre on -23.5 with a standard deviation of roughly 2.7 points, skewed slightly toward further decline.\n\n**What would move it outside my range.** A quick end to the Iran war or a strong rally-round event could lift it above -19; a new shock on prices or a damaging personnel fight could push it below -29.\n\n**Forecast.** Median -23.5, with 90% of the probability between -28.5 and -19.5.",
+  "posted_as": "0.5%: -32, 1%: -30.8, 5%: -28.5, 10%: -27.2, 25%: -25.2, 50%: -23.5, 75%: -21.9, 90%: -20.4, 95%: -19.5, 99%: -17.8, 99.5%: -17",
+  "posted_at": "2026-11-18T03:29:06Z",
+  "question_title": "What will be Donald Trump's net approval on December 31, 2026?",
+  "question_url": "https://www.metaculus.com/questions/43323",
+  "tournaments": [
+    "bot-testing-area"
+  ]
+}

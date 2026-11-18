@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-18T03:21:02Z",
+  "generated_at": "2026-11-18T03:30:25Z",
   "mode": "test_questions",
   "request_id": "20261118T032038Z-7341",
   "questions": [
@@ -16,6 +16,7 @@
       "open_time": "2026-04-27T15:03:00Z",
       "close_time": "2026-12-31T00:00:00Z",
       "scheduled_resolution_time": "2027-01-01T00:00:00Z",
+      "already_forecasted": true,
       "unit": "%",
       "lower_bound": -35.0,
       "upper_bound": 0.0,
@@ -34,7 +35,8 @@
       "fine_print": "",
       "open_time": "2026-04-27T15:39:00Z",
       "close_time": "2026-12-31T23:59:00Z",
-      "scheduled_resolution_time": "2027-01-31T23:59:00Z"
+      "scheduled_resolution_time": "2027-01-31T23:59:00Z",
+      "already_forecasted": true
     },
     {
       "question_id": 43329,
@@ -49,7 +51,8 @@
       "open_time": "2025-09-11T17:00:00Z",
       "close_time": "2027-01-01T00:00:00Z",
       "scheduled_resolution_time": "2027-01-01T13:00:00Z",
-      "group_option": "2025-2026"
+      "group_option": "2025-2026",
+      "already_forecasted": true
     },
     {
       "question_id": 43322,
@@ -64,6 +67,7 @@
       "open_time": "2026-04-27T14:56:00Z",
       "close_time": "2027-01-01T00:00:00Z",
       "scheduled_resolution_time": "2027-01-01T18:00:00Z",
+      "already_forecasted": true,
       "unit": "Officials",
       "lower_bound": 0.0,
       "upper_bound": 15.0,
@@ -84,6 +88,7 @@
       "open_time": "2026-04-27T15:08:00Z",
       "close_time": "2027-05-27T21:00:00Z",
       "scheduled_resolution_time": "2027-05-28T21:00:00Z",
+      "already_forecasted": true,
       "lower_bound": "2022-05-29T00:00:00Z",
       "upper_bound": "2027-05-28T00:00:00Z",
       "open_lower_bound": false,
@@ -161,6 +166,7 @@
       "open_time": "2026-10-17T06:00:00Z",
       "close_time": "2028-11-06T12:00:00Z",
       "scheduled_resolution_time": "2028-11-08T04:00:00Z",
+      "already_forecasted": true,
       "options": [
         "Democratic Party",
         "Republican Party",
