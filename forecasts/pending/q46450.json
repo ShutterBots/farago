@@ -1,0 +1,11 @@
+{
+  "question_id": 46450,
+  "post_id": 46223,
+  "type": "multiple_choice",
+  "probabilities": {
+    "Democratic Party": 0.61,
+    "Republican Party": 0.375,
+    "Other": 0.015
+  },
+  "reasoning": "**What is asked.** Which party's nominee wins the 2028 US presidential election; 'Other' covers a winner from neither major party or an election not held in 2028. Resolution is two years away.\n\n**Base rate.** Since 1952 the party holding the White House has won a third consecutive term once in seven tries (1988). An open seat after two terms, with the incumbent president unpopular, has historically favoured the challenging party. That alone suggests something like 55 to 65% for Democrats.\n\n**Recent evidence.** Prediction markets agree and have moved since the 3 November 2026 midterms, in which Republicans lost both chambers of Congress (IBTimes UK, November 2026). Kalshi's post-election summary put the Democratic Party at 65% to win in 2028. Polymarket's party market has traded between about 58% and 65% for Democrats through 2026. The president's net approval is at or near the lows of his term (Silver Bulletin, October and November 2026).\n\n**Why not higher.** Two years is a long time: neither nominee is known, the economy and the Iran war can change, and long-dated market prices tend to sit closer to 50% than the true odds. Midterm results are a weak predictor of the next presidential race.\n\n**Other.** A third-party or independent winner, or no election in 2028, is very unlikely: 1.5%.\n\n**Forecast.** Democratic Party 61%, Republican Party 37.5%, Other 1.5%."
+}

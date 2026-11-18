@@ -1,0 +1,19 @@
+{
+  "question_id": 43322,
+  "post_id": 43321,
+  "type": "discrete",
+  "percentiles": {
+    "0.5": 3.5,
+    "1": 3.53,
+    "5": 3.76,
+    "10": 4.03,
+    "25": 4.65,
+    "50": 5.28,
+    "75": 6.09,
+    "90": 6.88,
+    "95": 7.36,
+    "99": 8.45,
+    "99.5": 8.9
+  },
+  "reasoning": "**What is asked.** How many of 15 named top officials leave their position, or are announced as leaving, before 1 January 2027.\n\n**Already out: four.** Homeland Security Secretary Kristi Noem was fired on 5 March 2026; Attorney General Pam Bondi was removed about a month later; Director of National Intelligence Tulsi Gabbard announced her resignation on 22 May (Fortune, 26 May 2026); and Chief of Staff Susie Wiles left on 6 November, three days after the midterms (ABC News, 6 November 2026).\n\n**The uncertain fifth.** Stephen Miller, listed as Deputy Chief of Staff for Policy and Homeland Security Advisor, became Chief of Staff on 9 November. He has left the listed deputy role by promotion, but it is unclear whether he keeps the adviser title or whether a promotion counts. I give this 55%.\n\n**Who else could go in six weeks.** After the midterm defeat the president said he may make 'a few changes' (Newsweek, November 2026). Defense Secretary Pete Hegseth is the most exposed: CBS reported on 4 November that the president asked advisers whether he should stay, though he then expressed confidence in him. FBI Director Kash Patel and Commerce Secretary Howard Lutnick are also named as at risk. Marco Rubio says he is staying. I put Hegseth near 20%, Patel and Lutnick near 15% each, and the remaining six officials near 5% each, about 0.8 further departures expected.\n\n**Forecast.** Roughly 21% for four, 35% for five, 26% for six, 13% for seven and about 4% for eight or more. Median five."
+}
