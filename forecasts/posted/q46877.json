@@ -1,0 +1,27 @@
+{
+  "question_id": 46877,
+  "post_id": 46617,
+  "type": "numeric",
+  "percentiles": {
+    "0.5": 104400,
+    "1": 105000,
+    "5": 106000,
+    "10": 106600,
+    "20": 108600,
+    "25": 109200,
+    "50": 110550,
+    "75": 111600,
+    "90": 112550,
+    "95": 113150,
+    "99": 114500,
+    "99.5": 115500
+  },
+  "reasoning": "**Question.** The 2026 year-to-date dengue total in the latest INS Boletín Epidemiológico Semanal posted on or before 27 November 2026 (Colombia time): normally the week-46 issue (15–21 Nov), or the week-45 issue if week 46 is late. It resolves on 28 November.\n\n**Starting point.** The week-43 issue (posted 6 Nov) gave 97,894, up 3,276 in a week, after roughly 2,770 a week over weeks 38–42. Extending about 3,000 a week for three more issues would give about 107,000.\n\n**Recent evidence.**\n- Colombian press after the week-43 issue puts the INS count at 102,164 (Diario del Sur headline, mid-November) and 102,415 \"a corte del 10 de noviembre\" (El Espectador, 16 Nov). That implies a week-44 increment of about 4,300–4,500, well above the earlier pace.\n- El Tiempo (10 Nov), citing the week-43 bulletin: cases in weeks 39–42 (13,050) were 33.8% above weeks 35–38 (9,751); the INS describes a rising national trend, 23 of 37 territories are above expected levels, and IDEAM expects a very strong El Niño.\n- Timing: recent issues appeared on the Thursday or Friday after the week ends, so the week-46 issue is due 26–27 Nov with no slack for a delay. I put about 83% on it being posted in time.\n\n**Combining.** If week 46 resolves it, two more increments of about 3,500–5,300 each give roughly 109,000–113,000, centred near 110,900. If only week 45 is available (about 17%), the figure is near 106,500. The 16 Nov public holiday and routine reclassification of cases could trim the last increment; a continued acceleration would carry the total past 111,000.\n\n**Forecast.** Median about 110,550; 90% interval about 106,000 to 113,150, with roughly 39% above the 111,000 upper bound and about 17% below 108,000.",
+  "posted_as": "0.5%: 104,400, 1%: 105,000, 5%: 106,000, 10%: 106,600, 20%: 108,600, 25%: 109,200, 50%: 110,550, 75%: 111,600, 90%: 112,550, 95%: 113,150, 99%: 114,500, 99.5%: 115,500",
+  "posted_at": "2026-11-18T03:59:54Z",
+  "question_title": "What 2026 cumulative dengue case count will Colombia's INS report in the latest weekly epidemiological bulletin published on or before 27 November 2026?",
+  "question_url": "https://www.metaculus.com/questions/46617",
+  "tournaments": [
+    "minibench"
+  ]
+}
