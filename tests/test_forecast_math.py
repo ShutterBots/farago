@@ -445,3 +445,112 @@ def test_pick_variety_takes_one_of_each_kind_first():
     assert fm.pick_variety(kinds, 2) == [0, 2]
     assert fm.pick_variety(kinds, 0) == []
     assert fm.pick_variety([], 5) == []
+
+
+# --------------------------------------------------------------------------- #
+# The Claude route: forecast files
+# --------------------------------------------------------------------------- #
+
+REASONING = "The base rate is about one in four, and this week's report moves it up a little. " * 4
+SEVEN = {"5": 41.0, "10": 43.5, "25": 47.0, "50": 51.0, "75": 55.5, "90": 60.0, "95": 63.0}
+
+
+def forecast(kind="binary", **fields):
+    data = {"question_id": 12345, "post_id": 67890, "type": kind, "reasoning": REASONING}
+    if kind == "binary":
+        data["probability"] = 0.27
+    data.update(fields)
+    return data
+
+
+def test_forecast_file_yes_no():
+    parsed = fm.parse_forecast_file(forecast())
+    assert (parsed.question_id, parsed.post_id, parsed.kind) == (12345, 67890, "binary")
+    assert parsed.probability == 0.27 and parsed.reasoning == REASONING.strip()
+    assert parsed.options == () and parsed.percentiles == ()
+    # the ends are allowed here; the cap is applied when the forecast is posted
+    assert fm.parse_forecast_file(forecast(probability=1)).probability == 1.0
+    assert fm.parse_forecast_file(forecast(probability=0)).probability == 0.0
+    # extra fields a session may add are ignored
+    assert fm.parse_forecast_file(forecast(title="Will it?", sources=["a"])).probability == 0.27
+
+
+def test_forecast_file_multiple_choice_keeps_names_as_written():
+    parsed = fm.parse_forecast_file(
+        forecast("multiple_choice", probabilities={"Option one": 0.55, "Option two": 0.35, "Other": 0.10})
+    )
+    assert parsed.options == (("Option one", 0.55), ("Option two", 0.35), ("Other", 0.10))
+
+
+def test_forecast_file_numbers_are_sorted_fractions():
+    shuffled = {"90": 60.0, "5": 41.0, "50": 51.0, "10": 43.5, "95": 63.0, "25": 47.0, "75": 55.5}
+    parsed = fm.parse_forecast_file(forecast("numeric", percentiles=shuffled))
+    assert [p for p, _ in parsed.percentiles] == [0.05, 0.10, 0.25, 0.50, 0.75, 0.90, 0.95]
+    assert [v for _, v in parsed.percentiles] == sorted(SEVEN.values())
+    assert fm.parse_forecast_file(forecast("discrete", percentiles=SEVEN)).kind == "discrete"
+    # level stretches are fine, for example a count that is very likely zero
+    flat = {"5": 0, "10": 0, "25": 0, "50": 0, "75": 1, "90": 2, "95": 3}
+    assert fm.parse_forecast_file(forecast("discrete", percentiles=flat)).percentiles[0] == (0.05, 0.0)
+
+
+def test_forecast_file_dates_become_utc_seconds():
+    dates = {
+        "5": "2027-01-10", "10": "2027-01-20", "25": "2027-02-15", "50": "2027-03-20",
+        "75": "2027-05-01T12:00:00Z", "90": "2027-07-01T00:00:00+02:00", "95": "2027-09-01",
+    }
+    parsed = fm.parse_forecast_file(forecast("date", percentiles=dates))
+    first = datetime(2027, 1, 10, tzinfo=UTC).timestamp()
+    assert parsed.percentiles[0] == (0.05, first)
+    assert parsed.percentiles[4][1] == datetime(2027, 5, 1, 12, tzinfo=UTC).timestamp()
+    assert parsed.percentiles[5][1] == datetime(2027, 6, 30, 22, tzinfo=UTC).timestamp()
+
+
+def test_parse_when_and_file_name():
+    assert fm.parse_when("2027-03-01") == datetime(2027, 3, 1, tzinfo=UTC)
+    assert fm.parse_when(" 2027-03-01T06:30:00Z ") == datetime(2027, 3, 1, 6, 30, tzinfo=UTC)
+    for bad in ("March 1st", "", None, 20270301):
+        with pytest.raises(ValueError):
+            fm.parse_when(bad)
+    assert fm.forecast_file_name(12345) == "q12345.json"
+
+
+@pytest.mark.parametrize(
+    "data, reason",
+    [
+        ([forecast()], "one JSON object"),
+        (forecast(question_id="12345"), "'question_id'"),
+        (forecast(question_id=True), "'question_id'"),
+        (forecast(post_id=0), "'post_id'"),
+        (forecast(post_id=1.5), "'post_id'"),
+        (forecast(type="conditional"), "'type'"),
+        (forecast(reasoning="Seems likely."), "too short"),
+        (forecast(reasoning="x" * 12001), "too long"),
+        (forecast(reasoning=None), "must be text"),
+        (forecast(probability=27), "write 0.37, not 37"),
+        (forecast(probability=-0.1), "between 0 and 1"),
+        (forecast(probability="0.27"), "must be a number"),
+        (forecast(probability=True), "must be a number"),
+        (forecast(probability=float("nan")), "finite"),
+        ({k: v for k, v in forecast().items() if k != "probability"}, "must be a number"),
+        (forecast("multiple_choice", probabilities={"A": 60, "B": 40}), "add up to 1"),
+        (forecast("multiple_choice", probabilities={"A": 0.6, "B": 0.3}), "add up to 1"),
+        (forecast("multiple_choice", probabilities={"A": 1.2, "B": -0.2}), "negative"),
+        (forecast("multiple_choice", probabilities={"A": 1.0}), "at least two"),
+        (forecast("multiple_choice", probabilities=[0.5, 0.5]), "at least two"),
+        (forecast("numeric"), "'percentiles'"),
+        (forecast("numeric", percentiles={"10": 1, "50": 2, "90": 3}), "at least 5"),
+        (forecast("numeric", percentiles={"20": 1, "30": 2, "50": 3, "70": 4, "90": 5}), "both tails"),
+        (forecast("numeric", percentiles={"10": 1, "30": 2, "50": 3, "70": 4, "80": 5}), "both tails"),
+        (forecast("numeric", percentiles={**SEVEN, "50": 40.0}), "Values must rise"),
+        (forecast("numeric", percentiles={**SEVEN, "10.0": 43.5}), "given twice"),
+        (forecast("numeric", percentiles={**SEVEN, "100": 70.0}), "between 0 and 100"),
+        (forecast("numeric", percentiles={**SEVEN, "median": 51.0}), "Not a percentile"),
+        (forecast("numeric", percentiles={**SEVEN, "50": "51"}), "must be a number"),
+        (forecast("date", percentiles=SEVEN), "date"),
+        (forecast("date", percentiles={**{k: "2027-01-01" for k in SEVEN}, "95": "soon"}), "Not a date"),
+    ],
+)
+def test_forecast_files_that_are_refused(data, reason):
+    with pytest.raises(ValueError) as caught:
+        fm.parse_forecast_file(data)
+    assert reason in str(caught.value), str(caught.value)

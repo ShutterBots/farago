@@ -1,6 +1,49 @@
 # Bot notes
 
-This repo is Metaculus's [bot template](https://github.com/Metaculus/metac-bot-template) with a different `main.py`. The template's README still applies for setup. This page covers what is different.
+This repo is Metaculus's [bot template](https://github.com/Metaculus/metac-bot-template) with a different bot in it. The template's README still applies for the basic setup. This page covers what is different.
+
+There are two ways to run the bot. Both are in this repo.
+
+| | The Claude route | The API route |
+|---|---|---|
+| Who forecasts | A scheduled Claude session, with its own web research | A panel of AI models called through OpenRouter |
+| Cost | No extra money. It uses the owner's Claude plan | About $0.15 to $1.50 per question in model fees |
+| Needs | The `METACULUS_TOKEN` secret | `METACULUS_TOKEN` and `OPENROUTER_API_KEY` |
+| Status | **In use** | Built and rehearsed, switched off |
+
+# The Claude route
+
+## How it works
+
+1. **A Claude session starts on a schedule.** It asks for the list of open questions by pushing a small request file (`state/poll-request.json`).
+2. **GitHub writes the list.** The workflow `claude_route.yaml` holds the Metaculus token. It saves the open questions the bot has not answered to `state/open-questions.json`. The list leaves out what other forecasters think, because the tournament forbids copying the community.
+3. **The Claude session researches and forecasts.** It follows [FORECASTING.md](FORECASTING.md): read the question like a contract, find a base rate, search for recent evidence, then write one file per question in `forecasts/pending/`, with its reasoning.
+4. **GitHub checks and posts.** The same workflow reads each file, refuses anything malformed, applies the guard rails (yes/no forecasts stay between 2% and 98%, every multiple-choice option gets at least 1%, percentiles must make a valid distribution for the question) and posts the forecast with the reasoning as a comment.
+5. **Every forecast leaves a record.** Posted forecasts move to `forecasts/posted/`. Refused ones move to `forecasts/failed/` with the reason.
+
+No person is involved while it runs, and no AI model is called from GitHub. The workflow starts when the Claude session pushes, so nothing depends on GitHub's timer.
+
+## The pieces
+
+| File | What it does |
+|---|---|
+| `FORECASTING.md` | The playbook the Claude session follows |
+| `list_questions.py` | Writes the list of open questions (runs in GitHub Actions) |
+| `post_forecasts.py` | Checks and posts the waiting forecasts (runs in GitHub Actions) |
+| `check_forecast_files.py` | Lets the Claude session check its files before pushing |
+| `forecast_math.py` | The checks and the maths, covered by `tests/` |
+| `.github/workflows/claude_route.yaml` | Runs the two scripts when the session pushes |
+
+## Running it
+
+- **See what it did:** the `forecasts/posted/` folder is the bot's record. On Metaculus, switch to the bot account (Settings → My Forecasting Bots); the reasoning is in each question's Private comments tab.
+- **Pause:** pause the scheduled Claude task. With no session pushing, nothing runs.
+- **Try it by hand:** Actions → "Claude route - post forecasts and list questions" → Run workflow. It posts whatever is waiting and refreshes the list.
+- **Limits:** one forecast per scored question, at most six questions per run, questions that would close within ten minutes are left alone. Conditional questions are not handled yet and are listed under `skipped`.
+
+# The API route
+
+Everything below describes the other way to run the bot: `main.py` calling paid models. It is switched off (its 20-minute schedule is commented out in `run_bot_on_tournament.yaml`). It needs an `OPENROUTER_API_KEY` secret with credit behind it.
 
 ## How the bot forecasts
 

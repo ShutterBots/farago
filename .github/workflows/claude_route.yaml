@@ -1,0 +1,85 @@
+name: Claude route - post forecasts and list questions
+
+# The free way to run the bot (see FORECASTING.md). A Claude session does the
+# research and writes each forecast into forecasts/pending. This workflow does
+# the two things that need the Metaculus token: it posts those forecasts, and it
+# writes the list of open questions the bot has not answered yet. It calls no AI
+# model, so it costs nothing.
+#
+# It starts when a Claude session pushes a request for the question list or a
+# new forecast. Nothing here depends on GitHub's timer.
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "Which questions to list"
+        type: choice
+        options:
+          - tournament
+          - test_questions
+        default: tournament
+  push:
+    branches:
+      - main
+    paths:
+      - "state/poll-request.json"
+      - "forecasts/pending/**"
+
+permissions:
+  contents: write # to save the question list and the forecast records
+
+# One run at a time, so two runs never post the same forecast.
+concurrency:
+  group: claude-route
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          ref: main # always the newest state, even if this run waited in the queue
+          fetch-depth: 20
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install uv
+        uses: astral-sh/setup-uv@v10.3.0
+        with:
+          version: "0.13.1"
+          enable-cache: true
+      - name: Install dependencies
+        run: uv sync --locked
+      - name: Post the forecasts that are waiting
+        run: uv run python post_forecasts.py
+        env:
+          METACULUS_TOKEN: ${{ secrets.METACULUS_TOKEN }}
+      - name: List the open questions
+        if: success() || failure()
+        run: uv run python list_questions.py $MODE_ARGUMENT
+        env:
+          METACULUS_TOKEN: ${{ secrets.METACULUS_TOKEN }}
+          MODE_ARGUMENT: ${{ inputs.mode && format('--mode {0}', inputs.mode) || '' }}
+      - name: Save the results to the repository
+        if: success() || failure()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A state forecasts
+          if git diff --cached --quiet; then
+            echo "Nothing changed."
+            exit 0
+          fi
+          git commit -q -m "Claude route: update the question list and forecast records"
+          for attempt in 1 2 3 4; do
+            if git pull -q --rebase origin main && git push -q origin HEAD:main; then
+              echo "Saved."
+              exit 0
+            fi
+            sleep $((attempt * 5))
+          done
+          echo "Could not save the results to the repository."
+          exit 1

@@ -690,3 +690,166 @@ def describe_timing(
         else:
             parts.append(f"It was scheduled to resolve by {format_utc(resolve_time)}.")
     return " ".join(parts)
+
+
+# --------------------------------------------------------------------------- #
+# The Claude route: forecast files written by a scheduled Claude session
+# --------------------------------------------------------------------------- #
+
+FORECAST_KINDS = ("binary", "multiple_choice", "numeric", "discrete", "date")
+CONTINUOUS_KINDS = ("numeric", "discrete", "date")
+MIN_REASONING_CHARS = 200
+MAX_REASONING_CHARS = 12000
+MIN_PERCENTILE_POINTS = 5
+
+
+@dataclass(frozen=True)
+class ForecastFile:
+    """One forecast as a Claude session wrote it, after it has passed every check."""
+
+    question_id: int
+    post_id: int
+    kind: str
+    reasoning: str
+    probability: float | None = None  # yes/no questions
+    options: tuple[tuple[str, float], ...] = ()  # multiple choice, as written
+    # numeric, discrete and date questions: (fraction between 0 and 1, value),
+    # lowest percentile first. Dates are seconds since 1970 (UTC).
+    percentiles: tuple[tuple[float, float], ...] = ()
+
+
+def forecast_file_name(question_id: int) -> str:
+    return f"q{int(question_id)}.json"
+
+
+def parse_when(text: Any) -> datetime:
+    """Reads a date ("2027-03-01") or an ISO date-time as a moment in UTC."""
+    if not isinstance(text, str) or not text.strip():
+        raise ValueError(f"Expected a date like 2027-03-01, got {text!r}")
+    try:
+        moment = datetime.fromisoformat(text.strip())
+    except ValueError:
+        raise ValueError(f"Not a date I can read: {text!r}") from None
+    result = as_utc(moment)
+    assert result is not None
+    return result
+
+
+def _real_number(value: Any, what: str) -> float:
+    # bool is a kind of int in Python, and "true" is never a sensible number here
+    if isinstance(value, bool) or not isinstance(value, (int, float)):
+        raise ValueError(f"{what} must be a number, got {value!r}")
+    number = float(value)
+    if not math.isfinite(number):
+        raise ValueError(f"{what} must be a finite number, got {value!r}")
+    return number
+
+
+def _identifier(data: Mapping[str, Any], name: str) -> int:
+    value = data.get(name)
+    if isinstance(value, bool) or not isinstance(value, int) or value <= 0:
+        raise ValueError(f"'{name}' must be a positive whole number, got {value!r}")
+    return value
+
+
+def parse_forecast_file(data: Any) -> ForecastFile:
+    """
+    Checks one forecast file and returns it in a fixed shape. Anything that is
+    missing, out of range or ambiguous raises ValueError with a plain reason, so
+    a malformed forecast is refused instead of being posted.
+
+    The numbers are checked here as written. The guard rails (the 2% to 98% cap,
+    the per-option floor, the distribution curve) are applied later, when the
+    forecast is matched to the live question.
+    """
+    if not isinstance(data, Mapping):
+        raise ValueError("A forecast file must hold one JSON object")
+
+    question_id = _identifier(data, "question_id")
+    post_id = _identifier(data, "post_id")
+
+    kind = data.get("type")
+    if kind not in FORECAST_KINDS:
+        raise ValueError(f"'type' must be one of {list(FORECAST_KINDS)}, got {kind!r}")
+
+    reasoning = data.get("reasoning")
+    if not isinstance(reasoning, str):
+        raise ValueError("'reasoning' must be text")
+    reasoning = reasoning.strip()
+    if len(reasoning) < MIN_REASONING_CHARS:
+        raise ValueError(
+            f"'reasoning' is too short ({len(reasoning)} characters, the minimum is "
+            f"{MIN_REASONING_CHARS}): every forecast needs its reasoning"
+        )
+    if len(reasoning) > MAX_REASONING_CHARS:
+        raise ValueError(
+            f"'reasoning' is too long ({len(reasoning)} characters, the maximum is "
+            f"{MAX_REASONING_CHARS})"
+        )
+
+    if kind == "binary":
+        probability = _real_number(data.get("probability"), "'probability'")
+        if not 0.0 <= probability <= 1.0:
+            raise ValueError(
+                f"'probability' must be a fraction between 0 and 1, got {probability} "
+                "(write 0.37, not 37)"
+            )
+        return ForecastFile(question_id, post_id, kind, reasoning, probability=probability)
+
+    if kind == "multiple_choice":
+        raw = data.get("probabilities")
+        if not isinstance(raw, Mapping) or len(raw) < 2:
+            raise ValueError("'probabilities' must map at least two option names to numbers")
+        options: list[tuple[str, float]] = []
+        for name, value in raw.items():
+            if not isinstance(name, str) or not name.strip():
+                raise ValueError(f"Option names must be text, got {name!r}")
+            number = _real_number(value, f"The probability of '{name}'")
+            if number < 0:
+                raise ValueError(f"The probability of '{name}' is negative")
+            options.append((name, number))
+        total = sum(number for _, number in options)
+        if not 0.98 <= total <= 1.02:
+            raise ValueError(
+                f"The option probabilities add up to {total:.4f}; they must add up "
+                "to 1 (write 0.25, not 25)"
+            )
+        return ForecastFile(question_id, post_id, kind, reasoning, options=tuple(options))
+
+    raw = data.get("percentiles")
+    if not isinstance(raw, Mapping):
+        raise ValueError("'percentiles' must map percentiles such as \"10\" to values")
+    points: dict[float, float] = {}
+    for key, value in raw.items():
+        try:
+            percentile = float(key)
+        except (TypeError, ValueError):
+            raise ValueError(f"Not a percentile: {key!r}") from None
+        if not (math.isfinite(percentile) and 0.0 < percentile < 100.0):
+            raise ValueError(f"Percentiles must be between 0 and 100, got {key!r}")
+        if kind == "date":
+            number = parse_when(value).timestamp()
+        else:
+            number = _real_number(value, f"The value at percentile {key}")
+        fraction = round(percentile / 100.0, 6)
+        if fraction in points:
+            raise ValueError(f"Percentile {key} is given twice")
+        points[fraction] = number
+    ordered = sorted(points.items())
+    if len(ordered) < MIN_PERCENTILE_POINTS:
+        raise ValueError(
+            f"A {kind} forecast needs at least {MIN_PERCENTILE_POINTS} percentiles, "
+            f"got {len(ordered)}"
+        )
+    if ordered[0][0] > 0.10 + 1e-9 or ordered[-1][0] < 0.90 - 1e-9:
+        raise ValueError(
+            "The percentiles must reach down to 10 or lower and up to 90 or higher, "
+            "so both tails are stated"
+        )
+    values = [value for _, value in ordered]
+    if any(later < earlier for earlier, later in zip(values, values[1:])):
+        raise ValueError(
+            "Values must rise (or stay level) as the percentile rises: the 10th "
+            "percentile is the low end, the 90th the high end"
+        )
+    return ForecastFile(question_id, post_id, kind, reasoning, percentiles=tuple(ordered))

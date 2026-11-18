@@ -1,6 +1,6 @@
 # Simple Metaculus forecasting bot
 
-> **This fork runs its own bot.** `main.py` here is not the template's: it researches each question from several angles and combines a panel of models. [BOT_NOTES.md](BOT_NOTES.md) explains how it works, what it costs and how to change its settings. The setup steps below still apply. Where this page mentions `FallTemplateBot2026` or editing `main.py` to change behaviour, use `bot_settings.txt` instead.
+> **This fork runs its own bot.** A scheduled Claude session researches each question and writes the forecast, and GitHub Actions checks and posts it, so no paid model API is needed. [BOT_NOTES.md](BOT_NOTES.md) explains how it works and [FORECASTING.md](FORECASTING.md) is the playbook the session follows. The template's own bot described below (`main.py`, the 20-minute workflow, the model keys) is still here as a second route but is switched off.
 
 This repository contains a simple bot meant to get you started with creating your own bot for the AI Forecasting Tournament. Go to https://www.metaculus.com/futureeval/participate/ for more info and tournament rules (and then go to the  "Getting Started" section of our [resources](https://www.metaculus.com/notebooks/38928/ai-benchmark-resources/#want-to-join-the-ai-forecasting-benchmark) page).
 
