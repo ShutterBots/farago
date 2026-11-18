@@ -1,0 +1,18 @@
+{
+  "question_id": 43326,
+  "post_id": 43324,
+  "type": "date",
+  "percentiles": {
+    "0.2": "2026-11-19",
+    "1": "2027-01-15",
+    "2": "2027-02-15",
+    "5": "2027-05-12",
+    "10": "2027-09-01",
+    "25": "2028-03-01",
+    "50": "2029-03-01",
+    "75": "2031-06-01",
+    "90": "2036-01-01",
+    "95": "2045-01-01"
+  },
+  "reasoning": "**What is asked.** The first date on which at least three quarters of Ukraine's unoccupied oblasts are no longer under martial law. If that has not happened by 28 May 2027, the question resolves as later than that date.\n\n**Where things stand.** Martial law has been in force nationwide since 24 February 2022 and has been renewed every 90 days. In late October 2026 parliament approved a further extension, the 21st, running to 29 January 2027 (Ukrainska Pravda, 26 October 2026). The official position reported with that vote is that martial law will be lifted once Ukraine has security guarantees. An analysis of the July extension described the votes as routine and expected another renewal absent a ceasefire.\n\n**Base rate.** Twenty-one renewals out of twenty-one. Lifting requires an end to large-scale fighting, then a political decision, and elections cannot be held until it is lifted, which gives the government reasons to move carefully even after a ceasefire.\n\n**What would have to happen before the deadline.** A ceasefire or peace agreement with security guarantees in the next few months, followed by parliament ending martial law in most regions by late May 2027. I found no report of an agreement in place as of mid-November 2026. I put the chance of lifting by 28 May 2027 at about 6 to 7%.\n\n**Forecast.** About 93% that it resolves as later than 28 May 2027. My median for the lifting itself is early 2029, with a long tail: a frozen conflict could keep martial law in place into the 2040s."
+}
