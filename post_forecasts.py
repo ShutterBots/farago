@@ -94,6 +94,11 @@ def check_can_forecast(question: MetaculusQuestion, now: datetime) -> None:
         raise Refused("the bot has already forecast this question")
 
 
+def _percent(value: float) -> str:
+    """A probability as a percentage, with enough digits to show a very small or very large one."""
+    return f"{value:.1%}" if 0.01 <= value <= 0.99 else f"{value:.2%}"
+
+
 def _describe_percentiles(forecast: fm.ForecastFile) -> str:
     parts = []
     for fraction, value in forecast.percentiles:
@@ -122,7 +127,13 @@ def build_prediction(
     if kind == "binary":
         assert forecast.probability is not None
         probability = fm.clamp_probability(forecast.probability, prob_floor)
-        return probability, f"{probability:.1%}"
+        summary = f"{probability:.1%}"
+        if abs(probability - forecast.probability) >= 0.0005:
+            summary += (
+                f" (the reasoning lands on {_percent(forecast.probability)}; this bot never "
+                f"posts below {prob_floor * 100:g}% or above {(1 - prob_floor) * 100:g}%)"
+            )
+        return probability, summary
 
     if kind == "multiple_choice":
         options = list(question.options)  # type: ignore[attr-defined]
@@ -133,6 +144,10 @@ def build_prediction(
         floor = fm.effective_option_floor(len(options), option_floor)
         probabilities = fm.floor_and_normalize(aligned, floor)
         summary = ", ".join(f"{name}: {p:.1%}" for name, p in zip(options, probabilities))
+        if max(abs(a - b) for a, b in zip(aligned, probabilities)) >= 0.005:
+            summary += (
+                f" (adjusted so every option has at least {floor * 100:g}% and the total is 100%)"
+            )
         return dict(zip(options, probabilities)), summary
 
     percentiles = [
@@ -149,15 +164,26 @@ def build_prediction(
     return curve, _describe_percentiles(forecast)
 
 
-def post(client: MetaculusClient, question: MetaculusQuestion, prediction: Any, comment: str) -> None:
+def build_comment(forecast: fm.ForecastFile, summary: str) -> str:
+    """The comment that goes with the forecast: what was posted, then the session's reasoning."""
+    label = "Forecast posted (percentiles)" if forecast.kind in fm.CONTINUOUS_KINDS else "Forecast posted"
+    heading = f"**{label}:** {summary}\n\n" if summary else ""
+    return heading + forecast.reasoning + COMMENT_FOOTER
+
+
+def send_forecast(client: MetaculusClient, question: MetaculusQuestion, prediction: Any) -> None:
     kind = getattr(question, "question_type", None)
-    assert question.id_of_question is not None and question.id_of_post is not None
+    assert question.id_of_question is not None
     if kind == "binary":
         client.post_binary_question_prediction(question.id_of_question, prediction)
     elif kind == "multiple_choice":
         client.post_multiple_choice_question_prediction(question.id_of_question, prediction)
     else:
         client.post_numeric_question_prediction(question.id_of_question, prediction)
+
+
+def send_comment(client: MetaculusClient, question: MetaculusQuestion, comment: str) -> None:
+    assert question.id_of_post is not None
     client.post_question_comment(question.id_of_post, comment)
 
 
@@ -192,12 +218,24 @@ def process(
         if path.name != expected_name:
             raise Refused(f"the file must be named {expected_name}")
         question = find_question(client, forecast)
-        check_can_forecast(question, now)
-        prediction, summary = build_prediction(forecast, question, *floors)
-        comment = forecast.reasoning + COMMENT_FOOTER
+        # An earlier run may have posted the number and then failed on the comment.
+        # Then only the comment is owed, and the question's state no longer matters.
+        already_sent = bool(data.get("forecast_sent_at"))
+        if already_sent:
+            prediction, summary = None, str(data.get("posted_as") or "")
+        else:
+            check_can_forecast(question, now)
+            prediction, summary = build_prediction(forecast, question, *floors)
+        comment = build_comment(forecast, summary)
         if dry_run:
             return {"file": path.name, "status": "checked", "detail": summary}
-        post(client, question, prediction, comment)
+        if not already_sent:
+            send_forecast(client, question, prediction)
+            # Written down at once, so a failure from here on can never lead to a
+            # second forecast or to a forecast left without its reasoning.
+            data = {**data, "forecast_sent_at": list_time(now), "posted_as": summary}
+            _write(path, data)
+        send_comment(client, question, comment)
     except (Refused, ValueError) as error:
         # Wrong in itself: trying again cannot help.
         reason = str(error)
@@ -208,6 +246,8 @@ def process(
     except Exception as error:
         # Something outside went wrong (network, Metaculus). Try again next run.
         reason = f"{type(error).__name__}: {str(error)[:300]}"
+        if data.get("forecast_sent_at"):
+            reason = f"the forecast was posted but its comment was not: {reason}"
         attempts = int(data.get("attempts", 0) or 0) + 1
         if dry_run:
             return {"file": path.name, "status": "waiting", "detail": reason}
@@ -223,13 +263,14 @@ def process(
 
     record = {
         **data,
-        "posted_at": list_time(now),
+        "posted_at": str(data.get("forecast_sent_at") or list_time(now)),
         "posted_as": summary,
         "question_title": question.question_text,
         "question_url": question.page_url,
         "tournaments": list(question.tournament_slugs or []),
     }
     record.pop("last_error", None)
+    record.pop("forecast_sent_at", None)
     _write(POSTED / path.name, record)
     path.unlink(missing_ok=True)
     return {"file": path.name, "status": "posted", "detail": summary}

@@ -109,8 +109,17 @@ By question type:
 
 - **Yes/no.** Give a probability between 0 and 1. The posting step keeps it between 2% and 98%, so do not agonise over the last point near the ends.
 - **Multiple choice.** Give every option a probability; they must add up to 1. Copy the option names exactly as the list gives them. Never give an option 0.
-- **Numbers.** Give percentiles 5, 10, 25, 50, 75, 90 and 95. Values must rise with the percentile. Make the range wide: the truth should fall outside your 5 to 95 range one time in ten. If a bound is marked closed (`open_lower_bound` or `open_upper_bound` is false), every value must stay inside it. Use the unit the question states.
-- **Dates.** The same seven percentiles, as dates like `2027-03-01`.
+- **Numbers.** Give percentiles 5, 10, 25, 50, 75, 90 and 95, and pin the tails as described below. Values must rise with the percentile. Make the range wide: the truth should fall outside your 5 to 95 range one time in ten. If a bound is marked closed (`open_lower_bound` or `open_upper_bound` is false), every value must stay inside it. Use the unit the question states.
+- **Dates.** The same percentiles, as dates like `2027-03-01`.
+
+### How the tails work
+
+The posting step joins your percentiles with straight lines. The probability left below your lowest percentile and above your highest one is spread evenly from there to the end of the question's range (past an open bound, half of it goes beyond the bound). With only 5 to 95, a count that already stands at 4 and cannot fall still gets several percent on 0 to 3. So:
+
+- **Pin the tails.** Add `1` and `99`, and `0.5` and `99.5` when you need them, at the edge of what can still happen. Extra points anywhere are fine.
+- **Whole-number questions** (`discrete`). The count k covers the stretch from k − 0.5 to k + 0.5. If the count is already 4 and cannot fall, put your lowest percentile at 3.5. To give "exactly 5" a 35% chance, let 35 percentile points pass between 4.5 and 5.5.
+- **An open bound the answer may lie beyond.** Let your percentiles run past the bound; everything past it counts as "beyond the bound". A date question that resolves as "later than the upper bound" when the event does not happen in time works this way: if you see an 8% chance that it happens in time, put the 8th percentile at the upper bound and the later percentiles after it.
+- **A closed bound.** No value may lie outside it.
 
 ## The forecast file
 
@@ -147,7 +156,7 @@ Number (`"type"` is `numeric` or `discrete`, as the list says):
   "question_id": 12345,
   "post_id": 67890,
   "type": "numeric",
-  "percentiles": {"5": 41.0, "10": 43.5, "25": 47.0, "50": 51.0, "75": 55.5, "90": 60.0, "95": 63.0},
+  "percentiles": {"1": 37.0, "5": 41.0, "10": 43.5, "25": 47.0, "50": 51.0, "75": 55.5, "90": 60.0, "95": 63.0, "99": 68.0},
   "reasoning": "..."
 }
 ```
@@ -166,7 +175,7 @@ Date:
 
 ### The reasoning
 
-`reasoning` is posted with the forecast as the bot's comment, which the tournament requires. Write 150 to 350 words of plain Markdown:
+`reasoning` is posted with the forecast as the bot's comment, which the tournament requires. The posting step puts the posted numbers on the first line of the comment itself. Write 150 to 350 words of plain Markdown:
 
 - what the question asks and when it resolves,
 - the base rate or starting point you used,
