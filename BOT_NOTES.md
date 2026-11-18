@@ -51,7 +51,7 @@ One rule to know: a person may enter Market Pulse once, as a bot or as a human f
 
 ## Running it
 
-- **See what it did:** the `forecasts/posted/` folder is the bot's record. On Metaculus, switch to the bot account (Settings → My Forecasting Bots); the reasoning is in each question's Private comments tab.
+- **See what it did:** `state/last-run.json` holds the last run's one-line report (the file's history has the earlier ones), and the `forecasts/posted/` folder is the bot's record. On Metaculus, switch to the bot account (Settings → My Forecasting Bots); the reasoning is in each question's Private comments tab.
 - **The schedule:** a scheduled Claude task named "Farago bot: hourly forecasts" starts a session once an hour. Questions stay open for three hours, so each one is seen by two or three runs; the first run that reaches it forecasts it.
 - **Pause:** pause that scheduled task. With no session pushing, nothing runs.
 - **Try it by hand:** Actions → "Claude route - post forecasts and list questions" → Run workflow. It posts whatever is waiting and refreshes the list.
