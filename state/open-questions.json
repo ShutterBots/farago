@@ -1,31 +1,8 @@
 {
-  "generated_at": "2026-11-18T06:54:47Z",
+  "generated_at": "2026-11-18T06:55:48Z",
   "mode": "tournament",
   "request_id": "20261118T064209Z-3959",
   "questions": [
-    {
-      "question_id": 46215,
-      "post_id": 46010,
-      "type": "discrete",
-      "tournament": "Market Pulse",
-      "title": "What will be the ending value of the ICE BofA US High Yield Option-Adjusted Spread for these biweekly periods of Q4 2026? (Nov 23 - Dec 4)",
-      "url": "https://www.metaculus.com/questions/46010",
-      "background": "The ICE BofA US High Yield OAS tracks the extra yield investors require to hold below-investment-grade bonds over comparable Treasuries. It is a widely-followed risk indicator in fixed income, often rising in periods of economic uncertainty, market turbulence, or rising default risk. The biweekly closing value helps forecasters track the evolving risk appetite and credit conditions in the U.S. market.\n\nThe OAS represents the average yield spread (in basis points) over Treasuries for U.S. high-yield (junk) bonds, adjusted for embedded options. This metric is widely watched as a gauge of credit market risk and sentiment.\n\nFRED series: [ICE BofA US High Yield OAS (BAMLH0A0HYM2)](https://fred.stlouisfed.org/series/BAMLH0A0HYM2)",
-      "resolution_criteria": "Each subquestion will resolve as the last available daily value of the ICE BofA US High Yield OAS published on the [FRED website](https://fred.stlouisfed.org/series/BAMLH0A0HYM2) for the final calendar day (typically the final Friday) of the corresponding biweekly period.",
-      "fine_print": "* If the FRED data is delayed, the value will be taken as soon as published for the relevant date.\n* If the market is closed on the scheduled ending date or if no value for that date is published by FRED for two weeks, the most recent available value from an earlier day in the period will be used.\n* Only the initially published value for each date will be used (no revisions).\n* The value is reported in percentage points.",
-      "open_time": "2026-11-16T16:00:00Z",
-      "close_time": "2026-11-23T04:00:00Z",
-      "scheduled_resolution_time": "2026-12-04T21:00:00Z",
-      "group_option": "Nov 23 - Dec 4",
-      "unit": "pp",
-      "lower_bound": 1.75,
-      "upper_bound": 3.74,
-      "open_lower_bound": true,
-      "open_upper_bound": true,
-      "step": 0.01,
-      "deadline": "2026-11-23T04:00:00Z",
-      "reason": "new"
-    },
     {
       "question_id": 46209,
       "post_id": 46008,
@@ -74,8 +51,8 @@
   "skipped": [],
   "errors": [],
   "kept_up_to_date": {
-    "listed_now": 3,
-    "up_to_date": 5,
+    "listed_now": 2,
+    "up_to_date": 6,
     "past_their_scoring_time": 0,
     "held_for_a_later_run": 0
   }
