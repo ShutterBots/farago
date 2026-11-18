@@ -90,6 +90,8 @@ For each question:
 
 GitHub posts each forecast within a minute or two of the push. Do not wait for it between questions.
 
+When you finish several files at the same moment, because you researched a group or a set of related questions together, check them and send them in one commit and one push. Several pushes within a few seconds make GitHub start, and then cancel, a run for each.
+
 ### 6. See what happened
 
 After your last push, wait for GitHub to finish (give this command a timeout of six minutes):
