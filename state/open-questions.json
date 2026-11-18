@@ -1,29 +1,8 @@
 {
-  "generated_at": "2026-11-18T04:00:10Z",
+  "generated_at": "2026-11-18T04:03:47Z",
   "mode": "tournament",
   "request_id": "20261118T034301Z-9014",
-  "questions": [
-    {
-      "question_id": 46737,
-      "post_id": 46481,
-      "type": "discrete",
-      "tournament": "Seasonal tournament",
-      "title": "How many executive orders will the US president sign during December 2026?",
-      "url": "https://www.metaculus.com/questions/46481",
-      "background": "During Trump's first term he signed: 220 Executive Orders.\nDuring 2025, Trump signed: 225 Executive Orders:\nDuring 2026 he signed the following number of Executive Orders:\nJanuary: 10\nFebruary: 8\nMarch: 10\nApril: 4\nMay: 5\nJune: 6\nJuly: 2\nAugust: 7\nSeptember: 11\n\n`{\"format\": \"bot_tournament_question\", \"info\": {\"hash_id\": \"0323a7413c724ef9\", \"sheet_id\": \"115\"}}`",
-      "resolution_criteria": "This question will resolve as the total number of numbered Executive Orders that are officially published in the [Federal Register](https://www.federalregister.gov/presidential-documents/executive-orders/donald-trump/2026) and signed by the US president during December 2026.",
-      "fine_print": "Presidential Memoranda, Presidential Proclamations, Presidential Determinations, Administrative Orders, National Security Presidential Memoranda, and any other presidential documents that are not formally designated as \"Executive Orders\" do not count toward resolution.\n\nOrders that are later revoked still count toward the total.\n\nOrders that are blocked by courts still count toward the total.",
-      "open_time": "2026-11-18T03:00:00Z",
-      "close_time": "2026-11-18T06:00:00Z",
-      "scheduled_resolution_time": "2027-01-01T00:00:00Z",
-      "unit": "EOs",
-      "lower_bound": 0.0,
-      "upper_bound": 10.0,
-      "open_lower_bound": false,
-      "open_upper_bound": true,
-      "step": 1.0
-    }
-  ],
+  "questions": [],
   "skipped": [],
   "errors": []
 }
