@@ -23,6 +23,21 @@ There are two ways to run the bot. Both are in this repo.
 
 No person is involved while it runs, and no AI model is called from GitHub. The workflow starts when the Claude session pushes, so nothing depends on GitHub's timer.
 
+## Market Pulse
+
+The bot also plays the [Market Pulse Challenge 26Q4](https://www.metaculus.com/tournament/market-pulse-26q4/), which asks about markets every two weeks: return gaps between pairs of assets, the 10-year Treasury yield, the high-yield spread and the peak of the VIX. Only the forecast standing at a question's scoring time counts there, so the bot forecasts each question more than once:
+
+| Reason on the list | When |
+|---|---|
+| `new` | The first time the bot sees the question |
+| `weekly refresh` | The standing forecast is more than seven days old |
+| `final day` | The scoring time is within 26 hours and no forecast was made that late |
+| `last call` | The scoring time is within 3 hours and no forecast was made that late |
+
+The scoring time is the one Metaculus states for each question. When it states none, the earlier of the close and the moment the community forecast is revealed is used. `list_questions.py` puts the work that is due on the same hourly list as the bot tournaments (at most 12 urgent and 4 patient questions per list), and `post_forecasts.py` lets a forecast be replaced in this tournament only. Each record in `forecasts/posted/` keeps its earlier forecasts under `earlier`.
+
+One rule to know: a person may enter Market Pulse once, as a bot or as a human forecaster, not both.
+
 ## The pieces
 
 | File | What it does |

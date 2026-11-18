@@ -39,7 +39,7 @@ TESTING_AREA = "bot-testing-area"
 MIN_MINUTES_LEFT = 10
 # Whether the hourly "tournament" list also carries the Market Pulse work.
 # The "market_pulse" mode lists that work on its own, in full, whatever this says.
-UPDATED_IN_TOURNAMENT_MODE = False
+UPDATED_IN_TOURNAMENT_MODE = True
 
 
 def iso(moment: datetime | None) -> str | None:

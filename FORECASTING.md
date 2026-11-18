@@ -131,6 +131,16 @@ For every reason except `new`, start by reading your earlier forecast in `foreca
 5. **Centre on the current value,** or on the consensus for a reported figure, unless you have a specific and recent reason to move. Markets already contain the public news. Keep the tails wide: large moves happen more often than a bell curve allows.
 6. **For reported figures, check the definition** the question resolves on: as reported or adjusted, fiscal or calendar quarter, which source publishes it.
 
+### The questions that come back every two weeks
+
+Market Pulse asks the same families of question for each two-week period. They open a week before the period starts and their `deadline` is the start of the period, so the `final day` and `last call` forecasts are made with the last close before the period in hand.
+
+- **Return gaps** ("how much will A's returns exceed B's"). The answer is A's percent return minus B's over the period, in percentage points. Both returns start from the last close before the period. The honest centre is close to zero: nobody reliably knows which of two liquid assets will do better over two weeks. The width comes from history. Find how much this gap has varied over past two-week periods (the question's background usually links a sheet of past results), and make your range a little wider than that.
+- **Ending values** (a Treasury yield, a credit spread). Centre on the latest published value. The width is how far the series usually moves in two weeks at its present level, with extra room for the scheduled events inside the period.
+- **Highest value in the period** (the VIX). The maximum cannot end below where the period opens, and usually ends somewhat above it. The upper tail is long, because volatility jumps and does not creep. Start from the latest close and from what is scheduled inside the period.
+
+These questions give "pp" as the unit even for levels such as the VIX or a yield. Give the plain number the resolution source shows.
+
 ### 7. Final line
 
 One line: how many forecasts were posted (with question ids), how many failed and why, and how many questions were left for the next run.
@@ -159,7 +169,7 @@ By question type:
 The posting step joins your percentiles with straight lines. The probability left below your lowest percentile and above your highest one is spread evenly from there to the end of the question's range (past an open bound, half of it goes beyond the bound). With only 5 to 95, a count that already stands at 4 and cannot fall still gets several percent on 0 to 3. So:
 
 - **Pin the tails.** Add `1` and `99`, and `0.5` and `99.5` when you need them, at the edge of what can still happen. Extra points anywhere are fine.
-- **Whole-number questions** (`discrete`). The count k covers the stretch from k − 0.5 to k + 0.5. If the count is already 4 and cannot fall, put your lowest percentile at 3.5. To give "exactly 5" a 35% chance, let 35 percentile points pass between 4.5 and 5.5.
+- **Stepped questions** (`discrete`). Each possible answer covers half a `step` either side of itself. With a step of 1, the count k covers the stretch from k − 0.5 to k + 0.5: if the count is already 4 and cannot fall, put your lowest percentile at 3.5, and to give "exactly 5" a 35% chance, let 35 percentile points pass between 4.5 and 5.5. With a step of 0.01, the value 4.31 covers 4.305 to 4.315.
 - **An open bound the answer may lie beyond.** Let your percentiles run past the bound; everything past it counts as "beyond the bound". A date question that resolves as "later than the upper bound" when the event does not happen in time works this way: if you see an 8% chance that it happens in time, put the 8th percentile at the upper bound and the later percentiles after it.
 - **A closed bound.** No value may lie outside it.
 
