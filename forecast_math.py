@@ -932,10 +932,19 @@ def _card_edges(card: Mapping[str, Any], kind: str) -> tuple[float, float, float
         return None
 
 
+def format_number(value: float) -> str:
+    """A number the way a person writes it: 8,100,000 and -23.5, never 8.1e+06."""
+    size = abs(value)
+    if size >= 1e15 or (0 < size < 1e-4):
+        return f"{value:g}"
+    text = f"{value:,.4f}".rstrip("0").rstrip(".")
+    return "0" if text in ("-0", "") else text
+
+
 def _show_value(value: float, kind: str) -> str:
     if kind == "date":
         return datetime.fromtimestamp(value, tz=timezone.utc).strftime("%Y-%m-%d")
-    return f"{value:g}"
+    return format_number(value)
 
 
 def check_against_card(forecast: ForecastFile, card: Mapping[str, Any]) -> str | None:

@@ -685,3 +685,15 @@ def test_card_check_names_what_does_not_fit(card, fields, reason):
     fields = dict(fields)
     problem = verdict(card, fields.pop("kind", None), **fields)
     assert problem is not None and reason in problem, problem
+
+
+@pytest.mark.parametrize(
+    "value, shown",
+    [
+        (7500000, "7,500,000"), (8100000.0, "8,100,000"), (-23.5, "-23.5"), (3.53, "3.53"), (0, "0"),
+        (-0.0, "0"), (0.25, "0.25"), (1234.5678, "1,234.5678"), (15.0, "15"), (0.00001, "1e-05"),
+        (-0.00004, "-4e-05"), (2.5e17, "2.5e+17"), (0.1 + 0.2, "0.3"),
+    ],
+)
+def test_format_number_reads_like_a_person_wrote_it(value, shown):
+    assert fm.format_number(value) == shown

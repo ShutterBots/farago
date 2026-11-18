@@ -105,7 +105,7 @@ def _describe_percentiles(forecast: fm.ForecastFile) -> str:
         if forecast.kind == "date":
             shown = datetime.fromtimestamp(value, tz=timezone.utc).strftime("%Y-%m-%d")
         else:
-            shown = f"{value:g}"
+            shown = fm.format_number(value)
         parts.append(f"{fraction * 100:g}%: {shown}")
     return ", ".join(parts)
 
