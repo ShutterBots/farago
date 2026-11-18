@@ -2,8 +2,11 @@ name: Forecast on new AI tournament questions
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: "7,27,47 * * * *" # every 20 min, offset off the hour. Tournament questions stay open for about 90 minutes.
+  # The schedule is held back until the first live Test Bot run has passed, so
+  # untested code cannot spend money or forecast on real questions. To switch it
+  # on, remove the "# " from the two lines below.
+  # schedule:
+  #   - cron: "7,27,47 * * * *" # every 20 min, offset off the hour. Tournament questions stay open for about 90 minutes.
 
 # Add concurrency group to prevent parallel runs
 concurrency:
