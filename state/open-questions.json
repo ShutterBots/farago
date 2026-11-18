@@ -1,8 +1,30 @@
 {
-  "generated_at": "2026-11-18T05:59:45Z",
-  "mode": "market_pulse",
-  "request_id": "20261118T055919Z-2027",
+  "generated_at": "2026-11-18T06:17:53Z",
+  "mode": "tournament",
+  "request_id": "20261118T061720Z-2047",
   "questions": [
+    {
+      "question_id": 46738,
+      "post_id": 46482,
+      "type": "multiple_choice",
+      "tournament": "Seasonal tournament",
+      "title": "How many EU member states will the AI Act National Implementation tracker classify as having clear market surveillance and notifying authorities on January 1, 2027?",
+      "url": "https://www.metaculus.com/questions/46482",
+      "background": "According to the resolution source, \"Since the AI Act entered into force on 1 August 2024, the focus for Member States has shifted to national implementation. One of the first tasks for Member States is to designate the relevant authorities. This post gives an overview of the national authorities designated under the AI Act and what we know about the national implementation plans.\"\n\n`{\"format\": \"bot_tournament_question\", \"info\": {\"hash_id\": \"ac7536aa3d548d34\", \"sheet_id\": \"103\"}}`",
+      "resolution_criteria": "This question resolves as the number of EU member states classified as ‘Clear’ in the ‘National Competent Authorities’ column of the Future of Life Institute's [Overview of all AI Act National Implementation Plans](https://artificialintelligenceact.eu/national-implementation-plans/) tracker, when checked by Metaculus on or after January 1, 2027.",
+      "fine_print": "",
+      "open_time": "2026-11-18T06:00:00Z",
+      "close_time": "2026-11-18T09:00:00Z",
+      "scheduled_resolution_time": "2027-01-01T00:00:00Z",
+      "options": [
+        "≤9",
+        "10 or 11",
+        "12 or 13",
+        "14 or 15",
+        ">15"
+      ],
+      "deadline": "2026-11-18T09:00:00Z"
+    },
     {
       "question_id": 46245,
       "post_id": 46015,
@@ -23,11 +45,7 @@
       "open_lower_bound": true,
       "open_upper_bound": true,
       "deadline": "2026-11-23T04:00:00Z",
-      "reason": "new",
-      "timing": {
-        "stated_scoring_time": "2026-11-23T04:00:00Z",
-        "reveal_time": "2026-11-20T17:00:00Z"
-      }
+      "reason": "new"
     },
     {
       "question_id": 46239,
@@ -50,11 +68,7 @@
       "open_upper_bound": true,
       "step": 0.01,
       "deadline": "2026-11-23T04:00:00Z",
-      "reason": "new",
-      "timing": {
-        "stated_scoring_time": "2026-11-23T04:00:00Z",
-        "reveal_time": "2026-11-20T17:00:00Z"
-      }
+      "reason": "new"
     },
     {
       "question_id": 46233,
@@ -76,11 +90,7 @@
       "open_lower_bound": true,
       "open_upper_bound": true,
       "deadline": "2026-11-23T04:00:00Z",
-      "reason": "new",
-      "timing": {
-        "stated_scoring_time": "2026-11-23T04:00:00Z",
-        "reveal_time": "2026-11-20T17:00:00Z"
-      }
+      "reason": "new"
     },
     {
       "question_id": 46227,
@@ -102,124 +112,15 @@
       "open_lower_bound": true,
       "open_upper_bound": true,
       "deadline": "2026-11-23T04:00:00Z",
-      "reason": "new",
-      "timing": {
-        "stated_scoring_time": "2026-11-23T04:00:00Z",
-        "reveal_time": "2026-11-20T17:00:00Z"
-      }
-    },
-    {
-      "question_id": 46221,
-      "post_id": 46011,
-      "type": "numeric",
-      "tournament": "Market Pulse",
-      "title": "How much will Nasdaq-100 Futures total price returns exceed S&P 500 Futures in these biweekly periods of Q4 2026? (Nov 23 - Dec 4)",
-      "url": "https://www.metaculus.com/questions/46011",
-      "background": "The [Nasdaq-100](https://en.wikipedia.org/wiki/Nasdaq-100) focuses on 100 of the largest non-financial companies listed on the Nasdaq exchange, heavily weighted towards technology and innovation. This index includes tech titans like Apple (approximately 12-15% of the index), Microsoft, Amazon, NVIDIA, and Alphabet (Google), making it a prime indicator of the tech sector's performance and innovation economy.\n\nThe [S\\&P 500](https://en.wikipedia.org/wiki/S%26P_500) represents 500 of the largest publicly traded U.S. companies across diverse sectors. It captures the broader market sentiment, including technology, healthcare, financial, and industrial giants like Apple, Microsoft, Amazon, JPMorgan Chase, and Johnson & Johnson. The index is market-cap weighted, meaning larger companies have a more significant impact on its movement.\n\nA spreadsheet comparing the two assets in past periods can be found [here](https://docs.google.com/spreadsheets/d/1CpeSvX9gTKngoYc-2lGmGpBrhVQysmJ7_poKo4OcriI/edit?gid=0#gid=0).&#x20;",
-      "resolution_criteria": "Each subquestion will resolve as the difference between the percent total price return of [Nasdaq-100 Futures (NQ)](https://finance.yahoo.com/quote/NQ%3DF/history/) and that of [S\\&P 500 Futures (ES)](https://finance.yahoo.com/quote/ES%3DF/history/) for the corresponding biweekly period, according to Yahoo Finance data.\n\nSpecifically, each subquestion will resolve as NQ\\_return - ES\\_return.\n\nReturns will be calculated as follows: If P₀ is the Close price of an asset on the last trading day or half-day *before* the start of the period and P₁ is the Close price of the stock on the last trading day *of* the designated period, the percentage return will be calculated as:\n\n$$\n \\text{return} = 100 \\times \\frac{P1 - P0}{P0}\n$$",
-      "fine_print": "* If ES outperforms NQ, the corresponding subquestion will resolve as a negative number.\n* If Yahoo Finance delays or ceases reporting these data or if it reports them in error, Metaculus might use alternative credible sources to resolve this question.\n\n***\n\nFor example, for the period Jun 9, 2025 - Jun 20, 2025, the subquestion would have resolved based on the following calculations:\n\nNQ\\_P₀ \\= 21,789.50 (the Close price on Jun 6)\n\nNQ\\_P₁ \\= 21,889.89 (the Close price on Jun 20)\n\nNQ\\_return \\= 100 × (21,889.89 - 21,789.50) / 21,789.50 \\= 0.4607\n\nES\\_P₀ \\= 6,006.75 (the Close price on Jun 6)\n\nES\\_P₁ \\= 6,010.21 (the Close price on Jun 20)\n\nES\\_return \\= 100 × (6,010.21 - 6,006.75) / 6,006.75 \\= 0.0576\n\nAnd the resolution would be 0.4607 - 0.0576 \\= **0.4031** percentage points (pp).",
-      "open_time": "2026-11-16T17:00:00Z",
-      "close_time": "2026-11-23T04:00:00Z",
-      "scheduled_resolution_time": "2026-12-04T21:00:00Z",
-      "group_option": "Nov 23 - Dec 4",
-      "unit": "pp",
-      "lower_bound": -5.0,
-      "upper_bound": 5.0,
-      "open_lower_bound": true,
-      "open_upper_bound": true,
-      "deadline": "2026-11-23T04:00:00Z",
-      "reason": "new",
-      "timing": {
-        "stated_scoring_time": "2026-11-23T04:00:00Z",
-        "reveal_time": "2026-11-20T17:00:00Z"
-      }
-    },
-    {
-      "question_id": 46215,
-      "post_id": 46010,
-      "type": "discrete",
-      "tournament": "Market Pulse",
-      "title": "What will be the ending value of the ICE BofA US High Yield Option-Adjusted Spread for these biweekly periods of Q4 2026? (Nov 23 - Dec 4)",
-      "url": "https://www.metaculus.com/questions/46010",
-      "background": "The ICE BofA US High Yield OAS tracks the extra yield investors require to hold below-investment-grade bonds over comparable Treasuries. It is a widely-followed risk indicator in fixed income, often rising in periods of economic uncertainty, market turbulence, or rising default risk. The biweekly closing value helps forecasters track the evolving risk appetite and credit conditions in the U.S. market.\n\nThe OAS represents the average yield spread (in basis points) over Treasuries for U.S. high-yield (junk) bonds, adjusted for embedded options. This metric is widely watched as a gauge of credit market risk and sentiment.\n\nFRED series: [ICE BofA US High Yield OAS (BAMLH0A0HYM2)](https://fred.stlouisfed.org/series/BAMLH0A0HYM2)",
-      "resolution_criteria": "Each subquestion will resolve as the last available daily value of the ICE BofA US High Yield OAS published on the [FRED website](https://fred.stlouisfed.org/series/BAMLH0A0HYM2) for the final calendar day (typically the final Friday) of the corresponding biweekly period.",
-      "fine_print": "* If the FRED data is delayed, the value will be taken as soon as published for the relevant date.\n* If the market is closed on the scheduled ending date or if no value for that date is published by FRED for two weeks, the most recent available value from an earlier day in the period will be used.\n* Only the initially published value for each date will be used (no revisions).\n* The value is reported in percentage points.",
-      "open_time": "2026-11-16T16:00:00Z",
-      "close_time": "2026-11-23T04:00:00Z",
-      "scheduled_resolution_time": "2026-12-04T21:00:00Z",
-      "group_option": "Nov 23 - Dec 4",
-      "unit": "pp",
-      "lower_bound": 1.75,
-      "upper_bound": 3.74,
-      "open_lower_bound": true,
-      "open_upper_bound": true,
-      "step": 0.01,
-      "deadline": "2026-11-23T04:00:00Z",
-      "reason": "new",
-      "timing": {
-        "stated_scoring_time": "2026-11-23T04:00:00Z",
-        "reveal_time": "2026-11-20T13:00:00Z"
-      }
-    },
-    {
-      "question_id": 46209,
-      "post_id": 46008,
-      "type": "numeric",
-      "tournament": "Market Pulse",
-      "title": "How much will Gold Futures total price returns exceed S&P 500 Futures in these biweekly periods of Q4 2026? (Nov 23 - Dec 4)",
-      "url": "https://www.metaculus.com/questions/46008",
-      "background": "[Gold Futures](https://en.wikipedia.org/wiki/Gold_as_an_investment#Derivatives,_CFDs_and_spread_betting) represent physical gold trading, typically based on 100-troy-ounce contracts. Gold is viewed as a safe haven during periods of economic uncertainty, geopolitical tensions, and high inflation. The futures are influenced by global economic conditions, currency values, central bank policies, and international political events, making them a key indicator of global financial stability.\n\nThe [S\\&P 500](https://en.wikipedia.org/wiki/S%26P_500) represents 500 of the largest publicly traded U.S. companies across diverse sectors. It captures the broader market sentiment, including technology, healthcare, financial, and industrial giants like Apple, Microsoft, Amazon, JPMorgan Chase, and Alphabet (Google). The index is market-cap weighted, meaning larger companies have a more significant impact on its movement.\n\nA spreadsheet of past GC vs. ES returns can be found [here](https://docs.google.com/spreadsheets/d/1WFJ_GNmTTwrnPrCroArLgDR-K5kbtMW16VUlR8iRDS0/edit?gid=0#gid=0).&#x20;",
-      "resolution_criteria": "Each subquestion will resolve as the difference between the percent total price return of [Gold Futures (GC)](https://finance.yahoo.com/quote/GC%3DF/history/) and that of [S\\&P 500 Futures (ES)](https://finance.yahoo.com/quote/ES%3DF/history/) for the corresponding biweekly period, according to Yahoo Finance data.\n\nSpecifically, each subquestion will resolve as GC\\_return - ES\\_return.\n\nReturns will be calculated as follows: If P₀ is the Close price of an asset on the last trading day or half-day *before* the start of the period and P₁ is the Close price of the stock on the last trading day *of* the designated period, the percentage return will be calculated as:\n\n$$\n \\text{return} = 100 \\times \\frac{P1 - P0}{P0}\n$$",
-      "fine_print": "* If ES outperforms GC, the corresponding subquestion will resolve as a negative number.\n* If Yahoo Finance delays or ceases reporting these data or if it reports them in error, Metaculus might use alternative credible sources to resolve this question.\n\n***\n\nFor example, for the period Jun 9, 2025 - Jun 20, 2025, the subquestion would resolve based on the following calculations:\n\nGC\\_P₀ \\= 3,322.70 (the Adj Close price on Jun 6)\n\nGC\\_P₁ \\= 3,368.10 (the Close price on Jun 20)\n\nGC\\_return \\= 100 × (3,368.10 - 3,322.70) / 3,322.70 \\= 1.3663\n\nES\\_P₀ \\= 6,006.75 (the Adj Close price on Jun 6)\n\nES\\_P₁ \\= 6,010.21 (the Close price on Jun 20)\n\nES\\_return \\= 100 × (6,010.21 - 6,006.75) / 6,006.75 \\= 0.0576\n\nAnd the resolution would be 1.3663 - 0.0576 \\= **1.3087** percentage points (pp).",
-      "open_time": "2026-11-16T17:00:00Z",
-      "close_time": "2026-11-23T04:00:00Z",
-      "scheduled_resolution_time": "2026-12-04T21:00:00Z",
-      "group_option": "Nov 23 - Dec 4",
-      "unit": "pp",
-      "lower_bound": -10.0,
-      "upper_bound": 10.0,
-      "open_lower_bound": true,
-      "open_upper_bound": true,
-      "deadline": "2026-11-23T04:00:00Z",
-      "reason": "new",
-      "timing": {
-        "stated_scoring_time": "2026-11-23T04:00:00Z",
-        "reveal_time": "2026-11-20T17:00:00Z"
-      }
-    },
-    {
-      "question_id": 46203,
-      "post_id": 46007,
-      "type": "numeric",
-      "tournament": "Market Pulse",
-      "title": "How much will Crude Oil Futures total price returns exceed S&P 500 Futures in these biweekly periods of Q4 2026? (Nov 23 - Dec 4)",
-      "url": "https://www.metaculus.com/questions/46007",
-      "background": "Crude Oil Futures (CL) directly reflect global energy demand, transportation costs, and geopolitical tensions affecting oil production. Traders and analysts use these futures to gauge economic health, predict inflation, and understand supply chain dynamics. Significant price movements can signal economic slowdowns, changes in global trade, or disruptions in major oil-producing regions like the Middle East, Russia, and North America.\n\nThe [S\\&P 500](https://en.wikipedia.org/wiki/S%26P_500) (whose E-mini futures are abbreviated ES) represents 500 of the largest publicly traded U.S. companies across diverse sectors. It captures broader market sentiment, including the technology, healthcare, and financial sectors, and it includes mega-caps like Apple, Microsoft, Amazon, JPMorgan Chase, and Alphabet (Google). The index is market-cap weighted, meaning larger companies have a more significant impact on its movement.\n\nA spreadsheet of past returns of can be found [here](https://docs.google.com/spreadsheets/d/14dXbnR2I_hlrRivc-TkNwKsHjRsGeCGFoRMXoGpBbqM/edit?gid=0#gid=0).&#x20;",
-      "resolution_criteria": "Each subquestion will resolve as the difference between the percent total price return of [Crude Oil Futures (CL)](https://finance.yahoo.com/quote/CL%3DF/history/) and that of [S\\&P 500 Futures (ES)](https://finance.yahoo.com/quote/ES%3DF/history/) for the corresponding biweekly period, according to Yahoo Finance data.\n\nSpecifically, each subquestion will resolve as CL\\_return - ES\\_return.\n\nReturns will be calculated as follows: If P₀ is the Close price of a company stock on the last trading day or half-day *before* the start of the period and P₁ is the Close price of the stock on the last trading day *of* the designated period, the percentage return will be calculated as:\n\n$$\n \\text{return} = 100 \\times \\frac{P1 - P0}{P0}\n$$",
-      "fine_print": "* If ES outperforms CL, the corresponding subquestion will resolve as a negative number.\n* If Yahoo Finance delays or ceases reporting these data or if it reports them in error, Metaculus might use alternative credible sources to resolve this question.\n\n***\n\nFor example, for the period Jun 9 - Jun 20, the subquestion would resolve based on the following calculations:\n\nCL\\_P₀ \\= 64.58 (the Close price on Jun 6)\n\nCL\\_P₁ \\= 74.93 (the Close price on Jun 20)\n\nCL\\_return \\= 100 × (74.93 - 64.58) / 64.58 \\= 16.0266\n\nES\\_P₀ \\= 6,006.75 (the Close price on Jun 6)\n\nES\\_P₁ \\= 6,010.21 (the Close price on Jun 20)\n\nES\\_return \\= 100 × (6,010.21 - 6,006.75) / 6,006.75 \\= 0.0576\n\nAnd the resolution would be 16.0266 - 0.0576 \\= **15.9690** percentage points (pp).",
-      "open_time": "2026-11-16T17:00:00Z",
-      "close_time": "2026-11-23T04:00:00Z",
-      "scheduled_resolution_time": "2026-12-04T21:00:00Z",
-      "group_option": "Nov 23 - Dec 4",
-      "unit": "pp",
-      "lower_bound": -25.0,
-      "upper_bound": 25.0,
-      "open_lower_bound": true,
-      "open_upper_bound": true,
-      "deadline": "2026-11-23T04:00:00Z",
-      "reason": "new",
-      "timing": {
-        "stated_scoring_time": "2026-11-23T04:00:00Z",
-        "reveal_time": "2026-11-20T17:00:00Z"
-      }
+      "reason": "new"
     }
   ],
   "skipped": [],
   "errors": [],
   "kept_up_to_date": {
-    "listed_now": 8,
+    "listed_now": 4,
     "up_to_date": 0,
     "past_their_scoring_time": 0,
-    "held_for_a_later_run": 0
+    "held_for_a_later_run": 4
   }
 }
