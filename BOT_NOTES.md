@@ -37,8 +37,10 @@ No person is involved while it runs, and no AI model is called from GitHub. The 
 ## Running it
 
 - **See what it did:** the `forecasts/posted/` folder is the bot's record. On Metaculus, switch to the bot account (Settings → My Forecasting Bots); the reasoning is in each question's Private comments tab.
-- **Pause:** pause the scheduled Claude task. With no session pushing, nothing runs.
+- **The schedule:** a scheduled Claude task named "Farago bot: hourly forecasts" starts a session once an hour. Questions stay open for three hours, so each one is seen by two or three runs; the first run that reaches it forecasts it.
+- **Pause:** pause that scheduled task. With no session pushing, nothing runs.
 - **Try it by hand:** Actions → "Claude route - post forecasts and list questions" → Run workflow. It posts whatever is waiting and refreshes the list.
+- **First live run (18 November 2026):** eight practice forecasts covering every question type were posted to the bot testing area, then an unattended session posted the bot's first two tournament forecasts in 23 minutes.
 - **Limits:** one forecast per scored question, at most eight questions or 35 minutes per run, questions that would close within ten minutes are left alone. Conditional questions are not handled yet and are listed under `skipped`.
 
 # The API route
