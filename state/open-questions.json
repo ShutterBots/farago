@@ -1,8 +1,24 @@
 {
-  "generated_at": "2026-11-18T06:57:41Z",
+  "generated_at": "2026-11-18T09:42:33Z",
   "mode": "tournament",
-  "request_id": "20261118T064209Z-3959",
-  "questions": [],
+  "request_id": "20261118T094202Z-7453",
+  "questions": [
+    {
+      "question_id": 46739,
+      "post_id": 46483,
+      "type": "binary",
+      "tournament": "Seasonal tournament",
+      "title": "Will Donald Trump's approval rating reach a new low in the second half of December 2026?",
+      "url": "https://www.metaculus.com/questions/46483",
+      "background": "According to the resolution source, \"Donald Trump’s approval rating recently hit an all time low of 36.3 percent. It has since rebounded about a point, and today sits at 37.4 percent. Still, with a disapproval rating of about 60 percent, Trump is ending the midterms in a far worse place than he did during his first term.\n\nThe share of Americans who strongly approve of the president is just 20 percent, compared to nearly 50 percent who strongly disapprove.\"\n\n`{\"format\": \"bot_tournament_question\", \"info\": {\"hash_id\": \"6a57698708e85f64\", \"sheet_id\": \"107\"}}`",
+      "resolution_criteria": "This question resolves as **Yes** if Donald Trump's approval rating after December 15, 2026 and before January 1, 2027 reaches an approval level strictly lower than any Trump second presidential term level before that time period, according to Nate Silver's [Do Americans approve or disapprove of Donald Trump?](https://www.natesilver.net/p/trump-approval-ratings-nate-silver-bulletin) tracker.\n\nFor example, on July 22, 2026, the lowest approval rating according to the resolution source was 38.29062, reported for May 21, 2026. Thus, a question asked on July 22, 2026 would require Trump's approval rating to be below that level in order to resolve as Yes.",
+      "fine_print": "Between the value shown in the chart and the csv file under the chart (\"Get the data\"), the csv file takes precedence. See the \"approve\" column in the csv. The question resolves based on the values shown when checked by Metaculus on or after the resolution date and will not be re-resolved in case of a later update to the resolution source.",
+      "open_time": "2026-11-18T09:00:00Z",
+      "close_time": "2026-11-18T12:00:00Z",
+      "scheduled_resolution_time": "2027-01-01T00:00:00Z",
+      "deadline": "2026-11-18T12:00:00Z"
+    }
+  ],
   "skipped": [],
   "errors": [],
   "kept_up_to_date": {
