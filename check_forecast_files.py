@@ -16,6 +16,7 @@ from __future__ import annotations
 
 import json
 import sys
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
@@ -37,13 +38,24 @@ def load_cards(path: Path = QUESTION_LIST) -> dict[int, dict[str, Any]] | None:
         return None
 
 
+def deadline_passed(card: dict[str, Any], now: datetime) -> bool:
+    """Whether the moment this question's forecast had to be in has gone by."""
+    try:
+        return fm.parse_when(card.get("deadline") or card.get("close_time")) <= now
+    except ValueError:
+        return False
+
+
 def check_folder(
-    folder: Path, cards: dict[int, dict[str, Any]] | None = None
+    folder: Path,
+    cards: dict[int, dict[str, Any]] | None = None,
+    now: datetime | None = None,
 ) -> list[tuple[str, str | None]]:
     """
     Returns (file name, problem) for every forecast file; problem is None when it
     passes. With the question cards, each forecast is also held against its question.
     """
+    now = datetime.now(timezone.utc) if now is None else now
     results: list[tuple[str, str | None]] = []
     for path in sorted(folder.glob("*.json")):
         try:
@@ -59,6 +71,8 @@ def check_folder(
                         "this question is not in state/open-questions.json (it has closed "
                         "or been forecast already): delete this file"
                     )
+                if deadline_passed(card, now):
+                    raise ValueError("this question's deadline has passed: delete this file")
                 problem = fm.check_against_card(forecast, card)
                 if problem:
                     raise ValueError(problem)

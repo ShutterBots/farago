@@ -11,7 +11,7 @@ The division of labour:
 
 1. **No human in the loop.** Do not ask anyone anything. Decide and carry on. If you are blocked, stop and say why in your final line.
 2. **Never use the Metaculus community prediction.** Do not open or search for the question's page on Metaculus, and do not use other forecasters' comments on it. The tournament forbids copying the community. Other evidence is fine, including prediction markets and published expert forecasts.
-3. **Only forecast questions from `state/open-questions.json`**, and write one forecast for each.
+3. **Only forecast questions from `state/open-questions.json`**, and write one forecast for each. The list decides what is due, including which earlier forecasts are due for an update.
 4. **Write only two kinds of file:** `state/poll-request.json` and `forecasts/pending/q<question_id>.json`. Change nothing else in the repository.
 5. **Never handle a key or token.** You do not need one.
 6. **Do not improvise.** If the list never arrives or a push keeps failing, stop and report it. Do not look for another way in.
@@ -57,7 +57,11 @@ If it never prints `READY`, stop. Final line: "The question list did not arrive;
 
 Read `state/open-questions.json`. If `errors` is not empty, mention it in your final line. If `questions` is empty, you are done: "No open questions."
 
-Work through the questions that close soonest first. Note the time now (`date -u +%H:%M`) and look at it again before each question. Stop starting new questions once you have done 8 or the run is 35 minutes old; the next run takes the rest. Skip a question that closes in less than 8 minutes: there is no time left to research and post it. In `test_questions` mode take at most 5, one of each question type before a second of any type.
+Work through the questions in the order the list gives them: soonest `deadline` first. The `deadline` is the moment the forecast has to be in. Note the time now (`date -u +%H:%M`) and look at it again before each question. Stop starting new questions once you have done 8 or the run is 35 minutes old; the next run takes the rest. Skip a question whose `deadline` is less than 8 minutes away: there is no time left to research and post it. In `test_questions` mode take at most 5, one of each question type before a second of any type.
+
+Cards that share a `post_id` are parts of one group question, and `group_option` says which part each card is: a period, a company, a threshold. Read the `group_option` before anything else, because the shared text describes every part. Research the group once, then write one file for each of its cards on the list. A group counts as one question toward the limit of 8.
+
+Cards that carry a `reason` belong to the Market Pulse tournament. Read "Market Pulse cards" below before you forecast one.
 
 If `forecasts/failed/q<question_id>.json` exists for a question in the list, read its `error` first: an earlier run got that one wrong.
 
@@ -107,6 +111,25 @@ cd REPO && for id in ID1 ID2; do \
 ```
 
 A forecast that failed because of the forecast itself (a value, a name, the format) may be corrected and pushed again **once**, if its question is still in the list. Leave it alone if the error says the question closed or was already forecast.
+
+## Market Pulse cards
+
+A card with a `reason` comes from Market Pulse, a tournament about markets and company results. It differs from the bot tournaments in one way that changes the work: **only the forecast standing at the card's `deadline` counts.** A question stays open for weeks, and a newer forecast replaces the older one. So the list brings a question back when it is time to forecast it again. The `reason` says why it is on the list now:
+
+- `new`: the bot has no forecast on it yet.
+- `weekly refresh`: the standing forecast is more than a week old.
+- `final day` and `last call`: the deadline is near. This is the forecast that will be scored, so use the most recent data you can find.
+
+For every reason except `new`, start by reading your earlier forecast in `forecasts/posted/q<question_id>.json`. Find what has changed since its `posted_at`: prices, published results, company guidance, scheduled events that have now happened. Then write a complete new file in the usual format, with fresh reasoning that says what changed and where the numbers moved. If nothing changed, say so and keep the numbers. Write only the fields "The forecast file" lists; do not carry over the other fields of the old record.
+
+### Market numbers
+
+1. **Start from the latest value and date it.** Find the most recent close, yield, index level or reported figure from a source that states its date, and name both in the reasoning. A number without a date is not evidence.
+2. **Work out exactly what is asked.** A level on a date, the highest or lowest value inside a window, a return over a period, the gap between two returns, or a reported figure such as revenue or earnings per share. Check the unit: index points, percent, percentage points, dollars, billions.
+3. **Count the trading days left** until the value is fixed, skipping weekends and market holidays. How far a price usually travels grows with the square root of that count. For "highest in the window" and "lowest in the window" questions, the answer cannot be on the wrong side of what the window has already reached.
+4. **List what is scheduled before then:** central-bank meetings, inflation and jobs reports, the company's results date, its own guidance and the analyst consensus.
+5. **Centre on the current value,** or on the consensus for a reported figure, unless you have a specific and recent reason to move. Markets already contain the public news. Keep the tails wide: large moves happen more often than a bell curve allows.
+6. **For reported figures, check the definition** the question resolves on: as reported or adjusted, fiscal or calendar quarter, which source publishes it.
 
 ### 7. Final line
 

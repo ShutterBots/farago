@@ -1005,3 +1005,127 @@ def check_against_card(forecast: ForecastFile, card: Mapping[str, Any]) -> str |
             "when most of the probability is beyond an open bound"
         )
     return None
+
+
+# --------------------------------------------------------------------------- #
+# Tournaments where a forecast is kept up to date (Market Pulse)
+# --------------------------------------------------------------------------- #
+#
+# The bot tournaments score one forecast per question, made while the question
+# is open for a few hours. Market Pulse is different: a question stays open for
+# weeks and only the forecast standing at its scoring time counts. So the bot
+# forecasts such a question when it first sees it, and again shortly before the
+# moment that counts.
+
+UPDATED_TOURNAMENTS: dict[str, str] = {"market-pulse-26q4": "Market Pulse"}
+
+FINAL_DAY_WINDOW = timedelta(hours=26)  # one forecast inside the last day or so
+FINAL_DAY_MIN_AGE = timedelta(hours=6)  # ... unless the last one is this fresh
+LAST_CALL_WINDOW = timedelta(hours=3)  # and one more inside the last hours
+LAST_CALL_MIN_AGE = timedelta(hours=2)
+REFRESH_AFTER = timedelta(days=7)  # meanwhile, never leave a forecast older than this
+TOO_LATE = timedelta(minutes=10)  # no time left to research and post
+
+REASON_NEW = "new"
+REASON_LAST_CALL = "last call"
+REASON_FINAL_DAY = "final day"
+REASON_REFRESH = "weekly refresh"
+
+
+def is_updated_tournament(slugs: Sequence[str] | None) -> bool:
+    return any(slug in UPDATED_TOURNAMENTS for slug in (slugs or ()))
+
+
+def scoring_moment(
+    spot_scoring_time: datetime | None,
+    reveal_time: datetime | None,
+    close_time: datetime | None,
+) -> datetime | None:
+    """
+    The moment a question's standing forecast is scored. Metaculus states it per
+    question; when it does not, it is the earlier of the moment the community
+    forecast is revealed and the close. It is never later than the close.
+    """
+    spot, reveal, close = as_utc(spot_scoring_time), as_utc(reveal_time), as_utc(close_time)
+    if spot is not None:
+        moment = spot
+    else:
+        known = [time for time in (reveal, close) if time is not None]
+        if not known:
+            return None
+        moment = min(known)
+    if close is not None and moment > close:
+        moment = close
+    return moment
+
+
+def update_reason(
+    now: datetime, deadline: datetime | None, last_forecast: datetime | None
+) -> str | None:
+    """
+    Why a kept-up-to-date question should be forecast now, or None when it
+    should be left alone.
+
+    "new"            no forecast yet
+    "last call"      the deadline is hours away and no forecast was made that late
+    "final day"      the deadline is about a day away and no forecast was made that late
+    "weekly refresh" the standing forecast is more than a week old
+
+    A deadline that has passed, or is minutes away, always gives None.
+    """
+    now_utc = as_utc(now)
+    assert now_utc is not None
+    due, last = as_utc(deadline), as_utc(last_forecast)
+    if due is not None and due - now_utc < TOO_LATE:
+        return None
+    if last is None:
+        return REASON_NEW
+    age = max(now_utc - last, timedelta(0))
+    if due is not None:
+        left = due - now_utc
+        if left <= LAST_CALL_WINDOW and last < due - LAST_CALL_WINDOW and age >= LAST_CALL_MIN_AGE:
+            return REASON_LAST_CALL
+        if left <= FINAL_DAY_WINDOW and last < due - FINAL_DAY_WINDOW and age >= FINAL_DAY_MIN_AGE:
+            return REASON_FINAL_DAY
+    if age >= REFRESH_AFTER:
+        return REASON_REFRESH
+    return None
+
+
+# How much work one question list may hand a session for these tournaments.
+# A forecast is urgent when its deadline is near; everything else can trickle.
+URGENT_WITHIN = timedelta(hours=72)
+MAX_URGENT_CARDS = 12
+MAX_PATIENT_CARDS = 4
+
+
+def is_urgent(now: datetime, deadline: datetime | None, reason: str) -> bool:
+    """Whether a kept-up-to-date forecast has to be made soon, or can wait its turn."""
+    if reason in (REASON_LAST_CALL, REASON_FINAL_DAY):
+        return True
+    if reason == REASON_REFRESH:
+        return False
+    now_utc, due = as_utc(now), as_utc(deadline)
+    assert now_utc is not None
+    return due is not None and due - now_utc <= URGENT_WITHIN
+
+
+def pick_update_work(
+    candidates: Sequence[tuple[datetime | None, bool]],
+    max_urgent: int = MAX_URGENT_CARDS,
+    max_patient: int = MAX_PATIENT_CARDS,
+) -> list[int]:
+    """
+    Which of the due questions go on this list, as positions in `candidates`.
+    Each candidate is (deadline, urgent). Urgent ones go first, soonest deadline
+    first, up to a cap; then a few of the patient ones, so a backlog is worked
+    off a little every hour instead of all at once.
+    """
+    far_future = datetime.max.replace(tzinfo=timezone.utc)
+
+    def soonest(position: int) -> datetime:
+        return as_utc(candidates[position][0]) or far_future
+
+    urgent = sorted((i for i, (_, hurry) in enumerate(candidates) if hurry), key=soonest)
+    patient = sorted((i for i, (_, hurry) in enumerate(candidates) if not hurry), key=soonest)
+    return urgent[:max_urgent] + patient[:max_patient]

@@ -697,3 +697,121 @@ def test_card_check_names_what_does_not_fit(card, fields, reason):
 )
 def test_format_number_reads_like_a_person_wrote_it(value, shown):
     assert fm.format_number(value) == shown
+
+
+# --------------------------------------------------------------------------- #
+# Tournaments where a forecast is kept up to date (Market Pulse)
+# --------------------------------------------------------------------------- #
+
+T0 = datetime(2026, 11, 20, 12, 0, tzinfo=timezone.utc)
+
+
+def hours(count):
+    return timedelta(hours=count)
+
+
+def test_scoring_moment_prefers_what_metaculus_states():
+    spot, reveal, close = T0 + hours(10), T0 + hours(20), T0 + hours(30)
+    assert fm.scoring_moment(spot, reveal, close) == spot
+    # nothing stated: the earlier of the reveal and the close
+    assert fm.scoring_moment(None, reveal, close) == reveal
+    assert fm.scoring_moment(None, close, reveal) == reveal
+    assert fm.scoring_moment(None, None, close) == close
+    assert fm.scoring_moment(None, reveal, None) == reveal
+    assert fm.scoring_moment(None, None, None) is None
+    # never later than the close, and naive datetimes are read as UTC
+    assert fm.scoring_moment(close + hours(5), None, close) == close
+    assert fm.scoring_moment(datetime(2026, 11, 20, 22, 0), None, None) == T0 + hours(10)
+
+
+def test_update_reason_first_forecast_and_deadlines_that_have_gone():
+    assert fm.update_reason(T0, T0 + hours(500), None) == "new"
+    assert fm.update_reason(T0, T0 + hours(1), None) == "new"
+    assert fm.update_reason(T0, None, None) == "new"
+    # too late to research and post, or already past
+    assert fm.update_reason(T0, T0 + timedelta(minutes=9), None) is None
+    assert fm.update_reason(T0, T0 - hours(1), None) is None
+    assert fm.update_reason(T0, T0 - hours(1), T0 - hours(300)) is None
+
+
+def test_update_reason_leaves_a_recent_forecast_alone():
+    deadline = T0 + hours(200)
+    assert fm.update_reason(T0, deadline, T0 - hours(1)) is None
+    assert fm.update_reason(T0, deadline, T0 - hours(167)) is None
+    assert fm.update_reason(T0, deadline, T0 - hours(168)) == "weekly refresh"
+    assert fm.update_reason(T0, None, T0 - hours(169)) == "weekly refresh"
+    # a clock that runs a little ahead does not confuse it
+    assert fm.update_reason(T0, deadline, T0 + timedelta(minutes=3)) is None
+
+
+def test_update_reason_one_forecast_in_the_last_day_and_one_in_the_last_hours():
+    deadline = T0 + hours(20)
+    # last forecast two days ago: the final-day forecast is due
+    assert fm.update_reason(T0, deadline, T0 - hours(48)) == "final day"
+    # one was already made inside the last day: nothing until the last hours
+    assert fm.update_reason(T0, deadline, T0 - hours(2)) is None
+    assert fm.update_reason(T0, deadline, deadline - hours(25)) is None
+    # just outside the window, but made less than six hours ago: wait
+    near = T0 + hours(25)
+    assert fm.update_reason(T0, near, T0 - hours(3)) is None
+    assert fm.update_reason(T0 + hours(4), near, T0 - hours(3)) == "final day"
+
+    soon = T0 + hours(2)
+    assert fm.update_reason(T0, soon, T0 - hours(10)) == "last call"
+    assert fm.update_reason(T0, soon, T0 - hours(0.5)) is None  # already made inside the last hours
+    # made 90 minutes ago, just before the window opened: wait until it is two hours old
+    edge = T0 + hours(2.9)
+    assert fm.update_reason(T0, edge, T0 - hours(1.5)) is None
+    assert fm.update_reason(T0 + hours(0.6), edge, T0 - hours(1.5)) == "last call"
+    # the last call outranks the final day
+    assert fm.update_reason(T0, soon, T0 - hours(100)) == "last call"
+
+
+def test_update_schedule_over_a_question_s_whole_life():
+    """Hourly runs from six weeks out: how many forecasts, and when."""
+    deadline = T0 + timedelta(days=42)
+    last, made = None, []
+    moment = T0
+    while moment < deadline:
+        reason = fm.update_reason(moment, deadline, last)
+        if reason:
+            made.append((reason, round((deadline - moment).total_seconds() / 3600)))
+            last = moment
+        moment += hours(1)
+    reasons = [reason for reason, _ in made]
+    assert reasons[0] == "new" and reasons[-1] == "last call" and reasons[-2] == "final day"
+    assert reasons.count("weekly refresh") == 5 and len(made) == 8, made
+    assert made[-1][1] <= 3 and 3 < made[-2][1] <= 26, made
+
+
+def test_urgent_and_patient_work():
+    assert fm.is_urgent(T0, T0 + hours(500), "last call")
+    assert fm.is_urgent(T0, T0 + hours(20), "final day")
+    assert fm.is_urgent(T0, T0 + hours(72), "new")
+    assert not fm.is_urgent(T0, T0 + hours(73), "new")
+    assert not fm.is_urgent(T0, None, "new")
+    assert not fm.is_urgent(T0, T0 + hours(10), "weekly refresh")
+
+
+def test_pick_update_work_takes_urgent_first_and_trickles_the_rest():
+    candidates = [
+        (T0 + hours(900), False),  # 0 patient, late
+        (T0 + hours(5), True),  # 1 urgent
+        (T0 + hours(100), False),  # 2 patient, soonest of the patient ones
+        (T0 + hours(2), True),  # 3 urgent, soonest
+        (None, False),  # 4 patient, no deadline: last
+        (T0 + hours(300), False),  # 5 patient
+    ]
+    assert fm.pick_update_work(candidates) == [3, 1, 2, 5, 0, 4]
+    assert fm.pick_update_work(candidates, max_urgent=1, max_patient=2) == [3, 2, 5]
+    assert fm.pick_update_work([]) == []
+    crowd = [(T0 + hours(n), True) for n in range(30)] + [(T0 + hours(200 + n), False) for n in range(30)]
+    picked = fm.pick_update_work(crowd)
+    assert picked == list(range(12)) + list(range(30, 34))
+
+
+def test_is_updated_tournament():
+    assert fm.is_updated_tournament(["market-pulse-26q4"])
+    assert fm.is_updated_tournament(["something-else", "market-pulse-26q4"])
+    assert not fm.is_updated_tournament(["fall-futureeval-2026", "minibench"])
+    assert not fm.is_updated_tournament([]) and not fm.is_updated_tournament(None)

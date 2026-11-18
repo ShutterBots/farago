@@ -42,6 +42,13 @@ TESTING_AREA = "bot-testing-area"
 # A forecast that keeps failing for outside reasons (network, Metaculus down)
 # is tried this many times, once per run, before it is set aside.
 MAX_ATTEMPTS = 3
+# What this step writes into a record. A session that starts an update from its
+# earlier record may carry these along; they are never taken from a new file.
+RECORD_KEYS = (
+    "posted_at", "posted_as", "question_title", "question_url", "tournaments",
+    "earlier", "error", "failed_at",
+)
+MAX_EARLIER = 30
 
 COMMENT_FOOTER = (
     "\n\n---\n*This forecast and its reasoning were written by an automated Claude "
@@ -89,8 +96,13 @@ def check_can_forecast(question: MetaculusQuestion, now: datetime) -> None:
     state = getattr(getattr(question, "state", None), "value", None)
     if state is not None and state != "open":
         raise Refused(f"the question is {state}, not open")
-    # One forecast per scored question. The testing area can be forecast again.
-    if question.already_forecasted and not in_testing_area(question):
+    # One forecast per scored question, with two exceptions: the testing area,
+    # and the tournaments where the standing forecast is what counts and is
+    # therefore kept up to date (Market Pulse).
+    may_forecast_again = in_testing_area(question) or fm.is_updated_tournament(
+        question.tournament_slugs
+    )
+    if question.already_forecasted and not may_forecast_again:
         raise Refused("the bot has already forecast this question")
 
 
@@ -269,21 +281,40 @@ def process(
         _write(path, {**data, "attempts": attempts, "last_error": reason})
         return {"file": path.name, "status": "waiting", "detail": reason}
 
-    record = {
-        **data,
-        "posted_at": str(data.get("forecast_sent_at") or list_time(now)),
-        "posted_as": summary,
-        "question_title": question.question_text,
-        "question_url": question.page_url,
-        "tournaments": list(question.tournament_slugs or []),
-    }
-    record.pop("last_error", None)
-    record.pop("forecast_sent_at", None)
+    posted_at = str(data.get("forecast_sent_at") or list_time(now))
+    record = {key: value for key, value in data.items() if key not in RECORD_KEYS}
+    for key in ("last_error", "forecast_sent_at", "attempts"):
+        record.pop(key, None)
+    record.update(
+        {
+            "posted_at": posted_at,
+            "posted_as": summary,
+            "question_title": question.question_text,
+            "question_url": question.page_url,
+            "tournaments": list(question.tournament_slugs or []),
+        }
+    )
+    earlier = earlier_forecasts(POSTED / path.name)
+    if earlier:
+        record["earlier"] = earlier
     _write(POSTED / path.name, record)
     path.unlink(missing_ok=True)
     # An earlier attempt at this question may have failed. That record is now out of date.
     (FAILED / path.name).unlink(missing_ok=True)
     return {"file": path.name, "status": "posted", "detail": summary}
+
+
+def earlier_forecasts(record_path: Path) -> list[dict[str, Any]]:
+    """The forecasts this one replaces, oldest first, read from the record it overwrites."""
+    try:
+        previous = json.loads(record_path.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return []
+    if not isinstance(previous, dict) or not previous.get("posted_at"):
+        return []
+    history = [entry for entry in (previous.get("earlier") or []) if isinstance(entry, dict)]
+    history.append({"posted_at": previous["posted_at"], "posted_as": previous.get("posted_as")})
+    return history[-MAX_EARLIER:]
 
 
 def list_time(moment: datetime) -> str:
