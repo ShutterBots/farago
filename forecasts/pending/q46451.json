@@ -1,0 +1,17 @@
+{
+  "question_id": 46451,
+  "post_id": 46224,
+  "type": "numeric",
+  "percentiles": {
+    "1": 7500000,
+    "5": 7700000,
+    "10": 7800000,
+    "25": 7950000,
+    "50": 8100000,
+    "75": 8250000,
+    "90": 8420000,
+    "95": 8540000,
+    "99": 8850000
+  },
+  "reasoning": "**What is asked.** US federal net outlays in fiscal year 2028 (October 2027 to September 2028), in millions of dollars, as FRED's FYONET series first reports them. For scale: FY 2024 resolved as 6,751,552.\n\n**Starting point.** FY 2026 has just closed. The final Monthly Treasury Statement puts outlays at $7.396 trillion, up $386 billion or 6% on FY 2025 (Treasury, 16 October 2026; CBO Monthly Budget Review, 9 November 2026). That is almost exactly what CBO projected in February.\n\n**Base rate.** CBO's February 2026 baseline has outlays at $7.4 trillion in 2026, staying near 23.3% of GDP through 2028 and growing about 4.1% a year over the decade (CBO director's Senate testimony, 11 March 2026). Two more years at 4 to 5% gives $8.0 to $8.15 trillion. One calendar effect adds to FY 2028: 1 October 2028 is a Sunday, so benefit payments due that day are paid in September and count in FY 2028.\n\n**What could move it.** Up: a supplemental for the Iran war, interest costs that passed $1 trillion in FY 2026, and the usual drift in health programmes. Down: lower interest rates, rescissions, or a long shutdown after the change of control in Congress. CBO's two-year-ahead outlay projections have typically missed by a few percent, so I use a spread of about 3% either side.\n\n**Forecast.** Median 8,100,000 (that is $8.1 trillion), with 90% of the probability between 7,700,000 and 8,540,000."
+}
