@@ -1,36 +1,13 @@
 {
-  "generated_at": "2026-11-18T06:56:42Z",
+  "generated_at": "2026-11-18T06:57:41Z",
   "mode": "tournament",
   "request_id": "20261118T064209Z-3959",
-  "questions": [
-    {
-      "question_id": 46203,
-      "post_id": 46007,
-      "type": "numeric",
-      "tournament": "Market Pulse",
-      "title": "How much will Crude Oil Futures total price returns exceed S&P 500 Futures in these biweekly periods of Q4 2026? (Nov 23 - Dec 4)",
-      "url": "https://www.metaculus.com/questions/46007",
-      "background": "Crude Oil Futures (CL) directly reflect global energy demand, transportation costs, and geopolitical tensions affecting oil production. Traders and analysts use these futures to gauge economic health, predict inflation, and understand supply chain dynamics. Significant price movements can signal economic slowdowns, changes in global trade, or disruptions in major oil-producing regions like the Middle East, Russia, and North America.\n\nThe [S\\&P 500](https://en.wikipedia.org/wiki/S%26P_500) (whose E-mini futures are abbreviated ES) represents 500 of the largest publicly traded U.S. companies across diverse sectors. It captures broader market sentiment, including the technology, healthcare, and financial sectors, and it includes mega-caps like Apple, Microsoft, Amazon, JPMorgan Chase, and Alphabet (Google). The index is market-cap weighted, meaning larger companies have a more significant impact on its movement.\n\nA spreadsheet of past returns of can be found [here](https://docs.google.com/spreadsheets/d/14dXbnR2I_hlrRivc-TkNwKsHjRsGeCGFoRMXoGpBbqM/edit?gid=0#gid=0).&#x20;",
-      "resolution_criteria": "Each subquestion will resolve as the difference between the percent total price return of [Crude Oil Futures (CL)](https://finance.yahoo.com/quote/CL%3DF/history/) and that of [S\\&P 500 Futures (ES)](https://finance.yahoo.com/quote/ES%3DF/history/) for the corresponding biweekly period, according to Yahoo Finance data.\n\nSpecifically, each subquestion will resolve as CL\\_return - ES\\_return.\n\nReturns will be calculated as follows: If P₀ is the Close price of a company stock on the last trading day or half-day *before* the start of the period and P₁ is the Close price of the stock on the last trading day *of* the designated period, the percentage return will be calculated as:\n\n$$\n \\text{return} = 100 \\times \\frac{P1 - P0}{P0}\n$$",
-      "fine_print": "* If ES outperforms CL, the corresponding subquestion will resolve as a negative number.\n* If Yahoo Finance delays or ceases reporting these data or if it reports them in error, Metaculus might use alternative credible sources to resolve this question.\n\n***\n\nFor example, for the period Jun 9 - Jun 20, the subquestion would resolve based on the following calculations:\n\nCL\\_P₀ \\= 64.58 (the Close price on Jun 6)\n\nCL\\_P₁ \\= 74.93 (the Close price on Jun 20)\n\nCL\\_return \\= 100 × (74.93 - 64.58) / 64.58 \\= 16.0266\n\nES\\_P₀ \\= 6,006.75 (the Close price on Jun 6)\n\nES\\_P₁ \\= 6,010.21 (the Close price on Jun 20)\n\nES\\_return \\= 100 × (6,010.21 - 6,006.75) / 6,006.75 \\= 0.0576\n\nAnd the resolution would be 16.0266 - 0.0576 \\= **15.9690** percentage points (pp).",
-      "open_time": "2026-11-16T17:00:00Z",
-      "close_time": "2026-11-23T04:00:00Z",
-      "scheduled_resolution_time": "2026-12-04T21:00:00Z",
-      "group_option": "Nov 23 - Dec 4",
-      "unit": "pp",
-      "lower_bound": -25.0,
-      "upper_bound": 25.0,
-      "open_lower_bound": true,
-      "open_upper_bound": true,
-      "deadline": "2026-11-23T04:00:00Z",
-      "reason": "new"
-    }
-  ],
+  "questions": [],
   "skipped": [],
   "errors": [],
   "kept_up_to_date": {
-    "listed_now": 1,
-    "up_to_date": 7,
+    "listed_now": 0,
+    "up_to_date": 8,
     "past_their_scoring_time": 0,
     "held_for_a_later_run": 0
   }
