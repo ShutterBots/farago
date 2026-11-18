@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-18T03:37:51Z",
+  "generated_at": "2026-11-18T03:38:54Z",
   "mode": "test_questions",
   "request_id": "20261118T033720Z-8103",
   "questions": [
@@ -147,6 +147,7 @@
       "open_time": "2026-10-17T06:00:00Z",
       "close_time": "2028-10-01T03:59:00Z",
       "scheduled_resolution_time": "2028-10-20T12:00:00Z",
+      "already_forecasted": true,
       "unit": "",
       "lower_bound": 4000000.0,
       "upper_bound": 10000000.0,
