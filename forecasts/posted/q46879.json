@@ -1,0 +1,26 @@
+{
+  "question_id": 46879,
+  "post_id": 46619,
+  "type": "numeric",
+  "percentiles": {
+    "0.5": 7.42,
+    "1": 7.55,
+    "5": 7.77,
+    "10": 7.86,
+    "25": 8.0,
+    "50": 8.14,
+    "75": 8.28,
+    "90": 8.42,
+    "95": 8.52,
+    "99": 8.72,
+    "99.5": 8.8
+  },
+  "reasoning": "**Question.** The highest 6-minute observed water level (ft above MLLW) at NOAA's La Jolla gauge (9410230) on 26-27 November 2026 PST, taken from NOAA's preliminary data. It resolves on 28 November.\n\n**Starting point.** The answer is the astronomical high tide plus the non-tidal residual at that moment. NOAA's predicted highs in the window are 6.84 ft (26 Nov, 09:15 PST) and 6.50 ft (27 Nov, 10:05 PST); a published tide table for the station agrees (6.8 and 6.5 ft). The 26 November morning tide should therefore set the maximum.\n\n**Evidence.**\n- CalCoastTides (updated 17 Nov) lists La Jolla's daily-average residual at +14.6 to +17.9 inches on every day from 10 to 17 November, and +15.1 inches for the 24 hours to 07:42 on 17 November. It has stayed between about 12 and 18 inches since early October.\n- NWS forecasts for 9 November put San Diego and Orange County high tides 1.2 to 1.4 ft above astronomical predictions (Weatherboy, 9 Nov). The NWS San Diego discussion of 18 November (02:24 PST) still sees a chance of tides passing 7 ft on 21 November, when the predicted high is only 5.6 ft.\n- The same discussion says the ensembles are split about evenly for Thanksgiving week between a strong, dry ridge and an unsettled, wet and windy pattern.\n\n**Reasoning.** A residual that holds near 1.25 ft gives about 8.1 ft, and the largest 6-minute reading usually sits slightly above the smooth tide curve. Over nine days this residual has typically moved by 0.2 to 0.4 ft. High pressure under a ridge, or a fading Kelvin-wave pulse, would pull the peak toward 7.8 ft. A low-pressure storm with onshore wind at the morning high would push it past 8.4 ft, well above October's record of roughly 8.0 ft.\n\n**Forecast.** Median 8.14 ft, with a 5% to 95% range of 7.77 to 8.52 ft.",
+  "posted_at": "2026-11-18T13:17:19Z",
+  "posted_as": "0.5%: 7.42, 1%: 7.55, 5%: 7.77, 10%: 7.86, 25%: 8, 50%: 8.14, 75%: 8.28, 90%: 8.42, 95%: 8.52, 99%: 8.72, 99.5%: 8.8",
+  "question_title": "What will be the highest observed water level (ft above MLLW) at NOAA's La Jolla, CA tide gauge (station 9410230) on November 26-27, 2026?",
+  "question_url": "https://www.metaculus.com/questions/46619",
+  "tournaments": [
+    "minibench"
+  ]
+}
