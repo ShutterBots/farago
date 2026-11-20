@@ -1,8 +1,30 @@
 {
-  "generated_at": "2026-11-20T02:42:34Z",
+  "generated_at": "2026-11-20T03:42:27Z",
   "mode": "tournament",
-  "request_id": "20261120T024215Z-2804",
-  "questions": [],
+  "request_id": "20261120T034159Z-6510",
+  "questions": [
+    {
+      "question_id": 46883,
+      "post_id": 46623,
+      "type": "discrete",
+      "tournament": "Seasonal tournament",
+      "title": "What will Salesforce report for GAAP diluted EPS for Q3 FY2027?",
+      "url": "https://www.metaculus.com/questions/46623",
+      "background": "For an analysis of Salesforce's business, please see [Salesforce: Deep Dive Analysis](https://hatedmoats.substack.com/p/salesforce-deep-dive-analysis)\n\n`{\"format\": \"bot_tournament_question\", \"info\": {\"hash_id\": \"3d8dedd52d2d7c6b\", \"sheet_id\": \"123\"}}`",
+      "resolution_criteria": "This question resolves as the diluted earnings per share (EPS) in conformity with US generally accepted accounting principles (GAAP) reported in Salesforce's first official quarterly [earnings release](https://investor.salesforce.com/news/default.aspx) covering its Q3 FY 2027, expected to be released in December 2026.",
+      "fine_print": "Only the initially reported figures encompassing the entirety of the quarter will be considered. Any subsequent revisions, corrections, or restatements will not affect resolution.",
+      "open_time": "2026-11-20T03:00:00Z",
+      "close_time": "2026-11-20T06:00:00Z",
+      "scheduled_resolution_time": "2026-12-03T00:00:00Z",
+      "unit": "$",
+      "lower_bound": 1.5,
+      "upper_bound": 4.5,
+      "open_lower_bound": true,
+      "open_upper_bound": true,
+      "step": 0.01,
+      "deadline": "2026-11-20T06:00:00Z"
+    }
+  ],
   "skipped": [],
   "errors": [],
   "kept_up_to_date": {
