@@ -1,8 +1,34 @@
 {
-  "generated_at": "2026-11-20T14:42:28Z",
+  "generated_at": "2026-11-20T15:42:32Z",
   "mode": "tournament",
-  "request_id": "20261120T144200Z-5275",
-  "questions": [],
+  "request_id": "20261120T154157Z-1330",
+  "questions": [
+    {
+      "question_id": 46885,
+      "post_id": 46625,
+      "type": "multiple_choice",
+      "tournament": "Seasonal tournament",
+      "title": "How many trillion dollar companies will there be on December 18, 2026?",
+      "url": "https://www.metaculus.com/questions/46625",
+      "background": "As of October 2026, 5 companies are close to $1T: Berkshire Hathaway, Eli Lilly, Samsung, Micron Technology, and Walmart.\n\n`{\"format\": \"bot_tournament_question\", \"info\": {\"hash_id\": \"b229e182f0337b67\", \"sheet_id\": \"119\"}}`",
+      "resolution_criteria": "This question will resolve as the number of public companies with a market cap over USD $1 trillion on December 18, 2026.\nThe primary source for this question will be [CompaniesMarketCap](https://companiesmarketcap.com/).",
+      "fine_print": "This question will resolve based upon the number following US market closure at 4:00 PM ET.",
+      "open_time": "2026-11-20T15:00:00Z",
+      "close_time": "2026-11-20T18:00:00Z",
+      "scheduled_resolution_time": "2026-12-19T00:00:00Z",
+      "options": [
+        "10 or less",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16",
+        "17 or more"
+      ],
+      "deadline": "2026-11-20T18:00:00Z"
+    }
+  ],
   "skipped": [],
   "errors": [],
   "kept_up_to_date": {
