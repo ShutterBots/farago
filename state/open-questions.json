@@ -1,8 +1,24 @@
 {
-  "generated_at": "2026-11-20T08:42:36Z",
+  "generated_at": "2026-11-20T09:42:05Z",
   "mode": "tournament",
-  "request_id": "20261120T084207Z-3834",
-  "questions": [],
+  "request_id": "20261120T094143Z-5428",
+  "questions": [
+    {
+      "question_id": 46884,
+      "post_id": 46624,
+      "type": "binary",
+      "tournament": "Seasonal tournament",
+      "title": "Will the Belgian State and Engie conclude an agreement for Belgium's acquisition of Engie's nuclear activities before December 14, 2026?",
+      "url": "https://www.metaculus.com/questions/46624",
+      "background": "Euronext: [Engie and Belgium government to take more time to conclude deal over Engie's nuclear assets](https://live.euronext.com/en/financial-news/engie-and-belgium-government-take-more-time-conclude-deal-over-engies-nuclear-assets)\n\n`{\"format\": \"bot_tournament_question\", \"info\": {\"hash_id\": \"0ac6ba6aeae82164\", \"sheet_id\": \"132\"}}`",
+      "resolution_criteria": "This question resolves as **Yes** if, before December 14, 2026 (Central European Time), according to [credible sources](https://www.metaculus.com/faq/#definitions) the Belgian State and Engie S.A. and/or Electrabel formally agree to a Heads of Terms (HoT) for the Belgian State's acquisition of Engie's Belgian nuclear activities. The question resolves as **No** if no qualifying agreement has been concluded by the deadline. An extension alone does not count as a qualifying agreement.",
+      "fine_print": "An agreement counts even if it covers only part of the assets originally under discussion. An agreement may be variously described as Heads of Terms, a protocol of agreement, or a memorandum of understanding. An \"agreement in principle\" that has not been formalised, an approval by only one side, or statements that a deal is close or imminent do not count.",
+      "open_time": "2026-11-20T09:00:00Z",
+      "close_time": "2026-11-20T12:00:00Z",
+      "scheduled_resolution_time": "2026-12-14T00:00:00Z",
+      "deadline": "2026-11-20T12:00:00Z"
+    }
+  ],
   "skipped": [],
   "errors": [],
   "kept_up_to_date": {
