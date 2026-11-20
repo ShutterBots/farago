@@ -1,0 +1,23 @@
+{
+  "question_id": 46885,
+  "post_id": 46625,
+  "type": "multiple_choice",
+  "probabilities": {
+    "10 or less": 0.01,
+    "11": 0.01,
+    "12": 0.03,
+    "13": 0.14,
+    "14": 0.37,
+    "15": 0.32,
+    "16": 0.085,
+    "17 or more": 0.035
+  },
+  "reasoning": "**Question.** How many public companies will show a market cap above USD 1 trillion on CompaniesMarketCap after the US close on 18 December 2026, 20 trading days from now.\n\n**Starting point.** CompaniesMarketCap's ranking, read on 20 Nov with US prices from the 19 Nov close, shows 14 companies above $1T: Apple, Microsoft, Nvidia, Alphabet, Amazon, SpaceX, TSMC, Saudi Aramco, Broadcom, Meta, Tesla, Anthropic ($1.271T), Berkshire Hathaway ($1.215T) and Eli Lilly ($1.203T). Walmart sat at $999.96B and Samsung at $896.8B after a 7.3% drop in its latest session, followed by JPMorgan ($850B), AMD ($810B) and Micron ($781B). On 12 Nov (Revista Mercado, citing the same site) the count was also 14, with Samsung in and Anthropic not yet listed.\n\n**What moves the count.**\n- Walmart is on the line. It beat and raised its outlook on 19 Nov and was quoted at $130.22 (+3.3%) around 10:55 ET on 20 Nov (24/7 Wall St. quote page), about $1.03T. A 3% cushion against a typical four-week move of 6-7% gives roughly 60% that it finishes above.\n- Anthropic listed on 19 Nov at $83, closed at $97.17 and traded near $86 on its second morning (StockTitan, 24/7 Wall St., 20 Nov). On the site's share count it falls below $1T under about $76, some 8% below the IPO price. With the VIX near 31 and Nvidia down 35% in a month, I give it about 57% to hold.\n- Samsung needs about +12% (near 18%). AMD and Micron need +35% or more (about 5% each). Lilly, Berkshire, Tesla and Broadcom have cushions of 17-35%; I allow 1-3% each for a fall below the line.\n\n**Other outcomes.** 16 or more needs a sharp AI rebound that lifts Samsung while Walmart and Anthropic both hold. 13 or fewer needs both to slip, or a deeper rout that takes Tesla, Broadcom or Lilly under. No new listing above $1T is expected in time: OpenAI has only filed confidentially.\n\n**Forecast.** 14: 37%, 15: 32%, 13: 14%, 16: 8.5%, 17 or more: 3.5%, 12: 3%, 11: 1%, 10 or less: 1%.",
+  "posted_at": "2026-11-20T15:59:43Z",
+  "posted_as": "10 or less: 1.0%, 11: 1.0%, 12: 3.0%, 13: 14.0%, 14: 37.0%, 15: 32.0%, 16: 8.5%, 17 or more: 3.5%",
+  "question_title": "How many trillion dollar companies will there be on December 18, 2026?",
+  "question_url": "https://www.metaculus.com/questions/46625",
+  "tournaments": [
+    "fall-futureeval-2026"
+  ]
+}
