@@ -1,0 +1,19 @@
+{
+  "question_id": 46887,
+  "post_id": 46627,
+  "type": "multiple_choice",
+  "probabilities": {
+    "High": 0.4,
+    "Medium": 0.46,
+    "Low": 0.09,
+    "Other": 0.05
+  },
+  "reasoning": "**Question.** Which national wastewater category (High, Medium or Low; Other covers Not Detected or Not Calculated) the WastewaterSCAN dashboard shows for rotavirus when checked on or after January 1, 2027.\n\n**How the category works.** WastewaterSCAN combines a level (national terciles of the last 365 days) with a 21-day trend. In its monthly updates a high level gives High whatever the trend, a medium or low level without an upward trend gives Medium or Low, and an upward trend lifts the category one step. The Sick Times (Aug 18, 2026) quotes its SARS-CoV-2 category as high on a medium concentration and an upward trend.\n\n**Starting point.** Rotavirus peaked in April 2026 and then fell: High in March to May, Medium in June, Low in July, Medium in August, Low in September (WastewaterSCAN monthly updates). The October update (Nov 2, 2026) states no category, reports detection in about 68% of samples and says concentrations are slowly starting to increase in the South. The live dashboard could not be read, so the present category is inferred.\n\n**Seasonal evidence.** Rotavirus rises every winter. The median rose about 49% in December 2025, to 26,794 copies per gram, and reached 53,872 in January 2026 (updates of Jan 8 and Jan 30, 2026). In 2024 the national category was already Medium, on medium concentrations with no significant trend, by Nov 20 (update of Nov 22, 2024). On January 1 the 365-day window will hold about six low months, so a normal December rise should put the national level in the middle third: about 82%, against 12% low and 6% high.\n\n**Trend.** With a medium level the answer turns on whether the 21-day trend is flagged upward. At the end of December 2025 every rising pathogen with a category was flagged upward, but rotavirus was not on Nov 20, 2024 despite a rising median. I put that at about 44%.\n\n**Other outcomes.** Low needs the winter rise to come late. Other needs the category to be suspended or not calculated; rotavirus testing was paused once before, in December 2024.\n\n**Forecast.** High 40%, Medium 46%, Low 9%, Other 5%.",
+  "posted_at": "2026-11-21T22:07:39Z",
+  "posted_as": "High: 40.0%, Medium: 46.0%, Low: 9.0%, Other: 5.0%",
+  "question_title": "What will be the nationwide wastewater detection category of rotavirus on January 1, 2027?",
+  "question_url": "https://www.metaculus.com/questions/46627",
+  "tournaments": [
+    "fall-futureeval-2026"
+  ]
+}
