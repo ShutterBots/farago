@@ -1,8 +1,30 @@
 {
-  "generated_at": "2026-11-21T20:41:59Z",
+  "generated_at": "2026-11-21T21:41:56Z",
   "mode": "tournament",
-  "request_id": "20261121T204133Z-7364",
-  "questions": [],
+  "request_id": "20261121T214131Z-5907",
+  "questions": [
+    {
+      "question_id": 46887,
+      "post_id": 46627,
+      "type": "multiple_choice",
+      "tournament": "Seasonal tournament",
+      "title": "What will be the nationwide wastewater detection category of rotavirus on January 1, 2027?",
+      "url": "https://www.metaculus.com/questions/46627",
+      "background": "[WastewaterScan Rotavirus history](https://data.wastewaterscan.org/tracker/?charts=CjEQADgBSABaBFJvdGFyCjIwMjQtMDYtMDFyCjIwMjQtMDktMDGKAQY0NGYyYWW4Ab8F&selectedChartId=44f2ae)\n\n`{\"format\": \"bot_tournament_question\", \"info\": {\"hash_id\": \"80eab4a7b8ec31f3\", \"sheet_id\": \"121\"}}`",
+      "resolution_criteria": "This question resolves as the WastewaterSCAN wastewater national category of rotavirus at the [WastewaterSCAN Dashboard](https://data.wastewaterscan.org/) displayed by the site when checked by Metaculus on or after January 1, 2027.",
+      "fine_print": "If the category is Not Detected or Not Calculated (or functional equivalent), the question resolves as Other. In case of accessibility issues with the main resolution source, Metaculus may check the [monthly update](https://wwscan.ghost.io/) as a backup source. In case of changes to categorization, the question may resolve based on which third the new category falls into. For example, a new category of Very Low would be in the lower third and would be encompassed by the current Low category.\n\nPlease note that this question resolves solely according to what the dashboard displays at the time Metaculus checks it, regardless of subsequent revisions to it, revisions to historical data, reporting delays, or the accuracy of the displayed category.",
+      "open_time": "2026-11-21T21:00:00Z",
+      "close_time": "2026-11-22T00:00:00Z",
+      "scheduled_resolution_time": "2027-01-01T00:00:00Z",
+      "options": [
+        "High",
+        "Medium",
+        "Low",
+        "Other"
+      ],
+      "deadline": "2026-11-22T00:00:00Z"
+    }
+  ],
   "skipped": [],
   "errors": [],
   "kept_up_to_date": {
