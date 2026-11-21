@@ -1,8 +1,31 @@
 {
-  "generated_at": "2026-11-21T11:42:38Z",
+  "generated_at": "2026-11-21T12:42:16Z",
   "mode": "tournament",
-  "request_id": "20261121T114209Z-7408",
-  "questions": [],
+  "request_id": "20261121T124153Z-3794",
+  "questions": [
+    {
+      "question_id": 46886,
+      "post_id": 46626,
+      "type": "multiple_choice",
+      "tournament": "Seasonal tournament",
+      "title": "How many votes of no confidence will Thai PM Anutin Charnvirakul receive?",
+      "url": "https://www.metaculus.com/questions/46626",
+      "background": "ACLED: [Will Thailand’s no-confidence motion deepen the pressure on Anutin’s government?](https://acleddata.com/expert-comment/will-thailands-no-confidence-motion-deepen-pressure-anutins-government)\n\n`{\"format\": \"bot_tournament_question\", \"info\": {\"hash_id\": \"f3aebbd9371cbd28\", \"sheet_id\": \"125\"}}`",
+      "resolution_criteria": "This question resolves as the number of House of Representatives members voting for a motion of no confidence against Thailand's prime minister Anutin Charnvirakul, in the first such vote being held before December 23, 2026.",
+      "fine_print": "If no such vote takes place before December 23, 2026, the question resolves as **140 or fewer**",
+      "open_time": "2026-11-21T12:00:00Z",
+      "close_time": "2026-11-21T15:00:00Z",
+      "scheduled_resolution_time": "2026-12-23T00:00:00Z",
+      "options": [
+        "140 or fewer",
+        "141-144",
+        "145-148",
+        "149-154",
+        "155 or more"
+      ],
+      "deadline": "2026-11-21T15:00:00Z"
+    }
+  ],
   "skipped": [],
   "errors": [],
   "kept_up_to_date": {
