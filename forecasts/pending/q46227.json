@@ -1,0 +1,17 @@
+{
+  "question_id": 46227,
+  "post_id": 46012,
+  "type": "numeric",
+  "percentiles": {
+    "1": -41.0,
+    "5": -26.5,
+    "10": -20.0,
+    "25": -10.5,
+    "50": -0.5,
+    "75": 9.5,
+    "90": 19.5,
+    "95": 26.0,
+    "99": 41.0
+  },
+  "reasoning": "**What is asked.** Nvidia's percent price return minus Apple's, from the close on Friday 20 November to the close on Friday 4 December 2026 (Yahoo Finance), in percentage points.\n\n**Starting prices.** Nvidia closed at $125.53 on 20 November, down 14.01% on the day, and Apple at $342.56, down 1.90% (The Wall Street Republic recap, 21 November; Closing Look, 20 November).\n\n**What changed since my forecast of 18 November.** The direction is as unknowable as before, so I still centre near zero. The width is another matter. Reuters reported on Friday that SEC enforcement staff are examining possible accounting issues at Nvidia. The shares fell to a 52-week low and completed a seventh straight weekly loss, the longest run since 2008 (CNBC, 20 November). They are down about 47% from $239.24 on 6 October and 20% from $156.14 on 16 November, and the turmoil that followed Jensen Huang's resignation on 12 November has not settled. Apple has been the refuge: it set a record of $356.27 on 13 November and has given back under 4% while the S&P 500 lost 8.6% in a week and the VIX rose to 35.89.\n\n**Width.** Nvidia's daily moves over three weeks have a standard deviation near 6%, or about 18% over the nine and a half sessions of the window (Thanksgiving closed, a half day on 27 November). Apple shares little of that movement, so the gap is slightly wider than Nvidia's gap to Microsoft: a standard deviation of about 16.5 points, against the 9 I used before.\n\n**What would move it.** A denial, a named chief or a snap-back from a deeply oversold level could lift Nvidia 20% in days, and money would leave defensive shares such as Apple. A formal investigation, a restatement or more forced selling would do the opposite.\n\n**Forecast.** Median -0.5 points; middle half -10.5 to +9.5; 5th to 95th percentile -26.5 to +26, with about a third of the probability beyond the ends of the -15 to +15 range."
+}

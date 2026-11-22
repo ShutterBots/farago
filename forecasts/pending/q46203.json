@@ -1,0 +1,17 @@
+{
+  "question_id": 46203,
+  "post_id": 46007,
+  "type": "numeric",
+  "percentiles": {
+    "1": -29.0,
+    "5": -18.5,
+    "10": -14.3,
+    "25": -7.8,
+    "50": -0.8,
+    "75": 6.2,
+    "90": 12.8,
+    "95": 17.0,
+    "99": 28.0
+  },
+  "reasoning": "**What is asked.** The percent return of crude oil futures (Yahoo's CL=F) minus that of S&P 500 futures (ES), from the close on Friday 20 November to the close on Friday 4 December 2026, in percentage points.\n\n**The contract roll, now known.** December WTI stopped trading on Friday 20 November at $83.98, up 0.9%, and the January contract settled at $83.41, up 1.2% (Bloomberg via Rigzone, 20 November). Yahoo's series shows the expiring contract on its last day and the next one afterwards, so crude starts the window about 0.7% behind. On 18 November I had allowed 1.2 points for this.\n\n**What changed since my forecast of 18 November.** Oil fell for a third week: Brent settled at $92.57, down 3.4% on the week, and the IEA expects a surplus of about 2 million barrels a day this quarter. The bigger change is on the other leg. The S&P 500 lost 3.7% on Friday and 8.6% on the week, and the VIX closed at 35.89 (Closing Look, 20 November), so I now give ES a two-week standard deviation of about 7% in place of 4%.\n\n**Width.** Crude still moves about 2.7% a day, or 8.3% over nine and a half sessions (Thanksgiving closed, a half day on 27 November). With the two legs roughly uncorrelated, the gap has a standard deviation near 10.8 points.\n\n**Scheduled inside the window.** OPEC+ meets on Sunday 29 November to set 2027 quotas (FinanceFeeds, 21 November). Weekly inventories, core PCE on 25 November and the jobs report on 4 December.\n\n**What would move it.** The Gulf. The US struck Qeshm Island this week, Iran attacked tankers in Hormuz, and President Trump says he is not rushing a decision on further strikes (Rigzone, 20 November). An escalation would lift crude sharply while shares fell. A truce, or a rally in shares, would do the opposite.\n\n**Forecast.** Median -0.8 points; middle half -7.8 to +6.2; 5th to 95th percentile -18.5 to +17, with about 2% beyond each end of the -25 to +25 range."
+}

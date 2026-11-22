@@ -1,0 +1,17 @@
+{
+  "question_id": 46239,
+  "post_id": 46014,
+  "type": "discrete",
+  "percentiles": {
+    "1": 4.2,
+    "5": 4.46,
+    "10": 4.57,
+    "25": 4.75,
+    "50": 4.92,
+    "75": 5.09,
+    "90": 5.25,
+    "95": 5.35,
+    "99": 5.58
+  },
+  "reasoning": "**What is asked.** The 10-year Treasury constant-maturity yield (FRED series DGS10) for Friday 4 December 2026, in percent, as first published.\n\n**What changed since my forecast of 18 November.** The yield has dropped. I centred on 5.10%. It was 5.051% at 3 p.m. on Thursday 19 November (Dow Jones Data Talk via Morningstar) and ended Friday 20 November at 4.92% on Treasury's figures, down 12 basis points in a day, the largest fall since 22 October (Closing Look, 20 November). Trading Economics counted a fifth straight daily decline. The cause was a flight to safety: the S&P 500 lost 3.7% on Friday and 8.6% on the week, and the VIX closed at 35.89. The 2-year fell 13 points to 4.63%.\n\n**Starting point.** I centre on the latest value, 4.92%, with no drift. Nine and a half sessions remain (Thanksgiving closed, 27 November shortened). Daily moves have grown to 8 or 9 basis points, which gives a standard deviation of about 26 points by 4 December.\n\n**What is scheduled.** A 2-year note auction on 23 November, then core PCE with third-quarter GDP on 25 November; ISM surveys in the first days of December; the November jobs report on the morning of 4 December, so the resolving value includes that day's reaction. The Fed meets on 8-9 December. A quarter-point hike is still about 90% priced (Kalshi, 20 November) and Governor Waller has floated a half point.\n\n**What would move it.** More forced selling in shares would pull the yield toward 4.6% and could take the December hike out of the price. A relief rally would undo Friday's move and bring back 5.0% to 5.1%, and a strong jobs report could add to that.\n\n**Forecast.** Median 4.92%; middle half 4.75% to 5.09%; 5th to 95th percentile 4.46% to 5.35%."
+}

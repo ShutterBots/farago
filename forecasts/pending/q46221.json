@@ -1,0 +1,17 @@
+{
+  "question_id": 46221,
+  "post_id": 46011,
+  "type": "numeric",
+  "percentiles": {
+    "1": -7.2,
+    "5": -4.4,
+    "10": -3.35,
+    "25": -1.7,
+    "50": 0.0,
+    "75": 1.7,
+    "90": 3.35,
+    "95": 4.4,
+    "99": 7.2
+  },
+  "reasoning": "**What is asked.** The percent return of Nasdaq-100 futures (NQ) minus that of S&P 500 futures (ES), from the close on Friday 20 November to the close on Friday 4 December 2026 on Yahoo Finance, in percentage points. Both legs are December contracts, so no contract roll falls inside the window.\n\n**What changed since my forecast of 18 November.** The centre stays at zero: nobody reliably knows which index will do better over nine and a half sessions (Thanksgiving closed, a half day on 27 November). The width grows. On Friday 20 November the Nasdaq-100 fell 5.61% to 25,028.98 and the S&P 500 fell 3.70% to 6,910.39, a gap of 1.9 points in one day, after Reuters reported an SEC examination of Nvidia's accounting. Technology was the worst sector, down 7.3% (Closing Look, 20 November). On the week the Nasdaq Composite lost 10% against 8.6% for the S&P 500 (AP, 20 November). The VIX closed at 35.89, its highest since April 2025.\n\n**Width.** In ordinary times the daily gap has a standard deviation near 0.4 points, and I used 0.6 on 18 November. With the VIX near 36 and the selling centred on chips and AI, I now use about 0.85 a day, or roughly 2.6 points over the window. A second route gives the same figure: the Nasdaq-100 moves about 1.35 times as far as the S&P 500, and the S&P's own two-week standard deviation is about 7% at this level of the VIX.\n\n**Scheduled inside the window.** Core PCE and GDP on 25 November, ISM surveys, and the jobs report on 4 December. The Fed meets on 9 December with a rate hike about 90% priced (Kalshi).\n\n**What would move it.** A relief rally would favour NQ, the higher-beta index. More bad news on Nvidia or further forced selling in AI shares would favour ES.\n\n**Forecast.** Median 0.0 points; middle half -1.7 to +1.7; 5th to 95th percentile -4.4 to +4.4, with about 4% beyond each end of the -5 to +5 range."
+}
