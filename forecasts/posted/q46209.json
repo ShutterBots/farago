@@ -3,22 +3,28 @@
   "post_id": 46008,
   "type": "numeric",
   "percentiles": {
-    "1": -13.0,
-    "5": -8.5,
-    "10": -6.4,
-    "25": -3.2,
-    "50": 0.0,
-    "75": 3.2,
-    "90": 6.4,
-    "95": 8.5,
-    "99": 13.0
+    "1": -21.0,
+    "5": -13.5,
+    "10": -10.3,
+    "25": -5.2,
+    "50": 0.2,
+    "75": 5.6,
+    "90": 10.6,
+    "95": 13.8,
+    "99": 21.5
   },
-  "reasoning": "**What is asked.** The percent return of gold futures (GC) minus that of S&P 500 futures (ES), from the close on Friday 20 November to the close on Friday 4 December 2026 on Yahoo Finance, in percentage points.\n\n**Starting point.** The starting close has not happened yet, so I centre on zero: over nine and a half sessions (Thanksgiving closed, a half day on 27 November) nobody reliably knows which of the two will do better. Yahoo's gold series follows the nearest contract, which changes from November to December inside the window; both trade close to spot, so the roll adds almost nothing. In ordinary times each leg moves about 1% a day and they are nearly uncorrelated, which gives a two-week gap with a standard deviation of a little over 4 points.\n\n**Why I go wider now.** Both legs are unusually volatile. Gold futures closed at $3,851.90 on 17 November 2026 (Closing Look newsletter), the lowest since late September 2025, down 7% in a week and 7.9% in a month (Yahoo Finance, 17 November). On 10 November alone they ranged from $4,156 to $4,021 after a hot CPI report (CME Group). The S&P 500 closed at 7,340.53, a five-month low, with the VIX at 25.46. The common driver is the Fed: futures put a quarter-point hike on 9 December at about 95% (CME FedWatch, 17 November) and the 10-year yield is at 5.10%. Because rate fears hit gold and shares together, I assume a small positive correlation and a standard deviation for the gap of about 5.2 points.\n\n**Scheduled inside the window.** Inflation and ISM data, then the November jobs report on the morning of 4 December. The Fed decision comes after the window.\n\n**What would move it.** A flight to safety from shares, or an escalation in the Gulf, would favour gold. Stronger data and still higher yields, with a relief rally in shares, would favour ES.\n\n**Forecast.** Median 0.0 points; middle half -3.2 to +3.2; 5th to 95th percentile -8.5 to +8.5, with about 3.5% beyond each end of the -10 to +10 range.",
-  "posted_at": "2026-11-18T06:56:26Z",
-  "posted_as": "1%: -13, 5%: -8.5, 10%: -6.4, 25%: -3.2, 50%: 0, 75%: 3.2, 90%: 6.4, 95%: 8.5, 99%: 13",
+  "reasoning": "**What is asked.** The percent return of gold futures (GC) minus that of S&P 500 futures (ES), from the close on Friday 20 November to the close on Friday 4 December 2026 on Yahoo Finance, in percentage points.\n\n**What changed since my forecast of 18 November.** Both legs fell hard and both are far more volatile. Gold futures ended Friday 20 November near $3,515, down 4.63% on the day to a 14.5-month low (Closing Look, 20 November). They stood at $3,851.90 on 17 November, so they lost almost 9% in three sessions, and silver fell 7.4% on Friday alone. The S&P 500 closed at 6,910.39, down 3.7% on the day and 8.6% on the week, and the VIX closed at 35.89, its highest since April 2025. Gold is being sold with shares, not bought against them: a Fed rate hike on 9 December is about 90% priced (Kalshi) and the dollar has strengthened.\n\n**Starting point.** I centre on zero, plus about 0.2 points because Yahoo's gold series moves from the November to the December contract inside the window and the later month trades slightly higher.\n\n**Width.** Gold's daily moves now run near 2.5% to 3% and the S&P's near 2.3%. Over nine and a half sessions (Thanksgiving closed, a half day on 27 November) that is about 8.5% and 7%. Because the two have lately fallen together I assume a correlation of about 0.4, which gives the gap a standard deviation of roughly 8.3 points, against 5.2 in my earlier forecast.\n\n**Scheduled inside the window.** Core PCE and GDP on 25 November, ISM surveys, and the jobs report on 4 December.\n\n**What would move it.** A rebound in shares with yields rising again would favour ES. A turn to gold as a refuge, or a Fed that sounds less sure of a hike, would favour gold.\n\n**Forecast.** Median +0.2 points; middle half -5.2 to +5.6; 5th to 95th percentile -13.5 to +13.8, with about 11% beyond each end of the -10 to +10 range.",
+  "posted_at": "2026-11-22T03:01:06Z",
+  "posted_as": "1%: -21, 5%: -13.5, 10%: -10.3, 25%: -5.2, 50%: 0.2, 75%: 5.6, 90%: 10.6, 95%: 13.8, 99%: 21.5",
   "question_title": "How much will Gold Futures total price returns exceed S&P 500 Futures in these biweekly periods of Q4 2026? (Nov 23 - Dec 4)",
   "question_url": "https://www.metaculus.com/questions/46008",
   "tournaments": [
     "market-pulse-26q4"
+  ],
+  "earlier": [
+    {
+      "posted_at": "2026-11-18T06:56:26Z",
+      "posted_as": "1%: -13, 5%: -8.5, 10%: -6.4, 25%: -3.2, 50%: 0, 75%: 3.2, 90%: 6.4, 95%: 8.5, 99%: 13"
+    }
   ]
 }

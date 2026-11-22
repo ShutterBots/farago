@@ -3,22 +3,28 @@
   "post_id": 46013,
   "type": "numeric",
   "percentiles": {
-    "1": -22.0,
-    "5": -14.0,
-    "10": -10.5,
-    "25": -5.3,
-    "50": 0.0,
-    "75": 5.3,
-    "90": 10.5,
-    "95": 14.0,
-    "99": 22.0
+    "1": -40.0,
+    "5": -25.5,
+    "10": -19.5,
+    "25": -10.0,
+    "50": -0.5,
+    "75": 9.0,
+    "90": 19.0,
+    "95": 25.0,
+    "99": 40.0
   },
-  "reasoning": "**What is asked.** Nvidia's percent price return minus Microsoft's, from the close on Friday 20 November to the close on Friday 4 December 2026 (Yahoo Finance adjusted close), in percentage points.\n\n**Starting point.** Both returns start from a close that has not happened yet, so today's prices tell me about volatility, not direction. Nobody reliably knows which of two liquid mega-caps will do better over nine trading days, so I centre on zero.\n\n**Why the range is wide.** Nvidia is in an unusually turbulent stretch. It closed at $156.14 on 16 November 2026 (stockanalysis.com), down about 35% from $239.24 on 6 October, with daily moves of -9.3%, -4.3%, -5.5% and -4.1% inside two weeks. Jensen Huang resigned as CEO on 12 November; CFO Colette Kress is interim chief and the board is searching for a successor (Kiplinger, 17 November). Results on 17 November beat expectations (revenue $115.8bn against about $108.8bn expected, next-quarter guide $130bn) and the shares rose about 4% after hours. Microsoft has been jumpy too: +6.7% on 4 November, -3.6% the next day, $523.88 on 13 November.\n\nIn calmer times I estimate this two-week gap has a standard deviation of about 6 points. With Nvidia's daily swings roughly double their usual size and leadership headlines still coming, I use about 8.5. The window has nine sessions (Thanksgiving closed, a half day on 27 November) and includes the November jobs report, due on 4 December. The Fed meets after it.\n\n**What would move it.** A named successor, a return of Huang or findings from the board's investigation could move Nvidia 10% in a day either way. A broad relief rally would favour Nvidia, the higher-beta share. A further unwinding of AI positions would favour Microsoft.\n\n**Forecast.** Median 0.0 points; middle half -5.3 to +5.3; 5th to 95th percentile -14 to +14, with about 8% beyond the ends of the -15 to +15 range.",
-  "posted_at": "2026-11-18T06:37:08Z",
-  "posted_as": "1%: -22, 5%: -14, 10%: -10.5, 25%: -5.3, 50%: 0, 75%: 5.3, 90%: 10.5, 95%: 14, 99%: 22",
+  "reasoning": "**What is asked.** Nvidia's percent price return minus Microsoft's, from the close on Friday 20 November to the close on Friday 4 December 2026 (Yahoo Finance), in percentage points.\n\n**Starting prices.** Nvidia closed at $125.53 on 20 November, down 14.01% on the day, and Microsoft at $484.52, down 2.77% (The Wall Street Republic recap, 21 November; Closing Look, 20 November).\n\n**What changed since my forecast of 18 November.** The direction is as unknowable as before, so I still centre near zero. The width is another matter. Reuters reported on Friday that SEC enforcement staff are examining possible accounting issues at Nvidia. The shares fell to a 52-week low on about 600 million shares traded and completed a seventh straight weekly loss, the longest run since 2008 (CNBC, 20 November). They are down about 47% from $239.24 on 6 October and 20% from $156.14 on 16 November. The turmoil that followed Jensen Huang's resignation on 12 November has not settled (Investing.com, 20 November). The whole market is in the storm too: the S&P 500 lost 8.6% on the week and the VIX closed at 35.89.\n\n**Width.** Nvidia's daily moves over three weeks have a standard deviation near 6%, or about 18% over the nine and a half sessions of the window (Thanksgiving closed, a half day on 27 November). Microsoft moves with it only in part, so I put the gap's standard deviation at about 16 points, nearly double the 8.5 I used before.\n\n**What would move it.** A denial, a named chief or a snap-back from a deeply oversold level could lift Nvidia 20% in days. A formal investigation, a restatement or more forced selling could take as much off again. Core PCE on 25 November and the jobs report on 4 December matter less than the company's own news.\n\n**Forecast.** Median -0.5 points; middle half -10 to +9; 5th to 95th percentile -25.5 to +25, with about a third of the probability beyond the ends of the -15 to +15 range.",
+  "posted_at": "2026-11-22T03:01:06Z",
+  "posted_as": "1%: -40, 5%: -25.5, 10%: -19.5, 25%: -10, 50%: -0.5, 75%: 9, 90%: 19, 95%: 25, 99%: 40",
   "question_title": "How much will Nvidia's stock price returns exceed Microsoft's in these biweekly periods of Q4 2026? (Nov 23 - Dec 4)",
   "question_url": "https://www.metaculus.com/questions/46013",
   "tournaments": [
     "market-pulse-26q4"
+  ],
+  "earlier": [
+    {
+      "posted_at": "2026-11-18T06:37:08Z",
+      "posted_as": "1%: -22, 5%: -14, 10%: -10.5, 25%: -5.3, 50%: 0, 75%: 5.3, 90%: 10.5, 95%: 14, 99%: 22"
+    }
   ]
 }
