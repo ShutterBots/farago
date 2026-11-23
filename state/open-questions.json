@@ -1,31 +1,8 @@
 {
-  "generated_at": "2026-11-23T15:00:05Z",
+  "generated_at": "2026-11-23T15:07:41Z",
   "mode": "tournament",
   "request_id": "20261123T144134Z-6732",
-  "questions": [
-    {
-      "question_id": 46890,
-      "post_id": 46630,
-      "type": "multiple_choice",
-      "tournament": "Seasonal tournament",
-      "title": "How many Clade I Mpox cases will have been reported in the US before 2027?",
-      "url": "https://www.metaculus.com/questions/46630",
-      "background": "[Monkeypox or mpox](https://en.wikipedia.org/wiki/Mpox) is a virus which has two main strains: clade I and clade II. Clade I causes more severe infections and carries a higher mortality rate than clade II and has historically been confined to Central and West Africa. On August 14, 2024, the WHO [declared](https://en.wikipedia.org/wiki/Public_health_emergency_of_international_concern#Clade_I_mpox_\\(2024%E2%80%93present\\)) a Public Health Emergency of International Concern following a surge in clade I cases in the Democratic Republic of the Congo and a growing number of African countries.\n\nThe first confirmed case of clade I [mpox in the United States](https://www.cdc.gov/monkeypox/situation-summary/index.html) was identified on November 15, 2024, in a California resident who had recently traveled to an area experiencing a clade I outbreak. Since then, there have been 190 cases of clade I mpox in the United States, the majority in people who had recently traveled to affected regions of Central and Eastern Africa. However, three clade Ib cases with no recent travel history were confirmed in California in October 2025, suggesting local transmission. Beginning in Fall 2025, several countries in Western Europe also began reporting clade Ib cases among individuals with no documented history of international travel, likely related to intimate or sexual exposure among gay men.\n\n`{\"format\": \"bot_tournament_question\", \"info\": {\"hash_id\": \"fbbecddadf675fa1\", \"sheet_id\": \"122\"}}`",
-      "resolution_criteria": "This question resolves as the total number of Clade I Mpox cases reported in the US according to the latest report published by the [CDC](https://www.cdc.gov/monkeypox/situation-summary/index.html) before January 1, 2027.",
-      "fine_print": "If the CDC starts differentiating between suspected and confirmed cases, only confirmed cases will count for the purposes of this question.\n\nFor purposes of this question, a report of \"more than X\" is treated as X+1. For example, \"more than 190\" resolves as 191.",
-      "open_time": "2026-11-23T15:00:00Z",
-      "close_time": "2026-11-23T18:00:00Z",
-      "scheduled_resolution_time": "2027-01-01T00:00:00Z",
-      "options": [
-        "Under 210",
-        "210-245",
-        "246-295",
-        "296-370",
-        "Greater than 370"
-      ],
-      "deadline": "2026-11-23T18:00:00Z"
-    }
-  ],
+  "questions": [],
   "skipped": [],
   "errors": [],
   "kept_up_to_date": {
