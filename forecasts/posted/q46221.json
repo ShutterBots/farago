@@ -3,19 +3,19 @@
   "post_id": 46011,
   "type": "numeric",
   "percentiles": {
-    "1": -7.2,
-    "5": -4.4,
-    "10": -3.35,
-    "25": -1.7,
-    "50": 0.0,
-    "75": 1.7,
-    "90": 3.35,
-    "95": 4.4,
-    "99": 7.2
+    "1": -6.5,
+    "5": -3.7,
+    "10": -2.65,
+    "25": -1.0,
+    "50": 0.7,
+    "75": 2.4,
+    "90": 4.05,
+    "95": 5.1,
+    "99": 7.9
   },
-  "reasoning": "**What is asked.** The percent return of Nasdaq-100 futures (NQ) minus that of S&P 500 futures (ES), from the close on Friday 20 November to the close on Friday 4 December 2026 on Yahoo Finance, in percentage points. Both legs are December contracts, so no contract roll falls inside the window.\n\n**What changed since my forecast of 18 November.** The centre stays at zero: nobody reliably knows which index will do better over nine and a half sessions (Thanksgiving closed, a half day on 27 November). The width grows. On Friday 20 November the Nasdaq-100 fell 5.61% to 25,028.98 and the S&P 500 fell 3.70% to 6,910.39, a gap of 1.9 points in one day, after Reuters reported an SEC examination of Nvidia's accounting. Technology was the worst sector, down 7.3% (Closing Look, 20 November). On the week the Nasdaq Composite lost 10% against 8.6% for the S&P 500 (AP, 20 November). The VIX closed at 35.89, its highest since April 2025.\n\n**Width.** In ordinary times the daily gap has a standard deviation near 0.4 points, and I used 0.6 on 18 November. With the VIX near 36 and the selling centred on chips and AI, I now use about 0.85 a day, or roughly 2.6 points over the window. A second route gives the same figure: the Nasdaq-100 moves about 1.35 times as far as the S&P 500, and the S&P's own two-week standard deviation is about 7% at this level of the VIX.\n\n**Scheduled inside the window.** Core PCE and GDP on 25 November, ISM surveys, and the jobs report on 4 December. The Fed meets on 9 December with a rate hike about 90% priced (Kalshi).\n\n**What would move it.** A relief rally would favour NQ, the higher-beta index. More bad news on Nvidia or further forced selling in AI shares would favour ES.\n\n**Forecast.** Median 0.0 points; middle half -1.7 to +1.7; 5th to 95th percentile -4.4 to +4.4, with about 4% beyond each end of the -5 to +5 range.",
-  "posted_at": "2026-11-22T03:01:06Z",
-  "posted_as": "1%: -7.2, 5%: -4.4, 10%: -3.35, 25%: -1.7, 50%: 0, 75%: 1.7, 90%: 3.35, 95%: 4.4, 99%: 7.2",
+  "reasoning": "**What is asked.** The percent return of Nasdaq-100 futures (NQ) minus that of S&P 500 futures (ES), from the close on Friday 20 November to the close on Friday 4 December 2026 on Yahoo Finance, in percentage points. Both legs are December contracts, so no contract roll falls inside the window.\n\n**Starting point.** On Friday the Nasdaq-100 fell 5.61% to 25,029 and the S&P 500 fell 3.70% to 6,910 (Newsquawk, 22 November), with technology the worst sector.\n\n**What changed since my forecast of 22 November.** The window has in effect begun, because futures trade on Sunday evening. Nasdaq-100 futures were up 2.6% and S&P 500 futures 1.9% at 9:07 a.m. Tokyo on 23 November (Bloomberg); Fortune had them at +2.89% and +2.1% at 7:13 p.m. ET on 22 November. The gap already stands near +0.7 points. From here nobody reliably knows which index will do better, so I centre on what is in hand: +0.7 in place of zero.\n\n**Width.** Unchanged at a standard deviation of about 2.6 points over nine and a half sessions (Thanksgiving closed, a half day on 27 November). The VIX closed at 35.89 on Friday and the selling has centred on chips and AI, so the daily gap runs near 0.85 points against 0.4 in ordinary times.\n\n**Scheduled inside the window.** The October PCE price index on 25 November, ISM surveys, and the jobs report on 4 December. The Fed decides on 9 December with a rate hike still largely priced.\n\n**What would move it.** A rebound that holds would favour NQ, the higher-beta index. It can also fade: the Kospi opened 2.6% lower and Euro Stoxx 50 futures are down 2.8%. More bad news on Nvidia, where the SEC inquiry is at an early stage (AFP, 22 November), or further forced selling in AI shares would favour ES.\n\n**Forecast.** Median +0.7 points; middle half -1.0 to +2.4; 5th to 95th percentile -3.7 to +5.1, with about 5% above +5 and 3% below -5.",
+  "posted_at": "2026-11-23T01:20:31Z",
+  "posted_as": "1%: -6.5, 5%: -3.7, 10%: -2.65, 25%: -1, 50%: 0.7, 75%: 2.4, 90%: 4.05, 95%: 5.1, 99%: 7.9",
   "question_title": "How much will Nasdaq-100 Futures total price returns exceed S&P 500 Futures in these biweekly periods of Q4 2026? (Nov 23 - Dec 4)",
   "question_url": "https://www.metaculus.com/questions/46011",
   "tournaments": [
@@ -25,6 +25,10 @@
     {
       "posted_at": "2026-11-18T06:54:30Z",
       "posted_as": "1%: -4.9, 5%: -3.1, 10%: -2.35, 25%: -1.15, 50%: 0, 75%: 1.15, 90%: 2.35, 95%: 3.1, 99%: 4.9"
+    },
+    {
+      "posted_at": "2026-11-22T03:01:06Z",
+      "posted_as": "1%: -7.2, 5%: -4.4, 10%: -3.35, 25%: -1.7, 50%: 0, 75%: 1.7, 90%: 3.35, 95%: 4.4, 99%: 7.2"
     }
   ]
 }

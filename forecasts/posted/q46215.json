@@ -3,19 +3,19 @@
   "post_id": 46010,
   "type": "discrete",
   "percentiles": {
-    "1": 3.15,
-    "5": 3.28,
-    "10": 3.36,
-    "25": 3.52,
-    "50": 3.7,
-    "75": 3.98,
-    "90": 4.4,
-    "95": 4.75,
-    "99": 5.6
+    "1": 3.08,
+    "5": 3.21,
+    "10": 3.29,
+    "25": 3.45,
+    "50": 3.63,
+    "75": 3.91,
+    "90": 4.33,
+    "95": 4.68,
+    "99": 5.53
   },
-  "reasoning": "**What is asked.** The ICE BofA US High Yield option-adjusted spread for Friday 4 December 2026, in percentage points, as first published on FRED (series BAMLH0A0HYM2).\n\n**What changed since my forecast of 18 November.** The spread has broken out of its range. FRED shows 3.34 for 16 November, 3.43 for the 17th, 3.47 for the 18th and 3.52 for Thursday 19 November (page updated 20 November). That is above the 3.48 high of 5 November, which I had treated as the top of the band. Friday's value is not published yet. On Friday the S&P 500 fell 3.7%, the VIX closed at 35.89 and the high-yield fund HYG lost 0.26% while 2- to 10-year Treasury yields fell 12 to 13 basis points (Closing Look, 20 November). A lower price against a strong Treasury rally points to about 20 points of widening, so I take Friday at roughly 3.74, give or take 8.\n\n**Starting point and width.** I centre just under that estimate. After past equity routs the spread two weeks later was tighter about as often as wider, but the wide outcomes were far larger (2010, 2011, 2020), so the distribution leans to the upside. Ten trading days at 10 to 12 points a day give a standard deviation near 35 points.\n\n**What is scheduled.** Core PCE and GDP on 25 November, a holiday-thinned week, the jobs report on 4 December itself, and a Fed meeting on 9 December with a rate hike about 90% priced (Kalshi).\n\n**What would move it.** A firm rebound in shares would bring the spread back toward 3.4, as in August 2024. More forced selling, or stress among AI-linked borrowers after the Nvidia accounting report, would push it past 4.\n\n**Forecast.** Median 3.70; middle half 3.52 to 3.98; 5th to 95th percentile 3.28 to 4.75, with about 46% above the 3.74 top of the range.",
-  "posted_at": "2026-11-22T03:01:06Z",
-  "posted_as": "1%: 3.15, 5%: 3.28, 10%: 3.36, 25%: 3.52, 50%: 3.7, 75%: 3.98, 90%: 4.4, 95%: 4.75, 99%: 5.6",
+  "reasoning": "**What is asked.** The ICE BofA US High Yield option-adjusted spread for Friday 4 December 2026, in percentage points, as first published on FRED (series BAMLH0A0HYM2).\n\n**Starting point.** FRED's latest value is 3.52 for Thursday 19 November, up from 3.34 on the 16th. Friday's value comes out on Monday. On Friday the S&P 500 fell 3.7% and the high-yield fund HYG lost 0.26% while Treasury yields fell 12 to 13 basis points, which points to about 20 points of widening. I take Friday at roughly 3.74, give or take 8.\n\n**What changed since my forecast of 22 November.** The weekend brought a bounce. On Sunday evening S&P 500 futures were up 1.9% to 2.1% and Nasdaq-100 futures 2.6% to 2.9% (Bloomberg at 9:07 a.m. Tokyo on 23 November; Fortune, 22 November, 7:13 p.m. ET). Treasury Secretary Bessent said on Sunday that the Fed risks a policy mistake if it overtightens, and traders pared bets on a December hike. If the bounce lasts through Monday, the spread gives back 8 to 10 points of Friday's move. It may not last: the Kospi opened 2.6% lower and Euro Stoxx 50 futures are down 2.8%. I move the centre from 3.70 to 3.63.\n\n**Width.** After past equity routs the spread two weeks later was tighter about as often as wider, but the wide outcomes were far larger (2010, 2011, 2020), so the distribution leans upward. Ten trading days at 10 to 12 points a day give a standard deviation near 35 points.\n\n**What is scheduled.** The October PCE price index on 25 November, the jobs report on 4 December itself, and a Fed decision on 9 December with a hike still largely priced.\n\n**What would move it.** A rebound in shares that holds would bring the spread back toward 3.4, as in August 2024. More forced selling, or stress among AI-linked borrowers as the SEC inquiry into Nvidia's accounts proceeds, would push it past 4.\n\n**Forecast.** Median 3.63; middle half 3.45 to 3.91; 5th to 95th percentile 3.21 to 4.68, with about 40% above the 3.74 top of the range.",
+  "posted_at": "2026-11-23T01:20:31Z",
+  "posted_as": "1%: 3.08, 5%: 3.21, 10%: 3.29, 25%: 3.45, 50%: 3.63, 75%: 3.91, 90%: 4.33, 95%: 4.68, 99%: 5.53",
   "question_title": "What will be the ending value of the ICE BofA US High Yield Option-Adjusted Spread for these biweekly periods of Q4 2026? (Nov 23 - Dec 4)",
   "question_url": "https://www.metaculus.com/questions/46010",
   "tournaments": [
@@ -25,6 +25,10 @@
     {
       "posted_at": "2026-11-18T06:55:31Z",
       "posted_as": "1%: 2.92, 5%: 3.04, 10%: 3.11, 25%: 3.23, 50%: 3.36, 75%: 3.49, 90%: 3.68, 95%: 3.83, 99%: 4.3"
+    },
+    {
+      "posted_at": "2026-11-22T03:01:06Z",
+      "posted_as": "1%: 3.15, 5%: 3.28, 10%: 3.36, 25%: 3.52, 50%: 3.7, 75%: 3.98, 90%: 4.4, 95%: 4.75, 99%: 5.6"
     }
   ]
 }
