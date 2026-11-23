@@ -1,0 +1,17 @@
+{
+  "question_id": 46888,
+  "post_id": 46628,
+  "type": "numeric",
+  "percentiles": {
+    "1": 71000000.0,
+    "5": 73000000.0,
+    "10": 73800000.0,
+    "25": 74750000.0,
+    "50": 75600000.0,
+    "75": 76400000.0,
+    "90": 77100000.0,
+    "95": 77550000.0,
+    "99": 78600000.0
+  },
+  "reasoning": "**Question.** The sum of TSA's daily checkpoint counts for 1-31 December 2026, as published on tsa.gov. It resolves in early January 2027.\n\n**Starting point.** December 2025 totalled 77,421,277 (TSA daily counts summed by month, DWU Consulting TSA Checkpoint Report, 15 Nov 2026). The calendar is slightly less favourable this year. 1 December 2025 was the Monday after Thanksgiving (2,893,451 screened); this year that return traffic falls in November. In exchange, Christmas on a Friday adds one more pre-Christmas travel day, worth about 2.6 million. Like-for-like baseline: about 77.1 million.\n\n**Trend.** 2026 volumes have been below 2025 for six straight months: July -2.1%, August -4.4%, September -2.0%, October -1.9% (same report); October was -1.7% on a same-weekday basis (FlyingOver, 14 Nov 2026). Early November looks nearly flat only because it is compared with the shutdown-hit November 2025. Thanksgiving bookings ran 1.6% behind last year in late October (Cirium, via AP, 17 Nov 2026) and AAA expects 0.2% fewer flyers. Fares are roughly 20% higher, jet fuel set a record in October, Spirit stopped flying in May, and United and American have trimmed December schedules (Cirium: about 3% of domestic seats removed for 25 Nov-31 Dec). I assume December runs about 2% below last year like for like, somewhat better in the capacity-bound holiday weeks than in the first half of the month.\n\n**Estimate.** 77.1 million x 0.98 = about 75.6 million.\n\n**What would give another outcome.** Beating last year's 77.4 million needs demand to return to growth despite record fares; I put that near 6%. A total under 74 million needs an August-sized drop of 4% or more, a major Christmas-week storm, another air-traffic-control outage like the mid-November ground stop, or a resolution that sums the month before the last day is posted. Federal funding lapses on 11 December, but earlier shutdowns barely dented volumes in their first weeks.\n\n**Forecast.** Median 75.6 million passengers; 5th to 95th percentile 73.0 to 77.55 million."
+}
