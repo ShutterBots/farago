@@ -1,8 +1,24 @@
 {
-  "generated_at": "2026-11-23T13:42:26Z",
+  "generated_at": "2026-11-23T14:42:00Z",
   "mode": "tournament",
-  "request_id": "20261123T134158Z-2601",
-  "questions": [],
+  "request_id": "20261123T144134Z-6732",
+  "questions": [
+    {
+      "question_id": 46982,
+      "post_id": 46717,
+      "type": "binary",
+      "tournament": "Seasonal tournament",
+      "title": "Will any of these high-ranking U.S. officials leave office before January 1, 2027?",
+      "url": "https://www.metaculus.com/questions/46717",
+      "background": "On Tuesday November 3rd, 2026, Democrats [won](https://www.cbsnews.com/news/2026-midterm-election-results-where-democrats-won/) a [wave](https://www.newsweek.com/democrats-win-biggest-midterm-vote-share-since-watergate-12715915) midterm election, getting 56.1% of the overall vote. This resulted in at least 55 (potentially 56) out of 100 U.S. Senate seats in Democratic hands as well as at least 254 out of 435 of House seats. Of the 24 positions listed in the question, 22 are subject to approval by the Senate, while approval of a new vice president would require a majority vote of both houses. The new Congress does not take power until noon Eastern on January 3, 2026, and until then, Republicans hold both houses, including a 6-vote majority in the Senate. In the wake of the election, White House Chief of Staff Susie Wiles' departure was announced on Friday November 6th, and she was [replaced](https://apnews.com/article/susie-wiles-trump-miller-midterms-95690fe076f6bb8cfe2bf77435a1910d) by her deputy, Stephen Miller.\n\nIn recent elections in which the U.S. president's party lost power in the midterms, the Nov. 16th - Jan 1st periods went as follows:\n\n* 1986: President Ronald Reagan's party loses control of the Senate, but there are no departures in the time period.\n* 1994: President Bill Clinton's party loses control, and Lloyd Bentsen, the Secretary of the Treasury, departs on December 22nd.\n* 2006: President George W. Bush's party loses control, and Donald Rumsfeld, the Secretary of Defense, departs on December 18th.&#x20;\n* 2014: President Barack Obama's party loses control, and there are no departures in the time period. (His Defense Secretary, Chuck Hagel, [announced](https://www.war.gov/News/News-Stories/Article/Article/603711/president-announces-hagels-resignation-as-defense-secretary/) his resignation on November 24th, but he remained in his position \"until a successor is nominated and confirmed,\" which was not until February 17, 2014; thus, a question at the time would have resolved as No.)\n\n`{\"format\": \"metac_reveal_and_close_in_period\", \"info\": {\"post_id\": 46660, \"question_id\": 46918}}`",
+      "resolution_criteria": "This question resolves as **Yes** if, after November 16, 2026 and before January 1, 2027, any of these high-ranking officials of the U.S. government leaves office or announces that they will leave office:&#x20;\n\n* President\n* Vice President\n* Secretary of State\n* Secretary of the Treasury\n* Secretary of Defense\n* Attorney General\n* Secretary of the Interior\n* Secretary of Agriculture\n* Secretary of Commerce\n* Secretary of Labor\n* Secretary of Health and Human Services\n* Secretary of Housing and Urban Development\n* Secretary of Transportation\n* Secretary of Energy\n* Secretary of Education\n* Secretary of Veterans Affairs\n* Secretary of Homeland Security\n* Administrator of the Environmental Protection Agency\n* Director of the Office of Management and Budget\n* Director of National Intelligence\n* Director of the Central Intelligence Agency\n* United States Trade Representative\n* Administrator of the Small Business Administration\n* White House Chief of Staff",
+      "fine_print": "To qualify, an announcement that an individual will leave office without immediate effect must include a set date or period, and that date or period must end before January 1, 2027. In the event an announcement specifies that an individual will leave office upon confirmation of a successor, the question qualifies only if that event occurs before January 1, 2027.\n\nIf an individual leaves their position due to being nominated for another listed position (e.g., in a cabinet reshuffle), that will count.\n\n***\nThis question's information (resolution criteria, fine print, background info, etc) is synced with an [original identical question](https://www.metaculus.com/questions/46660) which opened on 2026-11-16 18:00:00.",
+      "open_time": "2026-11-23T14:00:00Z",
+      "close_time": "2026-11-23T17:00:00Z",
+      "scheduled_resolution_time": "2026-12-16T15:39:45Z",
+      "deadline": "2026-11-23T17:00:00Z"
+    }
+  ],
   "skipped": [],
   "errors": [],
   "kept_up_to_date": {
