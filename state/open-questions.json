@@ -1,24 +1,8 @@
 {
-  "generated_at": "2026-11-23T06:42:30Z",
+  "generated_at": "2026-11-23T06:57:47Z",
   "mode": "tournament",
   "request_id": "20261123T064157Z-1777",
-  "questions": [
-    {
-      "question_id": 46889,
-      "post_id": 46629,
-      "type": "binary",
-      "tournament": "Seasonal tournament",
-      "title": "Will any of these AI companies (Lovable, DeepSeek, or Perplexity) have a funding round in December 2026?",
-      "url": "https://www.metaculus.com/questions/46629",
-      "background": "New York Times: [A.I. Companies Shatter Fund-Raising Records, as Boom Accelerates](https://www.nytimes.com/2026/04/01/technology/ai-companies-fund-raising-records.html) \"OpenAI, Anthropic, Waymo and other artificial intelligence companies shattered fund-raising records in the first three months of the year with a $297 billion haul, according to data from Crunchbase, which tracks private investment.\"\n\n`{\"format\": \"bot_tournament_question\", \"info\": {\"hash_id\": \"fe9541c9b7b2a510\", \"sheet_id\": \"120\"}}`",
-      "resolution_criteria": "This question resolves as **Yes** if any of these companies has a funding round listed by TracXn with a date in December 2026: [Lovable](https://tracxn.com/d/companies/lovable/__fO6WUvzcx5q3814ietMd3kzGlRirsatzsTnpxmzLuMI/funding-and-investors),  [DeepSeek](https://tracxn.com/d/companies/deepseek/__1GrZ3pgoi2O-9tMSfF9ka6Sjybc1lgSSZ_qQqo5k2vE/funding-and-investors), or [Perplexity](https://tracxn.com/d/companies/perplexity/__V2BE-5ihMWJ1hNb2_u1W7Gry25JzPFCBg-iNWi94XI8/funding-and-investors).",
-      "fine_print": "No other resolution source will be used in resolving this question.",
-      "open_time": "2026-11-23T06:00:00Z",
-      "close_time": "2026-11-23T09:00:00Z",
-      "scheduled_resolution_time": "2027-01-01T00:00:00Z",
-      "deadline": "2026-11-23T09:00:00Z"
-    }
-  ],
+  "questions": [],
   "skipped": [],
   "errors": [],
   "kept_up_to_date": {
