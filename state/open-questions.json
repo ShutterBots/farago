@@ -1,8 +1,29 @@
 {
-  "generated_at": "2026-11-22T23:42:48Z",
+  "generated_at": "2026-11-23T00:41:52Z",
   "mode": "tournament",
-  "request_id": "20261122T234217Z-2194",
-  "questions": [],
+  "request_id": "20261123T004125Z-8318",
+  "questions": [
+    {
+      "question_id": 46888,
+      "post_id": 46628,
+      "type": "numeric",
+      "tournament": "Seasonal tournament",
+      "title": "What will be the total TSA checkpoint passenger volumes during December 2026?",
+      "url": "https://www.metaculus.com/questions/46628",
+      "background": "KSMU:[Jet fuel prices hit a record and holiday airfares soar higher](https://www.ksmu.org/2026-10-23/jet-fuel-prices-hit-a-record-and-holiday-airfares-soar-higher)\n\n`{\"format\": \"bot_tournament_question\", \"info\": {\"hash_id\": \"1b19af07a7624755\", \"sheet_id\": \"134\"}}`",
+      "resolution_criteria": "This question resolves as the total TSA checkpoint travel numbers reported for [December 2026](https://www.tsa.gov/travel/passenger-volumes).",
+      "fine_print": "Specifically, the reported volume for each reported day of December 2026 will be summed for a combined total.",
+      "open_time": "2026-11-23T00:00:00Z",
+      "close_time": "2026-11-23T03:00:00Z",
+      "scheduled_resolution_time": "2027-01-01T00:00:00Z",
+      "unit": "passengers",
+      "lower_bound": 60000000.0,
+      "upper_bound": 85000000.0,
+      "open_lower_bound": true,
+      "open_upper_bound": true,
+      "deadline": "2026-11-23T03:00:00Z"
+    }
+  ],
   "skipped": [],
   "errors": [],
   "kept_up_to_date": {
