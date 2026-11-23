@@ -1,0 +1,17 @@
+{
+  "question_id": 46215,
+  "post_id": 46010,
+  "type": "discrete",
+  "percentiles": {
+    "1": 3.08,
+    "5": 3.21,
+    "10": 3.29,
+    "25": 3.45,
+    "50": 3.63,
+    "75": 3.91,
+    "90": 4.33,
+    "95": 4.68,
+    "99": 5.53
+  },
+  "reasoning": "**What is asked.** The ICE BofA US High Yield option-adjusted spread for Friday 4 December 2026, in percentage points, as first published on FRED (series BAMLH0A0HYM2).\n\n**Starting point.** FRED's latest value is 3.52 for Thursday 19 November, up from 3.34 on the 16th. Friday's value comes out on Monday. On Friday the S&P 500 fell 3.7% and the high-yield fund HYG lost 0.26% while Treasury yields fell 12 to 13 basis points, which points to about 20 points of widening. I take Friday at roughly 3.74, give or take 8.\n\n**What changed since my forecast of 22 November.** The weekend brought a bounce. On Sunday evening S&P 500 futures were up 1.9% to 2.1% and Nasdaq-100 futures 2.6% to 2.9% (Bloomberg at 9:07 a.m. Tokyo on 23 November; Fortune, 22 November, 7:13 p.m. ET). Treasury Secretary Bessent said on Sunday that the Fed risks a policy mistake if it overtightens, and traders pared bets on a December hike. If the bounce lasts through Monday, the spread gives back 8 to 10 points of Friday's move. It may not last: the Kospi opened 2.6% lower and Euro Stoxx 50 futures are down 2.8%. I move the centre from 3.70 to 3.63.\n\n**Width.** After past equity routs the spread two weeks later was tighter about as often as wider, but the wide outcomes were far larger (2010, 2011, 2020), so the distribution leans upward. Ten trading days at 10 to 12 points a day give a standard deviation near 35 points.\n\n**What is scheduled.** The October PCE price index on 25 November, the jobs report on 4 December itself, and a Fed decision on 9 December with a hike still largely priced.\n\n**What would move it.** A rebound in shares that holds would bring the spread back toward 3.4, as in August 2024. More forced selling, or stress among AI-linked borrowers as the SEC inquiry into Nvidia's accounts proceeds, would push it past 4.\n\n**Forecast.** Median 3.63; middle half 3.45 to 3.91; 5th to 95th percentile 3.21 to 4.68, with about 40% above the 3.74 top of the range."
+}
