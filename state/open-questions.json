@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-11-23T03:42:22Z",
+  "generated_at": "2026-11-23T04:42:04Z",
   "mode": "tournament",
-  "request_id": "20261123T034156Z-6439",
+  "request_id": "20261123T044133Z-7305",
   "questions": [],
   "skipped": [],
   "errors": [],
   "kept_up_to_date": {
     "listed_now": 0,
-    "up_to_date": 8,
+    "up_to_date": 0,
     "past_their_scoring_time": 0,
     "held_for_a_later_run": 0
   }
