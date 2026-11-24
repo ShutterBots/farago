@@ -1,24 +1,8 @@
 {
-  "generated_at": "2026-11-24T12:42:07Z",
+  "generated_at": "2026-11-24T12:57:35Z",
   "mode": "tournament",
   "request_id": "20261124T124141Z-1321",
-  "questions": [
-    {
-      "question_id": 46892,
-      "post_id": 46632,
-      "type": "binary",
-      "tournament": "Seasonal tournament",
-      "title": "Will a US governor, congressperson or cabinet member formally declare a 2028 presidential run before 2027?",
-      "url": "https://www.metaculus.com/questions/46632",
-      "background": "USAToday:[Potential 2028 frontrunners rise to top of new primary poll](https://www.usatoday.com/story/news/politics/2026/10/30/new-harvard-harrisx-2028-primary-poll-shows-clear-frontrunners/92498623007/)\n\n`{\"format\": \"bot_tournament_question\", \"info\": {\"hash_id\": \"4331abfcf6af6f2f\", \"sheet_id\": \"136\"}}`",
-      "resolution_criteria": "This question will resolve as Yes if a sitting governor, senator, house member, or cabinet member files an FEC Form 2 declaring their candidacy for the 2028 Presidential Election before 2027.",
-      "fine_print": "An individual will count even if they have lost an election for their office so long as they are still in office at the time of filing.\n\nIndividuals who have won an election but have not yet taken office will not count.\n\nA cabinet member will only count if they are a member at the time of filing.\n\nThis question refers only to federal House and Senate members, not state legislatures.",
-      "open_time": "2026-11-24T12:00:00Z",
-      "close_time": "2026-11-24T15:00:00Z",
-      "scheduled_resolution_time": "2027-01-01T00:00:00Z",
-      "deadline": "2026-11-24T15:00:00Z"
-    }
-  ],
+  "questions": [],
   "skipped": [],
   "errors": [],
   "kept_up_to_date": {

@@ -1,0 +1,14 @@
+{
+  "question_id": 46892,
+  "post_id": 46632,
+  "type": "binary",
+  "probability": 0.31,
+  "reasoning": "**Question.** Yes if a sitting governor, US senator, US House member or cabinet member files an FEC Form 2 for the 2028 presidential election before 1 January 2027. About five weeks remain.\n\n**Starting point.** No sitting official has declared or filed: the only filers the trackers list are private citizens (2028tracker, updated 24 November; NBC, 5 November: \"No candidate has yet entered the field\"). In this late-November-to-New-Year window Elizabeth Warren registered an exploratory committee on 31 December 2018, while nobody in office filed ahead of 2016 or 2024 (ElectionsUSA, 8 November). Further back, as I recall, senators did so in December 1998, 2002 and 2006. That is roughly half of all cycles and one in four of the recent ones.\n\n**Recent evidence.**\n- Andy Beshear is the likeliest early mover. CNN reported in October that he had discussed launching shortly after the Democratic Governors Association's December meeting, when his chairmanship ends; his former campaign manager denied it, and around 10 November Beshear said he would talk with his family \"sometime later\" (TheGrio). Polymarket priced him near 22% to announce before 2027 on 24 November.\n- Most others point to 2027: Newsom will decide \"by early January\" (12 November), Ro Khanna \"after the holidays\" (NBC, 5 November), JD Vance \"sometime next year\" (CNBC, 17 November), Whitmer after leaving office. Mark Kelly and Ocasio-Cortez (6% and 9% on Polymarket) and retiring Rep. Don Bacon are undecided with no dates.\n\n**Combining.** I give Beshear about 17% to file in time, and all other sitting officials together about the same: Newsom before he leaves office in early January, Kelly, Ocasio-Cortez, Khanna, Bacon, Rand Paul, or a surprise entrant. Announcement markets run high for long shots, so I shade them. An exploratory committee that files a Form 2 would count here, while a launch in the last days of December could miss the paperwork.\n\n**What would make it Yes.** Beshear, or another officeholder who wants to be first, launching or registering an exploratory committee in December, as Warren did in 2018. No needs only the usual pattern of January and later launches.\n\n**Forecast: 31%.**",
+  "posted_at": "2026-11-24T12:57:17Z",
+  "posted_as": "31.0%",
+  "question_title": "Will a US governor, congressperson or cabinet member formally declare a 2028 presidential run before 2027?",
+  "question_url": "https://www.metaculus.com/questions/46632",
+  "tournaments": [
+    "fall-futureeval-2026"
+  ]
+}
