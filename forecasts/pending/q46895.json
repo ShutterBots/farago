@@ -1,0 +1,33 @@
+{
+  "question_id": 46895,
+  "post_id": 46635,
+  "type": "numeric",
+  "percentiles": {
+    "0.5": 6.335,
+    "1": 6.467,
+    "2.5": 6.635,
+    "5": 6.751,
+    "10": 6.863,
+    "15": 6.932,
+    "20": 6.985,
+    "25": 7.029,
+    "30": 7.068,
+    "35": 7.104,
+    "40": 7.138,
+    "45": 7.17,
+    "50": 7.202,
+    "55": 7.234,
+    "60": 7.267,
+    "65": 7.301,
+    "70": 7.337,
+    "75": 7.376,
+    "80": 7.421,
+    "85": 7.475,
+    "90": 7.546,
+    "95": 7.663,
+    "97.5": 7.787,
+    "99": 7.968,
+    "99.5": 8.103
+  },
+  "reasoning": "**What is asked.** Freddie Mac's Primary Mortgage Market Survey (PMMS) weekly average for the 30-year fixed-rate mortgage in the release dated December 31, 2026. Freddie Mac's publication calendar shows that release covering applications from December 24 to 30, five weeks from now.\n\n**Starting point.** The latest PMMS, dated November 19, was 7.28%, up from 7.11%; the 52-week range is 5.98% to 7.40%. That print covered November 12-18, before bonds rallied. Since then the 10-year Treasury yield has fallen from 5.07% (Nov 18, FRED) to about 4.90% (Nov 24, CNBC) as the AI-led stock selloff moved money into bonds, and Mortgage News Daily's daily 30-year index fell from 7.46% to 7.32%. In the three steadier weeks before, PMMS ran about 0.10 points below that index, so today's market corresponds to a PMMS near 7.20%. That is my centre. I see no specific reason for drift: the December Fed hike is already priced.\n\n**How far it can move.** Since 2013 the five-week change in PMMS has had a standard deviation of 0.26 points, and 0.29 when the rate was above 6.5%. Recent daily moves in the 10-year yield, about 6 basis points, scale to roughly 0.28 over the 22 or so trading days left. From the Thanksgiving-week print to the year's last print, the change since 2013 has ranged from -0.61 (2023) to +0.29 (2016).\n\n**What is scheduled.** October PCE inflation on November 25, the November jobs and CPI reports, and the Fed meeting of December 8-9, where a quarter-point hike to 4.00%-4.25% is almost fully priced (CME FedWatch, cited by CNBC on Nov 24). October CPI ran above expectations and the war with Iran keeps oil high, which pushes yields up; a deeper equity rout, or a hike with softer guidance, would push them down.\n\n**The other outcomes.** A print below 7.0% needs the 10-year yield near 4.7% or lower. A print above 7.40%, a new high for the year, needs yields back above 5.1%, where they stood in mid-November.\n\n**Forecast.** Median 7.20%; 50% interval 7.03% to 7.38%; 90% interval 6.75% to 7.66%; about a 1% chance below 6.5%."
+}
