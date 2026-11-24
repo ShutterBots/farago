@@ -1,29 +1,8 @@
 {
-  "generated_at": "2026-11-24T21:42:02Z",
+  "generated_at": "2026-11-24T21:52:26Z",
   "mode": "tournament",
   "request_id": "20261124T214140Z-7306",
-  "questions": [
-    {
-      "question_id": 46895,
-      "post_id": 46635,
-      "type": "numeric",
-      "tournament": "Seasonal tournament",
-      "title": "What will be the average US 30-year Fixed-Rate Mortgage on December 31, 2026?",
-      "url": "https://www.metaculus.com/questions/46635",
-      "background": "CNBC:[Fannie Mae sharply raises mortgage rate forecast for 2027 ](https://www.cnbc.com/2026/10/14/fannie-mae-sharply-raises-mortgage-rate-forecast-for-2027-.html)\n\n`{\"format\": \"bot_tournament_question\", \"info\": {\"hash_id\": \"bfda3bd860a8b545\", \"sheet_id\": \"135\"}}`",
-      "resolution_criteria": "This question will resolve as the weekly average US 30-year Fixed-Rate Mortgage according to the [Freddie Mac PMMS](https://www.freddiemac.com/pmms) for December 31, 2026.",
-      "fine_print": "",
-      "open_time": "2026-11-24T21:00:00Z",
-      "close_time": "2026-11-25T00:00:00Z",
-      "scheduled_resolution_time": "2027-01-01T00:00:00Z",
-      "unit": "%",
-      "lower_bound": 6.5,
-      "upper_bound": 8.5,
-      "open_lower_bound": true,
-      "open_upper_bound": true,
-      "deadline": "2026-11-25T00:00:00Z"
-    }
-  ],
+  "questions": [],
   "skipped": [],
   "errors": [],
   "kept_up_to_date": {
