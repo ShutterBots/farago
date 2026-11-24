@@ -1,8 +1,24 @@
 {
-  "generated_at": "2026-11-24T14:42:45Z",
+  "generated_at": "2026-11-24T15:42:21Z",
   "mode": "tournament",
-  "request_id": "20261124T144214Z-6274",
-  "questions": [],
+  "request_id": "20261124T154154Z-5041",
+  "questions": [
+    {
+      "question_id": 46893,
+      "post_id": 46633,
+      "type": "binary",
+      "tournament": "Seasonal tournament",
+      "title": "Will Senegal's National Assembly be dissolved before January 1, 2027?",
+      "url": "https://www.metaculus.com/questions/46633",
+      "background": "According to Senegal's [constitution](https://www.presidence.sn/en/institutions/lassemblee-nationale), \"The President of the Republic may, after consultation with the President of the National Assembly and the President of the Constitutional Council, pronounce the dissolution of the National Assembly.\"\n\n`{\"format\": \"bot_tournament_question\", \"info\": {\"hash_id\": \"da8560be152b8b64\", \"sheet_id\": \"129\"}}`",
+      "resolution_criteria": "This question resolves as **Yes** if, according to [credible sources](https://www.metaculus.com/faq/#definitions), Senegal's current [National Assembly](https://en.wikipedia.org/wiki/National_Assembly_(Senegal)) is formally dissolved before January 1, 2027.",
+      "fine_print": "",
+      "open_time": "2026-11-24T15:00:00Z",
+      "close_time": "2026-11-24T18:00:00Z",
+      "scheduled_resolution_time": "2027-01-01T00:00:00Z",
+      "deadline": "2026-11-24T18:00:00Z"
+    }
+  ],
   "skipped": [],
   "errors": [],
   "kept_up_to_date": {
