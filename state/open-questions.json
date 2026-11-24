@@ -1,8 +1,30 @@
 {
-  "generated_at": "2026-11-24T17:42:44Z",
+  "generated_at": "2026-11-24T18:42:16Z",
   "mode": "tournament",
-  "request_id": "20261124T174219Z-5860",
-  "questions": [],
+  "request_id": "20261124T184144Z-4191",
+  "questions": [
+    {
+      "question_id": 46894,
+      "post_id": 46634,
+      "type": "discrete",
+      "tournament": "Seasonal tournament",
+      "title": "What will be the water level of the Great Salt Lake on December 31, 2026?",
+      "url": "https://www.metaculus.com/questions/46634",
+      "background": "KSL: [Great Salt Lake not expected to hit new low in 2026; but what if it does in the future?](https://www.ksl.com/article/51608920/great-salt-lake-not-expected-to-hit-new-low-in-2026-but-what-if-it-does-in-the-future)\n\n`{\"format\": \"bot_tournament_question\", \"info\": {\"hash_id\": \"85075e634c7eee6d\", \"sheet_id\": \"118\"}}`",
+      "resolution_criteria": "This question will resolve as the last reported water level of the Great Salt Lake on December 31, 2026.",
+      "fine_print": "The source for this question will be the USGS, specifically the [10010000 Monitor](https://waterdata.usgs.gov/monitoring-location/USGS-10010000).\n\nFor clarity, this question will likely correspond to the time of 11:45:00 PM GMT.",
+      "open_time": "2026-11-24T18:00:00Z",
+      "close_time": "2026-11-24T21:00:00Z",
+      "scheduled_resolution_time": "2027-01-01T00:00:00Z",
+      "unit": "ft",
+      "lower_bound": 4188.0,
+      "upper_bound": 4191.0,
+      "open_lower_bound": true,
+      "open_upper_bound": true,
+      "step": 0.1,
+      "deadline": "2026-11-24T21:00:00Z"
+    }
+  ],
   "skipped": [],
   "errors": [],
   "kept_up_to_date": {
