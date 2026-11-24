@@ -1,0 +1,14 @@
+{
+  "question_id": 46893,
+  "post_id": 46633,
+  "type": "binary",
+  "probability": 0.54,
+  "reasoning": "**Question.** Resolves Yes if Senegal's current National Assembly is formally dissolved before 1 January 2027. Article 87 of the constitution bars dissolution during a legislature's first two years, and this one was installed on 2 December 2024, so the only legal window is 2 to 31 December 2026 (Senego, 19 Nov).\n\n**Starting point.** A president who has just regained the power to dissolve a hostile assembly, with 30 days to use it: roughly a coin flip. President Faye used the same power on the first legal day in September 2024, but he was then sure to win. Presidents who fear the result often sit on the power.\n\n**Evidence for.** The conflict is total. Faye dismissed Ousmane Sonko as prime minister on 22 May; Sonko now chairs an Assembly where Pastef still musters about 126 of 165 votes. Deputies rejected the amended 2026 budget (3 Nov) and the first part of the 2027 budget (18 Nov), Pastef struck Faye from its rolls (17 Nov), and Faye enacted the amended budget by decree on 19 Nov (IntelliNews, 23 Nov). Assembly committees met on 24 Nov on a resolution against that decree, with a censure motion (83 votes) and a high-treason indictment (99 votes) openly discussed (Pulse.sn and NotreAfrik, 24 Nov). Faye's own party, Kiiraay, is calling for dissolution (Seneweb, 10 Nov), and the local elections due in January were left without a convening decree (RFI, 20 Oct), which keeps the calendar free for early legislative elections.\n\n**Evidence against.** Nothing is announced. Faye said on 24 Sept only that he would not exclude the option and had fixed no date. His spokesman has called dissolution a \"risky bet\", and minister Boubacar Camara said on 21 Nov that the country \"can reach 2 December without dissolution\" (Senego). Sonko's camp could well win a snap vote, and a new Assembly could not be dissolved for two years. A decree in January, for a vote after Ramadan, is also plausible.\n\n**For No:** Faye judges the vote too risky, waits until January, or a budget truce is found.\n\n**Forecast: 54%.**",
+  "posted_at": "2026-11-24T15:55:58Z",
+  "posted_as": "54.0%",
+  "question_title": "Will Senegal's National Assembly be dissolved before January 1, 2027?",
+  "question_url": "https://www.metaculus.com/questions/46633",
+  "tournaments": [
+    "fall-futureeval-2026"
+  ]
+}
