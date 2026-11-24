@@ -1,8 +1,24 @@
 {
-  "generated_at": "2026-11-24T05:42:34Z",
+  "generated_at": "2026-11-24T06:42:29Z",
   "mode": "tournament",
-  "request_id": "20261124T054200Z-6198",
-  "questions": [],
+  "request_id": "20261124T064200Z-3907",
+  "questions": [
+    {
+      "question_id": 46891,
+      "post_id": 46631,
+      "type": "binary",
+      "tournament": "Seasonal tournament",
+      "title": "Will Russian Foreign Minister Sergey Lavrov visit Florida in December 2026?",
+      "url": "https://www.metaculus.com/questions/46631",
+      "background": "According to media reports ([example](https://www.dw.com/en/european-diplomats-shun-russia-at-g20-gathering-in-the-us/a-79813925)), Russian Foreign Minister Sergey Lavrov has declined to comment on his participation in the December 2026 G20 summit in Miami, Florida.\n\n`{\"format\": \"bot_tournament_question\", \"info\": {\"hash_id\": \"d0678a9d87bc3ce8\", \"sheet_id\": \"124\"}}`",
+      "resolution_criteria": "This question resolves as **Yes** if, after November 30, 2026 and before January 1, 2027, Sergey Lavrov personally visits the US state of Florida, according to [credible sources](https://www.metaculus.com/faq/#definitions).",
+      "fine_print": "\"Personally visits\" is defined as publicly reported to be physically present on the ground for any amount of time, including at an airport, within the territory of the given geographic location. Note that this excludes airspace, waters, and virtual appearances.",
+      "open_time": "2026-11-24T06:00:00Z",
+      "close_time": "2026-11-24T09:00:00Z",
+      "scheduled_resolution_time": "2027-01-01T00:00:00Z",
+      "deadline": "2026-11-24T09:00:00Z"
+    }
+  ],
   "skipped": [],
   "errors": [],
   "kept_up_to_date": {
