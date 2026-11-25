@@ -1,24 +1,8 @@
 {
-  "generated_at": "2026-11-25T18:42:33Z",
+  "generated_at": "2026-11-25T18:50:51Z",
   "mode": "tournament",
   "request_id": "20261125T184203Z-3917",
-  "questions": [
-    {
-      "question_id": 47008,
-      "post_id": 46751,
-      "type": "binary",
-      "tournament": "Seasonal tournament",
-      "title": "Will Donald Trump and Vladimir Putin meet in person or talk on the phone before January 1, 2027?",
-      "url": "https://www.metaculus.com/questions/46751",
-      "background": "WSJ: [U.S. Invites Putin to G-20 Summit at Trump Resort in Florida](https://www.wsj.com/world/russia/putin-invited-to-g-20-summit-at-trumps-florida-resort-rubio-says-3a0344f9)\n\n`{\"format\": \"bot_tournament_question\", \"info\": {\"hash_id\": \"72fa62d41e924ce0\", \"sheet_id\": \"148\"}}`",
-      "resolution_criteria": "This question resolves as **Yes** if Donald Trump and Vladimir Putin meet in person or speak on the phone with each other after November 22, 2026 and before January 1, 2027.",
-      "fine_print": "Meet in person is defined as Trump and Putin occupying the same physical space closely enough so that they can see and hear each other through direct un-intermediated exchange of photons and sound waves.\n\n\"Speak on the phone with each other\" is defined as both Trump and Putin, from different physical spaces, orally uttering words intended for the other individual into a telephone or equivalent device, those words being converted into electrical or digital signals in real time, and then transferred to the other individual via telecommunications links, where they are reconverted into sound waves at the other individual's listening device.",
-      "open_time": "2026-11-25T18:00:00Z",
-      "close_time": "2026-11-25T21:00:00Z",
-      "scheduled_resolution_time": "2027-01-01T00:00:00Z",
-      "deadline": "2026-11-25T21:00:00Z"
-    }
-  ],
+  "questions": [],
   "skipped": [],
   "errors": [],
   "kept_up_to_date": {

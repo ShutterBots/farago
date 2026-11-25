@@ -1,0 +1,14 @@
+{
+  "question_id": 47008,
+  "post_id": 46751,
+  "type": "binary",
+  "probability": 0.57,
+  "reasoning": "**Question.** Resolves Yes if Trump and Putin meet in person or speak by phone after 22 November and before 1 January 2027. Their meeting in Shenzhen on 19 November falls just outside the window, so a new contact is needed in the five weeks that remain.\n\n**Base rate.** Since February 2025 there have been 18 leader-level contacts: 16 calls and two meetings. In 2026 the calls came on 9 March, 29 April, 14 June, 5 July, 8 September and 10 October, followed by Shenzhen. The gap between contacts averages 38 days. Of the 15 gaps longer than six days, 7 ended within 42 days, the equivalent of a contact by 31 December: about 47%. A plain Poisson rate gives about 60%. I take roughly 50% for a phone call.\n\n**Evidence.**\n- The G20 summit in Miami is on 14-15 December and Putin is invited. He said on 19 November \"I will think about it and see\" (Bloomberg), and Peskov said on 24 November that no decision had been made (TASS). Bloomberg reported in September that he planned to skip it, and Polymarket prices \"Putin visits US by December 31\" at 13% (25 November).\n- Contact has been roughly monthly this autumn while Witkoff and Kushner press for a Ukraine deal \"as soon as possible\", preferably by January (Zelensky, 24 November). Trump said on 20 November there is \"a real good chance\" of a deal (Reuters), and Axios expected another round of talks with the Russians within about a week.\n- No call has been reported since Shenzhen. Kremlin aide Ushakov on 25 November mentioned only his own call with the US envoys.\n\n**What gives No.** Putin stays away from Miami and the leaders leave the work to their envoys over the holidays, as they did after Alaska in 2025 (59 days without a call) and from October to December 2025 (73 days).\n\n**Forecast.** 13% for a meeting in Miami, plus about half of the remainder for a call: **57%**.",
+  "posted_at": "2026-11-25T18:50:35Z",
+  "posted_as": "57.0%",
+  "question_title": "Will Donald Trump and Vladimir Putin meet in person or talk on the phone before January 1, 2027?",
+  "question_url": "https://www.metaculus.com/questions/46751",
+  "tournaments": [
+    "fall-futureeval-2026"
+  ]
+}
