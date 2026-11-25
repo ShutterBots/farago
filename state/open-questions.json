@@ -1,32 +1,8 @@
 {
-  "generated_at": "2026-11-25T03:42:03Z",
+  "generated_at": "2026-11-25T04:06:25Z",
   "mode": "tournament",
   "request_id": "20261125T034133Z-1220",
-  "questions": [
-    {
-      "question_id": 46897,
-      "post_id": 46637,
-      "type": "multiple_choice",
-      "tournament": "Seasonal tournament",
-      "title": "Which epidemiological week will be the onset week for the flu in HHS Region 8 in 2026-27?",
-      "url": "https://www.metaculus.com/questions/46637",
-      "background": "CDC’s ILINet tracks the share of outpatient visits for influenza-like illness (ILI), defined as fever plus a cough or sore throat, whatever the cause. Each region’s [baseline](https://webharvest.gov/congress115th/20181203182211/https://www.cdc.gov/flu/weekly/overview.htm) is the average ILI percentage during weeks with little flu over the previous three seasons, plus two standard deviations. ILI usually reaches the baseline as the flu season gathers pace, though other respiratory viruses also contribute to it.\n\nThe 2026-27 season started unusually early, driven by an H1N1 strain carrying a [mutation](https://www.nbcbayarea.com/news/health/flu-season-early-mutated-h1n1-strain/4164120/) that may partly evade existing antibodies. Activity rose first on the West Coast, and in late October the Pacific Northwest was the only region [above](https://www.natureworldnews.com/articles/73733/20261104/cdc-forecasts-flu-hospitalizations-will-likely-keep-climbing-through-mid-november-after-first-child.htm) its baseline. Holiday gatherings around Thanksgiving often accelerate flu transmission.\n\n`{\"format\": \"bot_tournament_question\", \"info\": {\"hash_id\": \"19706617e7f1c401\", \"sheet_id\": \"126\"}}`",
-      "resolution_criteria": "This question resolves as the Morbidity and Mortality Weekly Report (MMWR) week number of the first week of the 2026-27 season in which the percentage of outpatient visits for influenza-like illness (ILI) in HHS Region 8 is equal or above the region’s baseline and remains equal or above it for the following two weeks, according to the Line Chart ILINet graph on the [National, Regional, and State Level Outpatient Illness and Viral Surveillance dashboard](https://gis.cdc.gov/grasp/fluview/fluportaldashboard.html).",
-      "fine_print": "* MMWR weeks are CDC’s standard epidemiological weeks, running Sunday to Saturday. For example, week 45 of 2026 runs from November 8 to November 14, 2026.\n* To see the relevant values, select \"HHS Regions\" and then \"Region 8\" as the *Surveillance Area* at the top of the dashboard.\n* Any onset on or after the week ending December 19, 2026 (i.e., MMWR week 50) or no qualifying onset at all resolves as **≥50.**\n* The question resolves when first accessed by Metaculus. It will not re-resolve based on subsequent revisions to the data.",
-      "open_time": "2026-11-25T03:00:00Z",
-      "close_time": "2026-11-25T06:00:00Z",
-      "scheduled_resolution_time": "2027-01-05T00:00:00Z",
-      "options": [
-        "45",
-        "46",
-        "47",
-        "48",
-        "49",
-        "≥50"
-      ],
-      "deadline": "2026-11-25T06:00:00Z"
-    }
-  ],
+  "questions": [],
   "skipped": [],
   "errors": [],
   "kept_up_to_date": {
