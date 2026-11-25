@@ -1,0 +1,14 @@
+{
+  "question_id": 46898,
+  "post_id": 46638,
+  "type": "multiple_choice",
+  "probabilities": {
+    "45": 0.02,
+    "46": 0.27,
+    "47": 0.46,
+    "48": 0.08,
+    "49": 0.11,
+    "≥50": 0.06
+  },
+  "reasoning": "**Question.** The first MMWR week of 2026-27 in which HHS Region 7's (Iowa, Kansas, Missouri, Nebraska) ILINet outpatient ILI percentage is at or above the regional baseline and stays there for the next two weeks, read from CDC's FluView Interactive in early January 2027.\n\n**Starting point.** CDC's FluView for week 45 (ending 14 November, published 20 November) lists Region 7 as still below its baseline, while regions 1, 2, 4, 6, 8, 9 and 10 are above theirs, so \"45\" needs an upward revision. Region 7 was \"stable but trending upwards\" in week 44 and rose by more than 0.1 point in week 45. State ILINet figures for week 45 from a third-party tracker (updated 20-21 November: Missouri 1.9%, Nebraska 1.9%, Kansas 1.5%, Iowa 0.4%) give a population-weighted regional value near 1.5%. I could not find the 2026-27 regional baseline in text. Last season's was 2.0% and the national baseline fell from 3.1% to 2.9%, so I assume about 1.8-1.9%, with 1.6-2.4% possible.\n\n**Evidence on speed.**\n- CDC emergency-department data for week 45: flu's share of visits rose in all four states (Iowa 0.50 to 0.71%, Kansas 0.31 to 0.54%, Missouri 0.55 to 0.63%, Nebraska 0.46 to 0.79%), about +37% in a week for the region.\n- Nebraska DHHS, week 45: flu test positivity 7.4%, up 2.2 points; ILI emergency visits 308, up 96.\n- National ILI went 2.8%, 3.2%, 3.8% in weeks 43 to 45 with H1N1 dominant, and FluSight (20 November) expects further increases. Week 47 is Thanksgiving week, when the ILI share usually jumps.\n\nA regional path of roughly 1.7% in week 46, 2.2% in week 47 and 2.4% in week 48 makes week 47 the likeliest crossing. Week 46 needs a baseline of 1.7-1.8% or faster growth.\n\n**What would give another answer.** A post-Thanksgiving dip in week 48 after a marginal week-47 crossing moves onset to 49. A baseline above 2.2% or stalling growth moves it later still. Week 46 data arrive only on 30 November.\n\n**Forecast.** 45: 2%, 46: 27%, 47: 46%, 48: 8%, 49: 11%, 50 or later: 6%."
+}
