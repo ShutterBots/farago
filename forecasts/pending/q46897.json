@@ -1,0 +1,14 @@
+{
+  "question_id": 46897,
+  "post_id": 46637,
+  "type": "multiple_choice",
+  "probabilities": {
+    "45": 0.8,
+    "46": 0.09,
+    "47": 0.04,
+    "48": 0.02,
+    "49": 0.02,
+    "≥50": 0.03
+  },
+  "reasoning": "**Question.** The first MMWR week of 2026-27 in which HHS Region 8's ILINet outpatient ILI percentage is at or above the regional baseline and stays there for the next two weeks, read from CDC's FluView Interactive dashboard. It resolves in early January 2027.\n\n**Starting point.** Region 8 (Colorado, Montana, the Dakotas, Utah, Wyoming) was below its baseline in weeks 42, 43 and 44, so week 45 is the earliest possible onset. CDC's FluView for week 45 (ending 14 November, published 20 November) lists Region 8 among the seven regions above their baselines. \"45\" therefore resolves if weeks 46 and 47 also hold and week 45 survives later data revisions. A region that crosses during a real multi-week upswing usually stays above; false starts are the exception.\n\n**Evidence.**\n- CDC FluView, weeks 43 to 45 (published 6, 13 and 20 November): Region 8's ILI rose by more than 0.1 point in each of the last three weeks. National ILI went 2.4%, 2.8%, 3.2%, 3.8% against a 2.9% baseline, H1N1 dominates, and FluSight projects further increases through 5 December.\n- Colorado carries almost half the region's weight. State data for the week ending 14 November (reported 18 November) show flu's share of emergency visits at 1.76%, up from 1.36%, and clinic positivity at 10.4%, up from 9.1%. COVID-19 and RSV admissions rose too; flu admissions were flat (157 against 156).\n- Week 47 is Thanksgiving week, when the ILI share normally jumps because routine visits fall.\n\n**What would give another answer.** State-level ILINet figures for week 45 from a third-party tracker (20 November: Colorado 4.0%, the other five states 0.6% to 2.1%) imply a regional value near 2.5%, probably only one or two tenths above the baseline. A downward revision of week 45 with later weeks holding gives \"46\"; I put that risk near one in ten. A dip in week 46 moves onset to 47 or later, and repeated dips give 50 or later. Week 46 data arrive only on 30 November.\n\n**Forecast.** 45: 80%, 46: 9%, 47: 4%, 48: 2%, 49: 2%, 50 or later: 3%."
+}
