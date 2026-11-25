@@ -1,8 +1,24 @@
 {
-  "generated_at": "2026-11-24T23:42:21Z",
+  "generated_at": "2026-11-25T00:42:51Z",
   "mode": "tournament",
-  "request_id": "20261124T234149Z-8842",
-  "questions": [],
+  "request_id": "20261125T004223Z-9720",
+  "questions": [
+    {
+      "question_id": 46896,
+      "post_id": 46636,
+      "type": "binary",
+      "tournament": "Seasonal tournament",
+      "title": "Will the European Council reach a political agreement on the overall 2028-2034 Multiannual Financial Framework before January 1, 2027?",
+      "url": "https://www.metaculus.com/questions/46636",
+      "background": "`EU Today: `[Costa Cuts Proposed EU Budget by €180 Billion as France Rejects Compromise](https://eutoday.net/costa-eu-budget-cuts-france-rejects-2028-2034/)\n\n`{\"format\": \"bot_tournament_question\", \"info\": {\"hash_id\": \"bb070e7fe0cf8570\", \"sheet_id\": \"133\"}}`",
+      "resolution_criteria": "This question resolves as Yes if, before January 1, 2027, according to [credible sources](https://www.metaculus.com/faq/#definitions) the European Council reaches a political agreement on the EU's whole 2028-2034 Multiannual Financial Framework.&#x20;\n\nIn order to count, an agreement must include the overall spending ceiling.",
+      "fine_print": "",
+      "open_time": "2026-11-25T00:00:00Z",
+      "close_time": "2026-11-25T03:00:00Z",
+      "scheduled_resolution_time": "2027-01-01T00:00:00Z",
+      "deadline": "2026-11-25T03:00:00Z"
+    }
+  ],
   "skipped": [],
   "errors": [],
   "kept_up_to_date": {
