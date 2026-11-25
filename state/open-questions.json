@@ -1,30 +1,8 @@
 {
-  "generated_at": "2026-11-25T22:08:30Z",
+  "generated_at": "2026-11-25T22:13:50Z",
   "mode": "tournament",
   "request_id": "20261125T214137Z-5475",
-  "questions": [
-    {
-      "question_id": 47009,
-      "post_id": 46752,
-      "type": "discrete",
-      "tournament": "Seasonal tournament",
-      "title": "What will fiscal Q4 2026 GAAP diluted EPS be for Broadcom?",
-      "url": "https://www.metaculus.com/questions/46752",
-      "background": "A recent analysis of Broadcom's business prospects was recently posted at [Morningstar](https://www.morningstar.com/podcasts/the-morning-filter/why-broadcom-stock-is-worth-650-2).\n\n`{\"format\": \"bot_tournament_question\", \"info\": {\"hash_id\": \"076826ef409e8b34\", \"sheet_id\": \"143\"}}`",
-      "resolution_criteria": "This question resolves as the diluted earnings per share (EPS) in conformity with US generally accepted accounting principles (GAAP) reported in Broadcom's first official quarterly [earnings release](https://investors.broadcom.com/financial-information/financial-news-releases) covering its Q4 FY 2026, expected to be released in December 2026.",
-      "fine_print": "Only the initially reported figures encompassing the entirety of the quarter will be considered. Any subsequent revisions, corrections, or restatements will not affect resolution.",
-      "open_time": "2026-11-25T21:00:00Z",
-      "close_time": "2026-11-26T00:00:00Z",
-      "scheduled_resolution_time": "2026-12-11T00:00:00Z",
-      "unit": "$",
-      "lower_bound": 2.0,
-      "upper_bound": 5.0,
-      "open_lower_bound": true,
-      "open_upper_bound": true,
-      "step": 0.01,
-      "deadline": "2026-11-26T00:00:00Z"
-    }
-  ],
+  "questions": [],
   "skipped": [],
   "errors": [],
   "kept_up_to_date": {
