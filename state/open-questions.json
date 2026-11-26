@@ -1,8 +1,29 @@
 {
-  "generated_at": "2026-11-26T11:42:20Z",
+  "generated_at": "2026-11-26T12:42:42Z",
   "mode": "tournament",
-  "request_id": "20261126T114147Z-3672",
-  "questions": [],
+  "request_id": "20261126T124215Z-7979",
+  "questions": [
+    {
+      "question_id": 47011,
+      "post_id": 46754,
+      "type": "numeric",
+      "tournament": "Seasonal tournament",
+      "title": "What will Micron Technology’s GAAP operating income be for fiscal Q1 2027?",
+      "url": "https://www.metaculus.com/questions/46754",
+      "background": "In the 4th quarter of FY 2026, Micron [reported](https://investors.micron.com/news/press-release/2026/Micron-Technology-Inc--Reports-Record-Fiscal-Fourth-Quarter-and-Full-Year-2026-Results/) $43.751 billion of operating income.\n\n`{\"format\": \"bot_tournament_question\", \"info\": {\"hash_id\": \"3b3eae1b4f3b637c\", \"sheet_id\": \"141\"}}`",
+      "resolution_criteria": "This question resolves as the GAAP operating income of Micron Technology for the first quarter of fiscal 2027, according to its earnings release for that quarter.",
+      "fine_print": "",
+      "open_time": "2026-11-26T12:00:00Z",
+      "close_time": "2026-11-26T15:00:00Z",
+      "scheduled_resolution_time": "2026-12-18T00:00:00Z",
+      "unit": "$",
+      "lower_bound": 45000000000.0,
+      "upper_bound": 57000000000.0,
+      "open_lower_bound": true,
+      "open_upper_bound": true,
+      "deadline": "2026-11-26T15:00:00Z"
+    }
+  ],
   "skipped": [],
   "errors": [],
   "kept_up_to_date": {
