@@ -1,0 +1,24 @@
+{
+  "question_id": 47011,
+  "post_id": 46754,
+  "type": "numeric",
+  "percentiles": {
+    "1": 48200000000,
+    "5": 49800000000,
+    "10": 50300000000,
+    "25": 51050000000,
+    "50": 51900000000,
+    "75": 53100000000,
+    "90": 54300000000,
+    "95": 55000000000,
+    "99": 56600000000
+  },
+  "reasoning": "**Question.** Micron's GAAP operating income for fiscal Q1 2027, the quarter ending in early December 2026, as printed in its earnings release. Micron reports on 17 December 2026 (company notice, 19 Nov).\n\n**Starting point.** Micron's guidance of 30 Sep 2026: revenue $61.5B ± $1.5B, GAAP gross margin about 85.95%, GAAP operating expenses about $2.31B. That gives 61.5 × 0.8595 − 2.31 = **$50.5B** at the midpoint, against $43.75B in fiscal Q4. Last quarter the cost of goods sold matched guidance and the whole revenue beat reached gross profit, so each extra $1B of price-driven revenue adds close to $1B.\n\n**Base rate.** Micron has beaten consensus nine quarters running, but by less each time: EPS surprises of 21%, 33%, 21% and 5% in the last four (Yahoo Finance). Fiscal Q4 revenue was $54.2B against a $50B midpoint (+8.5%). In the 2024 slowdown results landed only 0-2% above the midpoint.\n\n**Evidence this quarter.**\n- DRAM, 73% of sales, is still rising: TrendForce (11 Nov) puts PC DRAM contracts up 13-18% in 4Q26, the DDR4 contract benchmark rose 5.8% in October to a record, and Korean chip exports were up 331% on the year in 1-10 Nov (Korea Customs Service).\n- NAND is softer: TrendForce cut its 4Q26 contract forecast from +15-20% (30 Sep) to +8-13% (19 Nov) after Chinese cloud order cuts.\n- Long-term agreements with price bands (over 35% of revenue through 2030) and annually priced HBM cap the upside. Consensus revenue is $61.8B (Yahoo Finance, 26 Nov), barely above guidance. Management called pricing constructive on 18 Nov and gave no update.\n- Q4's $500M patent charge reflects the Netlist settlement signed 5 Oct (10-K); fees now run $30M a quarter, so I assume no repeat.\n\n**Other outcomes.** Below $50B needs revenue under the midpoint or another unguided cost like Q4's extra bonus and donation. Above $55B needs a second 8%-plus revenue beat.\n\n**Forecast.** Median $51.9B, revenue near $63B. 5th to 95th percentile: $49.8B to $55.0B.",
+  "posted_at": "2026-11-26T12:55:44Z",
+  "posted_as": "1%: 48,200,000,000, 5%: 49,800,000,000, 10%: 50,300,000,000, 25%: 51,050,000,000, 50%: 51,900,000,000, 75%: 53,100,000,000, 90%: 54,300,000,000, 95%: 55,000,000,000, 99%: 56,600,000,000",
+  "question_title": "What will Micron Technology’s GAAP operating income be for fiscal Q1 2027?",
+  "question_url": "https://www.metaculus.com/questions/46754",
+  "tournaments": [
+    "fall-futureeval-2026"
+  ]
+}
