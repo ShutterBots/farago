@@ -1,8 +1,29 @@
 {
-  "generated_at": "2026-11-26T14:42:04Z",
+  "generated_at": "2026-11-26T15:42:20Z",
   "mode": "tournament",
-  "request_id": "20261126T144138Z-2185",
-  "questions": [],
+  "request_id": "20261126T154147Z-7306",
+  "questions": [
+    {
+      "question_id": 47012,
+      "post_id": 46755,
+      "type": "numeric",
+      "tournament": "Seasonal tournament",
+      "title": "How much will Dune: Part Three gross domestically during its opening weekend?",
+      "url": "https://www.metaculus.com/questions/46755",
+      "background": "Deadline:[Summer U.S. Box Office Hits All-Time $4.76B Record: How Audiences Surrendered To Moviegoing](https://deadline.com/2026/09/box-office-summer-2026-record-1237068355/)\n\n`{\"format\": \"bot_tournament_question\", \"info\": {\"hash_id\": \"3869d72743146040\", \"sheet_id\": \"154\"}}`",
+      "resolution_criteria": "This question will resolve as the gross domestic box office revenue that Dune: Part Three earns during its opening weekend.\n\nThe primary source for resolution will be Box Office Mojo.",
+      "fine_print": "This question will resolve based on the non-preliminary figures reported when they are first accessed by Metaculus.",
+      "open_time": "2026-11-26T15:00:00Z",
+      "close_time": "2026-11-26T18:00:00Z",
+      "scheduled_resolution_time": "2026-12-21T00:00:00Z",
+      "unit": "$",
+      "lower_bound": 50000000.0,
+      "upper_bound": 250000000.0,
+      "open_lower_bound": true,
+      "open_upper_bound": true,
+      "deadline": "2026-11-26T18:00:00Z"
+    }
+  ],
   "skipped": [],
   "errors": [],
   "kept_up_to_date": {
