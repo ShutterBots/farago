@@ -1,0 +1,14 @@
+{
+  "question_id": 47010,
+  "post_id": 46753,
+  "type": "binary",
+  "probability": 0.41,
+  "reasoning": "**Question.** Resolves Yes if credible sources (Holtec, the NRC) show that loading of all 204 fuel assemblies into the Palisades reactor vessel was completed before December 16, 2026. That leaves 20 days.\n\n**Starting point.** A full core load is normally about a week of work, so the job fits in the window several times over. Against that, Holtec has missed every restart date it has signalled since 2025, usually by months, and no source reports that the paused state has changed.\n\n**Evidence.**\n- Loading began on August 30 and stopped with about eight assemblies in the vessel when assembly DD41 tilted. The NRC approved a one-off recovery method on October 13, and Holtec moved the assembly to the spent fuel pool on October 21, saying loading could now resume (Holtec release, Oct 21; Michigan Public, Oct 22).\n- On October 29 Energy Secretary Wright said he hoped for a restart by the end of November. Holtec's statement the same day still listed \"the completion of fuel loading\" as outstanding and gave no date (Holtec, WWMT, Oct 29).\n- Since then there is no Holtec announcement (its newest news item is dated October 29) and nothing in the local outlets that carry its releases. ENR (Nov 9), The Nation (Nov 12) and Michigan Public (Nov 19) all describe a restart with no date. The NRC status report for November 25 shows the unit at zero power. The cause of the tilt was still under review in late October.\n\n**What decides it.** Yes needs loading to have resumed by early December, to run without a second handling problem, and to be confirmed publicly in time. A quiet completion in November that surfaces later would also count. No follows if root-cause work, a replacement for DD41 or staffing keeps the vessel open into late December, which the March 1, 2027 power-sale deadline still allows.\n\n**Forecast: 41%.**",
+  "posted_at": "2026-11-26T04:01:31Z",
+  "posted_as": "41.0%",
+  "question_title": "Will the fuel loading of the Palisades Nuclear Generating Station's reactor core be completed before December 16, 2026?",
+  "question_url": "https://www.metaculus.com/questions/46753",
+  "tournaments": [
+    "fall-futureeval-2026"
+  ]
+}
