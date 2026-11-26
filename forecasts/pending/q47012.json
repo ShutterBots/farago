@@ -1,0 +1,19 @@
+{
+  "question_id": 47012,
+  "post_id": 46755,
+  "type": "numeric",
+  "percentiles": {
+    "0.5": 65000000,
+    "1": 68500000,
+    "5": 77500000,
+    "10": 83000000,
+    "25": 93000000,
+    "50": 105000000,
+    "75": 120500000,
+    "90": 136500000,
+    "95": 147500000,
+    "99": 170000000,
+    "99.5": 180000000
+  },
+  "reasoning": "**Question.** The domestic (US and Canada) opening-weekend gross of *Dune: Part Three*, as Box Office Mojo reports it in final form. The film opens December 18, 2026, so the weekend is December 18-20 and the number is fixed in about three and a half weeks.\n\n**Starting point.** *Dune* opened to $41.0M in 2021 and *Dune: Part Two* to $82.5M in 2024. The closest recent analogue is *The Odyssey* (July 2026): tracked at $80-100M three weeks out (Cosmic Book News, June 26), it opened to $124.5M, with $29.6M from 444 IMAX screens (Boxoffice Pro, July 19). Survey tracking has run low on heavily pre-sold event films this year.\n\n**Recent evidence.**\n- NRG's first tracking, three weeks out, puts the film at $75-80M, and the Deadline report expects it to climb past Part Two (relayed by Dark Horizons and ComicBookMovie, Nov 25).\n- Presale-based forecasts are higher. Shawn Robbins of Box Office Theory has $91-100M+ (Nov 13), and a forum tracker quoted on Nov 11 sees $100M+ with about $25M in previews. Presales reportedly passed $25M seven weeks before release.\n- The Polymarket market on this opening (read Nov 26, thin at about $24K traded) centres near $115M after normalising: 16% below $90M, 23% for $90-110M, 39% for $110-130M, 21% above. Two weeks ago its leading bracket was $130M+, so it has drifted down.\n- Structure: a three-week IMAX exclusive, plus early fan screenings, should be worth roughly $30-35M of the weekend. Against that, *Avengers: Doomsday* opens the same day, tracking at $270M+, and competes for the other premium screens and much of the same audience. Runtime is 150 minutes; reviews land December 9.\n\n**What would change it.** Under $85M needs walk-ups to collapse behind Avengers, or poor reviews. Over $135M needs a Barbenheimer-style lift for both films, in a weekend that would then pass the $437M all-time record by a wide margin.\n\n**Forecast.** Median $105M, with a 5th-95th percentile range of $77.5M to $147.5M and a longer upper tail."
+}
