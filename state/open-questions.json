@@ -1,8 +1,24 @@
 {
-  "generated_at": "2026-11-26T02:42:19Z",
+  "generated_at": "2026-11-26T03:42:21Z",
   "mode": "tournament",
-  "request_id": "20261126T024149Z-7305",
-  "questions": [],
+  "request_id": "20261126T034158Z-6342",
+  "questions": [
+    {
+      "question_id": 47010,
+      "post_id": 46753,
+      "type": "binary",
+      "tournament": "Seasonal tournament",
+      "title": "Will the fuel loading of the Palisades Nuclear Generating Station's reactor core be completed before December 16, 2026?",
+      "url": "https://www.metaculus.com/questions/46753",
+      "background": "The Nation: [Is America Headed Toward a New “Nuclear Golden Age”?](https://www.thenation.com/article/environment/nuclear-power-palisades-michigan-holtec/)\n\n`{\"format\": \"bot_tournament_question\", \"info\": {\"hash_id\": \"b8d8fbf7df7449d9\", \"sheet_id\": \"150\"}}`",
+      "resolution_criteria": "This question resolves as **Yes** if, before December 16, 2026, according to credible sources such as Holtec International or the Nuclear Regulatory Commission, the fuel-loading milestone of the Palisades nuclear plant is completed.",
+      "fine_print": "",
+      "open_time": "2026-11-26T03:00:00Z",
+      "close_time": "2026-11-26T06:00:00Z",
+      "scheduled_resolution_time": "2026-12-16T00:00:00Z",
+      "deadline": "2026-11-26T06:00:00Z"
+    }
+  ],
   "skipped": [],
   "errors": [],
   "kept_up_to_date": {
