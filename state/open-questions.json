@@ -1,8 +1,31 @@
 {
-  "generated_at": "2026-11-26T23:42:28Z",
+  "generated_at": "2026-11-27T00:42:04Z",
   "mode": "tournament",
-  "request_id": "20261126T234159Z-3917",
-  "questions": [],
+  "request_id": "20261127T004134Z-4578",
+  "questions": [
+    {
+      "question_id": 47013,
+      "post_id": 46756,
+      "type": "multiple_choice",
+      "tournament": "Seasonal tournament",
+      "title": "Which of these companies will have the highest rank among their group on CompaniesMarketCap on December 28, 2026?",
+      "url": "https://www.metaculus.com/questions/46756",
+      "background": "Investopedia: [Market Capitalization: What It Means for Investors](https://www.investopedia.com/terms/m/marketcapitalization.asp)\n\n`{\"format\": \"bot_tournament_question\", \"info\": {\"hash_id\": \"4f4fb6b873ed5d71\", \"sheet_id\": \"152\"}}`",
+      "resolution_criteria": "This question resolves as the option corresponding to the listed public company that has the highest rank in CompaniesMarketCap's [Largest Companies by Marketcap](https://companiesmarketcap.com/) among these five companies upon the close of regular US stock market trading on December 28, 2026: SpaceX, Meta Platforms (Facebook), Tesla, Anthropic, and Berkshire Hathaway.",
+      "fine_print": "No other resolution source will be used to resolve the question, and Metaculus will not second-guess CompaniesMarketCap's methodology in calculating market capitalization for any company. This question resolves strictly based on the highest rank among the companies as presented by the resolution source.",
+      "open_time": "2026-11-27T00:00:00Z",
+      "close_time": "2026-11-27T03:00:00Z",
+      "scheduled_resolution_time": "2026-12-27T00:00:00Z",
+      "options": [
+        "SpaceX",
+        "Meta Platforms",
+        "Tesla",
+        "Anthropic",
+        "Berkshire Hathaway"
+      ],
+      "deadline": "2026-11-27T03:00:00Z"
+    }
+  ],
   "skipped": [],
   "errors": [],
   "kept_up_to_date": {
