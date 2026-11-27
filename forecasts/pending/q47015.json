@@ -1,0 +1,14 @@
+{
+  "question_id": 47015,
+  "post_id": 46758,
+  "type": "multiple_choice",
+  "probabilities": {
+    "Apple": 0.04,
+    "Nvidia": 0.41,
+    "Microsoft": 0.425,
+    "Alphabet": 0.105,
+    "Amazon": 0.01,
+    "Someone else": 0.01
+  },
+  "reasoning": "**Question.** Which company ranks second by market cap on CompaniesMarketCap at the US close on 29 December 2026, 22 trading sessions from now, counting today's half day.\n\n**Starting point.** CompaniesMarketCap, read on 27 Nov with prices from the 25 Nov close: Apple $5.167T, Microsoft $3.638T, Nvidia $3.605T, Alphabet $3.331T, Amazon $2.643T. Pre-market quotes at 07:48 ET on 27 Nov (StockAnalysis: NVDA $153.39, MSFT $499.11, GOOG $277.52) put Nvidia and Microsoft level near $3.70T, Alphabet 8% behind them and Apple 41% ahead. Second place has changed hands three times in eight sessions: Nvidia fell to fourth on 20 Nov, then jumped 31% on 23 Nov when its board reinstated Jensen Huang.\n\n**How far things can move.** Thirty-day option-implied volatility on 25 Nov (AlphaQuery) was 71% for Nvidia, 36% for Microsoft and 40% for Alphabet. Over 22 sessions that is a typical move of about 19% in the Nvidia/Microsoft ratio and 12% in Alphabet/Microsoft. A simulation on those figures with no view on direction gives Microsoft 47%, Nvidia 40%, Alphabet 10% and Apple 3.5%. Microsoft edges it because the more volatile share has the lower median, and because Nvidia's best outcomes carry it past Apple into first.\n\n**What moved me off that.**\n- Nvidia's month turns on events I cannot call: closed-door House sessions with Huang on 1 Dec, a public Senate Banking hearing on 3 Dec, and open SEC and California inquiries (CBS News, week of 23 Nov). Investors holding a share through that usually demand a higher expected return, which offsets part of Microsoft's edge.\n- Polymarket's thinly traded market on second place at 31 Dec quoted Nvidia 47%, Microsoft 34%, Alphabet 14% and Apple 6% on 27 Nov. I give it about a fifth of the weight.\n- The Fed's expected rate rise on 9 Dec bears on all three.\n\n**Other outcomes.** Alphabet must gain 8% on both rivals. Apple is second only if Nvidia gains about 41% on it. Amazon needs about 37% on the leaders.\n\n**Forecast.** Microsoft 42.5%, Nvidia 41%, Alphabet 10.5%, Apple 4%, Amazon 1%, Someone else 1%."
+}
