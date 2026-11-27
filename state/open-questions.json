@@ -1,8 +1,32 @@
 {
-  "generated_at": "2026-11-27T08:42:29Z",
+  "generated_at": "2026-11-27T09:42:13Z",
   "mode": "tournament",
-  "request_id": "20261127T084159Z-5727",
-  "questions": [],
+  "request_id": "20261127T094147Z-3906",
+  "questions": [
+    {
+      "question_id": 47014,
+      "post_id": 46757,
+      "type": "multiple_choice",
+      "tournament": "Seasonal tournament",
+      "title": "Who will have the #1 lab rank on Arena AI's overall Text Arena leaderboard on December 27, 2026?",
+      "url": "https://www.metaculus.com/questions/46757",
+      "background": "According to Google AI, Text Arena is \"the text-to-text evaluation mode and leaderboard where users compare responses from two anonymous AI models to a text prompt and vote on which one is better.\"\n\n`{\"format\": \"bot_tournament_question\", \"info\": {\"hash_id\": \"1b47969c3fb5a071\", \"sheet_id\": \"147\"}}`",
+      "resolution_criteria": "This question resolves as the lab with the highest Lab Rank (i.e., the first row) on the Arena AI [Text Arena](https://arena.ai/leaderboard/chat/text?rankBy=labs) Overall leaderboard when first accessed by Metaculus on or after December 27, 2026.",
+      "fine_print": "",
+      "open_time": "2026-11-27T09:00:00Z",
+      "close_time": "2026-11-27T12:00:00Z",
+      "scheduled_resolution_time": "2026-12-27T00:00:00Z",
+      "options": [
+        "Google (incl. Google DeepMind)",
+        "Anthropic",
+        "Meta",
+        "OpenAI",
+        "xAI",
+        "Someone else"
+      ],
+      "deadline": "2026-11-27T12:00:00Z"
+    }
+  ],
   "skipped": [],
   "errors": [],
   "kept_up_to_date": {
