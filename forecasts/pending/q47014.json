@@ -1,0 +1,14 @@
+{
+  "question_id": 47014,
+  "post_id": 46757,
+  "type": "multiple_choice",
+  "probabilities": {
+    "Google (incl. Google DeepMind)": 0.82,
+    "Anthropic": 0.125,
+    "Meta": 0.02,
+    "OpenAI": 0.015,
+    "xAI": 0.007,
+    "Someone else": 0.013
+  },
+  "reasoning": "**Question.** Which lab is in the first row of Arena's Text Arena Overall leaderboard when it is ranked by labs, as first checked on or after 27 December 2026, 30 days from now.\n\n**Starting point.** The lab at the top changes only a few times a year, and a leader with a clear margin usually keeps it for a month. The last change was recent: Claude Opus 5.5 topped the board on 27 September and Gemini 4 Argon passed it days later (36Kr, 25 Nov).\n\n**Where the board stands.** Arena's own post of 18 Nov had Google holding the top three: Gemini 4 Carbon (High) 1526, Argon 1521, Neon 1518. Trackers dated 22-27 Nov (BenchLeader, ai.info) show Carbon at 1527 (interval 1517-1536) and Argon at 1520, then Meta's Muse Wonder (Max) at 1512 and Anthropic's best, Claude Opus 5.5 (High), at 1507. OpenAI's GPT-6.2 Astra (Max), added on 19 Nov, and xAI's Grok are outside the top 15.\n\n**What could change it.** The live threat is Anthropic. Since 24 Nov users have reported an unannounced, stronger Claude in testing, widely called Opus 5.6 (Emergent, 27 Nov; Memeburn, 26 Nov; Anthropic has confirmed nothing), and the 60-day gap between the last two Opus releases pointed to late November. I put about 55% on a new Claude being listed by 27 December. It would need roughly 20 points more than Opus 5.5, yet Anthropic's last seven flagships, Opus 4.6 through Fable 5.2 (added 19 Nov at 1502), all sit between 1490 and 1507. I give a new model about one chance in five of landing above Google's best. Meta is 15 points back with no flagship known to be due, and Google may add further Gemini 4 variants.\n\n**Cross-check.** Polymarket's markets on the no-style-control version of this board (27 Nov) give Google 85% for 15 December and 76% for 31 December, with Anthropic at 13% and about 21%. I am a little higher on Google because Anthropic's Arena scores have been flat across releases.\n\n**Forecast.** Google 82%, Anthropic 12.5%, Meta 2%, OpenAI 1.5%, xAI 0.7%, someone else 1.3%."
+}
