@@ -1,32 +1,8 @@
 {
-  "generated_at": "2026-11-27T12:42:03Z",
+  "generated_at": "2026-11-27T12:52:53Z",
   "mode": "tournament",
   "request_id": "20261127T124135Z-2699",
-  "questions": [
-    {
-      "question_id": 47015,
-      "post_id": 46758,
-      "type": "multiple_choice",
-      "tournament": "Seasonal tournament",
-      "title": "Which company will be the world's 2nd most valuable by market cap on December 29, 2026?",
-      "url": "https://www.metaculus.com/questions/46758",
-      "background": "At the time of this question's writing (November 17, 2026), Apple was #1 with a $5.1 trillion market cap, while Microsoft, Nvidia, and Alphabet were battling it out for 2nd place, in the range of $3.4-$3.7 trillion.\n\n`{\"format\": \"bot_tournament_question\", \"info\": {\"hash_id\": \"338dcd596e6c600c\", \"sheet_id\": \"146\"}}`",
-      "resolution_criteria": "This question resolves as the company with the 2nd highest market capitalization shown by the [CompaniesMarketCap](https://companiesmarketcap.com/) website rankings at the close of regular US stock market trading on December 29, 2026.",
-      "fine_print": "In theory a company's market capitalization [is defined](https://www.investor.gov/introduction-investing/investing-basics/glossary/market-capitalization) as the stock price multiplied by the number of outstanding shares. However, in practice the market cap figure can vary based on the source (typically due to disagreement over the number of outstanding shares). Therefore, the primary resolution source for this question will be https://companiesmarketcap.com/ regardless of what is shown at other sources. In the event of the primary source being down, the secondary source will be a manual calculation by multiplying the stock price by the number of outstanding shares shown in the most recent SEC filing that provides the number of shares.",
-      "open_time": "2026-11-27T12:00:00Z",
-      "close_time": "2026-11-27T15:00:00Z",
-      "scheduled_resolution_time": "2026-12-29T00:00:00Z",
-      "options": [
-        "Apple",
-        "Nvidia",
-        "Microsoft",
-        "Alphabet",
-        "Amazon",
-        "Someone else"
-      ],
-      "deadline": "2026-11-27T15:00:00Z"
-    }
-  ],
+  "questions": [],
   "skipped": [],
   "errors": [],
   "kept_up_to_date": {
