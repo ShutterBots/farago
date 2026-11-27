@@ -1,0 +1,20 @@
+{
+  "question_id": 47013,
+  "post_id": 46756,
+  "type": "multiple_choice",
+  "probabilities": {
+    "SpaceX": 0.57,
+    "Meta Platforms": 0.27,
+    "Tesla": 0.135,
+    "Anthropic": 0.014,
+    "Berkshire Hathaway": 0.011
+  },
+  "reasoning": "**Question.** Which of SpaceX, Meta Platforms, Tesla, Anthropic and Berkshire Hathaway ranks highest by market cap on CompaniesMarketCap after the US close on 28 December 2026, 21 trading days from now.\n\n**Starting point.** CompaniesMarketCap, read on 27 Nov with prices from the 25 Nov close: SpaceX $1.730T (#7), Meta $1.559T (#9), Tesla $1.502T (#10), Berkshire $1.230T (#13), Anthropic $1.106T (#14). Meta has to gain 11% on SpaceX and Tesla 15%. On today's share counts SpaceX stayed ahead of both through the last 50 trading days, though Meta came within about 1% on 24 Sep. These are volatile stocks: daily closes over that stretch (StockAnalysis) give annualised volatility of 64% for SpaceX, 54% for Tesla and 50% for Meta, so the SpaceX/Meta ratio typically moves about 17% in 21 trading days and SpaceX/Tesla about 14%. A plain random walk from here gives SpaceX about 62%, Meta 25%, Tesla 11%.\n\n**What moved me off that.**\n- SpaceX fell 11% in five sessions to $127.44 on 25 Nov, with its credit default swaps at record highs (Motley Fool, 25 Nov). Its last IPO lock-up tranche, up to 797.6 million shares, unlocks on 8 Dec (TIKR, 18 Nov).\n- SpaceX and Tesla are negotiating an all-stock merger through special committees. The FT (23-24 Nov, via Quartz and Benzinga) says terms could be settled by year-end, and Polymarket put an official announcement by 31 Dec near 30% on 26 Nov. Analysts frame the terms near $480 per Tesla share, about half of the combined company, so an announcement would pull Tesla's value toward SpaceX's and probably weigh on SpaceX as the buyer. I give 24% to an announcement by 28 Dec.\n\n**Other outcomes.** Meta wins if SpaceX slips roughly another 10% against it. Tesla needs a generous exchange ratio or a further 15% relative gain. Anthropic needs about +55% against SpaceX, and Berkshire needs all three leaders to fall 18-29% against it.\n\n**Forecast.** SpaceX 57%, Meta 27%, Tesla 13.5%, Anthropic 1.4%, Berkshire 1.1%.",
+  "posted_at": "2026-11-27T00:51:51Z",
+  "posted_as": "SpaceX: 57.0%, Meta Platforms: 27.0%, Tesla: 13.5%, Anthropic: 1.4%, Berkshire Hathaway: 1.1%",
+  "question_title": "Which of these companies will have the highest rank among their group on CompaniesMarketCap on December 28, 2026?",
+  "question_url": "https://www.metaculus.com/questions/46756",
+  "tournaments": [
+    "fall-futureeval-2026"
+  ]
+}
