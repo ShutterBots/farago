@@ -1,0 +1,33 @@
+{
+  "question_id": 47016,
+  "post_id": 46759,
+  "type": "discrete",
+  "percentiles": {
+    "0.5": 2.1,
+    "1": 2.26,
+    "2.5": 2.51,
+    "5": 2.73,
+    "10": 3.0,
+    "15": 3.17,
+    "20": 3.32,
+    "25": 3.46,
+    "30": 3.58,
+    "35": 3.7,
+    "40": 3.83,
+    "45": 3.95,
+    "50": 4.09,
+    "54": 4.205,
+    "60": 4.41,
+    "65": 4.61,
+    "70": 4.85,
+    "75": 5.11,
+    "80": 5.4,
+    "85": 5.71,
+    "90": 6.08,
+    "95": 6.59,
+    "97.5": 7.17,
+    "99": 7.81,
+    "99.5": 8.3
+  },
+  "reasoning": "**Question.** The Paraguay River level at Asunción on 31 Dec 2026, in metres, from the DMH gauge table. The range ends at 4.2 m and is open above.\n\n**Starting point.** The DMH table shows 3.33 m on 28 Nov, up from 1.71 m on 17 Nov and rising 25–32 cm a day since 25 Nov. Upstream stations were still climbing about 30 cm a day on 28 Nov (DMH station pages): Rosario 4.29 m, Vallemí 5.76 m, Fuerte Olimpo 4.78 m. Concepción was 4.79 m on 27 Nov, against 1.64 m on 15 Nov. Asunción usually settles near Rosario's reading a few days later, so it should pass 4.2 m around 1–2 Dec and crest near 5–6 m about 7–11 Dec.\n\n**What decides 31 Dec.** The crest has about three weeks to drain.\n- Recessions here are fast. October's pulse rose from 0.46 m (3 Oct) to 3.02 m (26 Oct) and was back at 1.71 m by 17 Nov, a fall of 1.31 m in 22 days. In 2014 Asunción fell from 5.31 m (28 Nov) to 3.48 m (31 Dec). Scaled to this larger wave, a December without a major new rain episode leaves 3.0–4.2 m, centred near 3.6 m.\n- A new episode would hold the level up. El Niño is very strong; this wave followed more than 180 mm in 48 hours in San Pedro and Concepción (Hoy, 23 Nov) and about 540 mm in under ten days at Puerto Casado (El Nacional, 28 Nov). In December 2015 Asunción rose from 4.53 m to 7.88 m. Against that, October's rains were followed by a three-week lull, and the Bolsa de Cereales outlook for 26 Nov–9 Dec (La Nación, 26 Nov) puts the heaviest rain in south-east Paraguay, outside this basin.\n\n**Weighing.** About 43% for a major new rain episode before late December (4.5–6.5 m) and 57% for an undisturbed recession.\n\n**Other outcome.** Below 3 m needs a dry December and October-style drainage; above 6.5 m needs repeated basin-wide storms as in 2015.\n\n**Forecast.** Median 4.09 m, 5–95% range 2.73–6.59 m, about 46% above 4.2 m."
+}
