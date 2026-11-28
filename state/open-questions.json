@@ -1,8 +1,30 @@
 {
-  "generated_at": "2026-11-28T11:42:47Z",
+  "generated_at": "2026-11-28T12:42:07Z",
   "mode": "tournament",
-  "request_id": "20261128T114225Z-5995",
-  "questions": [],
+  "request_id": "20261128T124140Z-7316",
+  "questions": [
+    {
+      "question_id": 47016,
+      "post_id": 46759,
+      "type": "discrete",
+      "tournament": "Seasonal tournament",
+      "title": "What will be the Paraguay River level at Asunción on December 31, 2026?",
+      "url": "https://www.metaculus.com/questions/46759",
+      "background": "The Paraguay River is a tributary of the Parana River, which has recently experienced [flooding](https://latinamericanpost.com/life/paraguay-floods-put-families-on-the-move-and-border-life-on-hold/).\n\n`{\"format\": \"bot_tournament_question\", \"info\": {\"hash_id\": \"59c8bb6491948896\", \"sheet_id\": \"142\"}}`",
+      "resolution_criteria": "This question resolves as the river level of the Paraguay River at Asunción [station](https://www.meteorologia.gov.py/nivel-rio/vermas.php?id=2000086218), in meters, for December 31, 2026.",
+      "fine_print": "If there is no entry for that specific date at the resolution source, the value for the latest date displayed before then will be used for resolution. \n\nIn case of inaccessibility of the resolution source, this question may also resolve according to [credible sources](https://www.metaculus.com/faq/#definitions).",
+      "open_time": "2026-11-28T12:00:00Z",
+      "close_time": "2026-11-28T15:00:00Z",
+      "scheduled_resolution_time": "2026-12-31T00:00:00Z",
+      "unit": "m",
+      "lower_bound": 1.5,
+      "upper_bound": 4.2,
+      "open_lower_bound": true,
+      "open_upper_bound": true,
+      "step": 0.01,
+      "deadline": "2026-11-28T15:00:00Z"
+    }
+  ],
   "skipped": [],
   "errors": [],
   "kept_up_to_date": {
