@@ -1,0 +1,18 @@
+{
+  "question_id": 47027,
+  "post_id": 46770,
+  "type": "multiple_choice",
+  "probabilities": {
+    "Chuck Schumer": 0.92,
+    "Chris Van Hollen": 0.06,
+    "Other": 0.02
+  },
+  "reasoning": "**What is asked.** Who Senate Democrats elect as caucus leader for the 120th Congress. The secret-ballot vote is set for Tuesday, December 1, 2026. 55 senators and senators-elect can vote, so 28 wins. \"Other\" covers any third person, or no election before January 3, 2027.\n\n**Starting point.** Sitting congressional party leaders who face a caucus challenge almost always survive, usually comfortably: Byrd beat Chiles 36–11 in 1984, the last challenge to a sitting Senate Democratic leader; McConnell beat Rick Scott 37–10 in 2022; Pelosi beat Tim Ryan 134–63 in 2016. The rare ousters followed election defeats, and Schumer has just delivered a 56-seat majority. That puts the incumbent near 90–95% before the specifics.\n\n**Evidence.**\n- Public commitments stand at 17 for Schumer, counting himself and Mark Warner (endorsed November 25), against 7 for Van Hollen, counting himself and Sen.-elect Troy Jackson (endorsed the same day) (Washington Post, Nov 25; Wikipedia whip count as edited Nov 28). The other 31 have named no candidate.\n- Schumer says he has the votes and his allies project more than 40. Van Hollen claims \"north of 15\" and calls himself the underdog (Newsweek, Nov 26). Chris Coons, himself uncommitted, called Van Hollen's chances \"remote\".\n- Prediction markets: Kalshi had Schumer 91%, Van Hollen 9%, Schatz 2% on November 26 (Newsweek); Polymarket showed 93%, 7% and 1% on November 28.\n- Pulling the other way: Democratic voters prefer Van Hollen 40–19 (Economist/YouGov, Nov 20–23), several freshmen campaigned against Schumer, and the Wall Street Journal (Nov 26) called the vote \"too unpredictable to call\" while still naming Van Hollen the underdog.\n\n**What the other outcomes need.** Van Hollen must win 21 of the 31 senators with no public commitment, mostly institutionalists Schumer's side counts as its own. That takes a large hidden revolt on the secret ballot, perhaps set off at Monday's caucus meeting. \"Other\" needs Schumer to withdraw, or a deadlock that produces a compromise such as Brian Schatz; nothing reported points to either.\n\n**Forecast.** Chuck Schumer 92%, Chris Van Hollen 6%, Other 2%.",
+  "posted_at": "2026-11-28T15:48:15Z",
+  "posted_as": "Chuck Schumer: 92.0%, Chris Van Hollen: 6.0%, Other: 2.0%",
+  "question_title": "Who will be elected leader of the Senate Democratic Caucus in the 120th Congress?",
+  "question_url": "https://www.metaculus.com/questions/46770",
+  "tournaments": [
+    "fall-futureeval-2026"
+  ]
+}

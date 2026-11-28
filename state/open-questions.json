@@ -1,29 +1,8 @@
 {
-  "generated_at": "2026-11-28T15:42:19Z",
+  "generated_at": "2026-11-28T15:48:31Z",
   "mode": "tournament",
   "request_id": "20261128T154149Z-7954",
-  "questions": [
-    {
-      "question_id": 47027,
-      "post_id": 46770,
-      "type": "multiple_choice",
-      "tournament": "Seasonal tournament",
-      "title": "Who will be elected leader of the Senate Democratic Caucus in the 120th Congress?",
-      "url": "https://www.metaculus.com/questions/46770",
-      "background": "In the 2026 U.S. general election, the Democratic Party flipped several seats in the U.S. Senate and is set to take control of the Senate when the new Congress is sworn in in January.\n\nSenator [Chuck Schumer](https://bioguide.congress.gov/search/bio/s000148), of New York, has served as a U.S. Senator since 1999 and has led the Senate Democratic Caucus since 2017. In this position, he has continuously served as Senate Minority or Majority Leader.\n\nSenator Chris Van Hollen, of Maryland, has served as a U.S. Senator since 2017. On November 12, 2026, Van Hollen [announced](https://www.ms.now/news/van-hollen-schumer-senate-majority-leader) that he would challenge Schumer for leadership of the Senate Democratic Caucus. On November 15, 2026, [Van Hollen claimed](https://www.nytimes.com/2026/11/15/us/politics/van-hollen-schumer-democrats-majority-leader.html) that he had a path to victory, while on November 17, Schumer [declared](https://thehill.com/homenews/senate/6226192-schumer-vs-van-hollen-leadership-race/) that he had the votes to retain leadership over the caucus. As of mid-November, while many Senators have endorsed a candidate, [many more](https://en.wikipedia.org/wiki/2026_Senate_Democratic_Caucus_leadership_election#Whip_Count) have not made their preferences known.\n\nThe leader of the caucus will be determined by a simple majority vote of Democratic Senators-elect (including Independents who caucus with the Democrats). Votes will be cast on December 1, 2026, via secret ballot.\n\n`{\"format\": \"metac_reveal_and_close_in_period\", \"info\": {\"post_id\": 46719, \"question_id\": 46983}}`",
-      "resolution_criteria": "This question will resolve as the incoming leader of the [Senate Democratic Caucus](https://www.democrats.senate.gov/) for the 120th Congress, according to [credible sources](https://www.metaculus.com/faq/#definitions).",
-      "fine_print": "If neither Schumer nor Van Hollen is elected, including if no election occurs before January 3, 2027, the question will resolve as **Other**.\n\n***\nThis question's information (resolution criteria, fine print, background info, etc) is synced with an [original identical question](https://www.metaculus.com/questions/46719) which opened on 2026-11-23 18:00:00.",
-      "open_time": "2026-11-28T15:00:00Z",
-      "close_time": "2026-11-28T18:00:00Z",
-      "scheduled_resolution_time": "2026-12-03T00:00:00Z",
-      "options": [
-        "Chuck Schumer",
-        "Chris Van Hollen",
-        "Other"
-      ],
-      "deadline": "2026-11-28T18:00:00Z"
-    }
-  ],
+  "questions": [],
   "skipped": [],
   "errors": [],
   "kept_up_to_date": {
